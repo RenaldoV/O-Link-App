@@ -1,0 +1,26 @@
+<div ng-controller="jobHistory" class="jonHist">
+
+    <table style="margin-top: 42px; " class="table tab  applicantsTable oneHid">
+
+    <thead class="blueBack talentHistoryHead"><th class="tableAdd"></th><th>Employer</th><th class="jobHistSmall">Date</th><th>Category</th><th class="jobHistSmall">Comment</th><th>Rating</th>
+    </thead>
+    <tbody>
+    <tr class="historyTbl" ng-mouseleave="unhighlightChildren($event)" ng-mouseover="highlightChildren($event)" ng-click="getJob(app.jobID._id)" style="cursor: pointer; width:100%" ng-repeat="app in applications">
+        <td style="width:5%" class="lilPp tableAdd"><a ><img ng-src="data:image/png;base64,{{app.image}}"  class="animated pulse lilPp img-circle"></a></td>
+        <td class="jobHistPsmall">{{app.employerID.contact.name + " " + app.employerID.contact.surname}}</td>
+        <td class="jobHistPsmall jobHistSmall">{{app.jobID.post.startingDate}}</td>
+        <td ng-if="app.jobID.post.OtherCategory" class=" jobHistPsmall">{{app.jobID.post.OtherCategory}}</td>
+        <td ng-if="!app.jobID.post.OtherCategory" class=" jobHistPsmall">{{app.jobID.post.category}}</td>
+        <td class=" jobHistPBig jobHistSmall" ng-if="app.commentToStudent">{{app.commentToStudent}}</td>
+        <td class=" jobHistPMed jobHistSmall" ng-if="!app.commentToStudent"><span class="text-danger">Not rated yet</span></td>
+        <td class="jobHistNumRating">{{app.studentRating}}</td>
+        <td style="text-align: left;" class="jobHistPMed">
+            <jk-rating-stars class="jobHistoryStars" rating="app.studentRating" read-only="true"></jk-rating-stars>
+        </td>
+
+    </tr>
+    </tbody>
+
+</table>
+   <div style="margin-left: 42px; color: white;">{{message}}</div>
+</div>

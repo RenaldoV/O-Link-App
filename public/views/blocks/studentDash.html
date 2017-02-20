@@ -1,0 +1,188 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+  <!-- main -->
+  <div class="col">
+    <!-- / main header -->
+    <div class="wrapper-md">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5 dashTops" ng-controller="stats">
+          <div class="row row-sm text-center">
+            <div class="col-xs-6">
+              <div class="panel padder-v item card dashboxBlue">
+                <div class="h1 font-thin h1" id="newJobs">{{stats.jobsCount}}</div>
+                <span class="text-muted text-xs">Total Jobs</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div href class="block panel padder-v item card dashboxGreen">
+                <span class="font-thin h1 block" id="newStudents">{{stats.myApplications}}</span>
+                <span class="text-muted text-xs">My Total Applications</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div href class="block panel padder-v item card dashboxPurple">
+                <span class="font-thin h1 block" id="totalEmployers">{{stats.employerCount}}</span>
+                <span class="text-muted text-xs">Employers</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="panel padder-v item card dashboxMuted">
+                <div class="font-thin h1" id="totalStudents">{{stats.studentCount}}</div>
+                <span class="text-muted text-xs">Student<span ng-if="stats.studentCount > 1">s</span></span>
+              </div>
+            </div>
+
+          </div>
+          <div class="dashSlogan">Innovative Thinking <br> Real World Solutions</div>
+        </div>
+        <div class="col-md-7">
+          <div class="panel wrapper  blueBorder  text-center cards">
+            <div class="card-header blueBack">
+              <div class="row">
+                <div class="col-xs-2 col-centered" style="width:240px; ">
+                  <span class="glyphicon glyphicon-time"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2 col-centered" style="width:240px;">
+                  <h2 class="font-thin m-t-none m-b-none">Latest Job Posts</h2>
+                </div>
+              </div>
+            </div>
+
+            <div ng-controller="jobFeed"  class="jobPosts">
+              <table class="table text-left latestJobsTable">
+                <thead><th></th><th>Category</th><th>Pay</th><th>Location</th>
+                </thead>
+                <tbody>
+                <tr class="jobRow" ng-repeat="job in jobs" ng-click="getJob(job._id)" style="cursor: pointer;" >
+                  <td class="lilPp"><a ><img ng-src="data:image/png;base64,{{job.image}}"  class="animated pulse lilPp img-circle"></a></td>
+                  <td class="fields" ng-if="job.post.category == 'Other'">{{job.post.OtherCategory}}</td>
+                  <td class="fields" ng-if="job.post.category != 'Other'">{{job.post.category}}</td>
+                  <td class="fields" ng-if="job.post.payPer == 'hour'">R{{job.post.pay + "/" + getPer(job.post.timePeriod)}}</td>
+                  <td class="fields" ng-if="job.post.payPer == 'hourAndTips'">R{{job.post.pay + "/" + getPer(job.post.timePeriod)}} + {{job.post.tips == 'sharedTips' ? 'Shared Tips' : 'Individual Tips'}}</td>
+                  <td class="fields" ng-if="job.post.payPer == 'tips'">{{job.post.tips == 'sharedTips' ? 'Shared Tips' : 'Individual Tips'}}</td>
+                  <td class="fields" ng-if="job.post.payPer == 'commission'">
+                    <span ng-if="job.post.commission.type == 'percentage'">{{job.post.commission.percentage}}% per {{job.post.commission.per}}</span>
+                    <span ng-if="job.post.commission.type == 'rand'">R{{job.post.commission.amount}} per {{job.post.commission.per}}</span>
+                  </td>
+                  <td class="fields">{{job.post.location.address.split(',')[1]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / stats -->
+<br>
+      <!-- service -->
+      <div class="panel hbox hbox-auto-xs greenBorder text-center" ng-controller="goBrowse">
+        <div class="col wrapper cards">
+          <div class="card-header greenBack">
+            <div class="row">
+              <div class="col-xs-2 col-centered" style="width:240px;">
+                <span class="glyphicon glyphicon-search"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-2 col-centered" style="width:240px;">
+                <h2 class="font-thin m-t-none m-b-none ">Browse Jobs</h2>
+              </div>
+            </div>
+
+          </div>
+          <form id="browseForm" ng-submit="submit()" >
+
+
+            <br>
+            <div>
+              <div class="row">
+                <div class="col-xs-2 col-centered" style="width:240px; margin-left:-45px;">
+                  <img src="../img/Icons/Times-Blue-New.png" class="heading-img-browse-jobs img-responsive">
+                  <div class="browse-jobs-head"><h4 class="form-section-label-browse">Please Select a Time Period</h4><br/></div>
+                </div>
+
+              </div>
+
+            <div class="btn-group-md timeBrowse" data-toggle="buttons">
+
+              <label class="btn btn-primary-outline  timeSelect" ng-repeat="period in timePeriods" ng-click="toggleSelectionP(period.name)">
+                <input class="periods"
+                        type="checkbox"
+                        name="selectedPeriods[]"
+                        value="{{period}}"
+                        ng-checked="selectionP.indexOf(period.name) > -1"
+
+                /> {{period.name}}<br><small >({{period.description}})</small>
+              </label>
+
+              <div style="font-weight: bold;" class="btn-group-lg catSelect"><label class="btn btn-primary-outline categorySelect" id="allP" ng-click="selectAllP()">
+                <input
+                        id="selectAllP"
+                        type="checkbox"
+                        name="selectAll"
+                        value="Select All"
+
+                /> {{allPer}}
+              </label></div>
+            </div>
+
+            </div>
+
+
+
+
+          <div>
+              <div>
+                <br>
+                <div class="row">
+                  <div class="col-xs-2 col-centered" style="width:240px; margin-left:-45px;">
+                    <img src="../img/Icons/select-a-catagory-Green.png" class="heading-img-browse-jobs img-responsive">
+                    <div class="browse-jobs-head"><h4 class="form-section-label-browse">Please Select a Category</h4><br/></div>
+                  </div>
+
+                </div>
+
+                  <div class="btn-group-lg catSelect" data-toggle="buttons">
+
+
+                    <label class="btn btn-primary-outline categorySelect" ng-repeat="category in categories" ng-click="toggleSelectionC(category)">
+                      <input
+                              class="categories"
+                              type="checkbox"
+                              name="selectedCategories[]"
+                              value="{{category}}"
+                              ng-checked="selectionC.indexOf(category) > -1"
+
+                      /> {{category}}
+                    </label>
+
+                  </div>
+
+                <div>
+                <div  class="btn-group-lg " data-toggle="buttons">
+                <label style="font-weight: bold;" class="btn btn-primary-outline  categorySelect" ng-click="selectAllC()">
+                  <input
+                          id="selectAllC"
+                          type="checkbox"
+                          name="selectAll"
+                          value="Select All"
+
+                  /> {{allCat}}
+                </label></div>
+                <button ng-disabled="selectionP.length < 1 || selectionC.length < 1" type="submit" class="btn browseButton" >Browse</button>
+                </div>
+
+
+       </div>
+      </div>
+          </form>
+     </div>
+    </div>
+  </div>
+</div>
+  </div>

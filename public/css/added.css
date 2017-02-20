@@ -1,0 +1,1359 @@
+textarea.ng-invalid.ng-touched{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+select.ng-invalid.ng-touched{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+input.ng-invalid.ng-touched{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+form.ng-submitted textarea.ng-invalid{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+form.ng-submitted select.ng-invalid{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+form.ng-submitted input.ng-invalid{
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255,0,0,0.6); !important;
+    outline: 0 none;
+}
+
+textarea.form-control{
+    border: none;
+}
+textarea.form-control:focus{
+    border-color: #33B6CC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(51, 182, 204, 0.6);
+    outline: 0 none;
+}
+.cluttered:hover{
+    border-color: #33B6CC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(51, 182, 204, 0.6);
+    outline: 0 none;
+}
+select.form-control{
+    border: none;
+}
+select.form-control:focus{
+    border-color: none; !important;
+    border-color: #33B6CC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(51, 182, 204, 0.6); !important;
+    outline: 0 none;
+}
+
+textarea:focus,
+select:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #33B6CC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(51, 182, 204, 0.6);
+    outline: 0 none;
+}
+
+select{
+    color: black;
+}
+
+.segmented-button {
+    padding: 12px;
+}
+.segmented-button input[type="radio"] {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+.segmented-button label {
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: white;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e4e4e4));
+    background: -webkit-linear-gradient(#ffffff, #e4e4e4);
+    background: -moz-linear-gradient(#ffffff, #e4e4e4);
+    background: -o-linear-gradient(#ffffff, #e4e4e4);
+    background: -ms-linear-gradient(#ffffff, #e4e4e4);
+    background: linear-gradient(#ffffff, #e4e4e4);
+    border: 1px solid #b2b2b2;
+    color: #666666;
+    padding: 5px 24px;
+    padding-bottom: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: Helvetica;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    border-radius: 0px;
+    margin-right: -5px;
+}
+.segmented-button label {
+    *display: inline;
+}
+.segmented-button label:hover {
+    -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+.segmented-button label:active, .segmented-button label.active {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e4e4e4), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(#e4e4e4, #ffffff);
+    background: -moz-linear-gradient(#e4e4e4, #ffffff);
+    background: -o-linear-gradient(#e4e4e4, #ffffff);
+    background: -ms-linear-gradient(#e4e4e4, #ffffff);
+    background: linear-gradient(#e4e4e4, #ffffff);
+}
+.segmented-button label:disabled, .segmented-button label.disabled {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+    background: -webkit-linear-gradient(#ffffff, #efefef);
+    background: -moz-linear-gradient(#ffffff, #efefef);
+    background: -o-linear-gradient(#ffffff, #efefef);
+    background: -ms-linear-gradient(#ffffff, #efefef);
+    background: linear-gradient(#ffffff, #efefef);
+    cursor: default;
+    color: #b2b2b2;
+    border-color: #cccccc;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+.segmented-button label.first {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -o-border-top-left-radius: 4px;
+    -ms-border-top-left-radius: 4px;
+    -khtml-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -o-border-bottom-left-radius: 4px;
+    -ms-border-bottom-left-radius: 4px;
+    -khtml-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.segmented-button label.last {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -o-border-top-right-radius: 4px;
+    -ms-border-top-right-radius: 4px;
+    -khtml-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -o-border-bottom-right-radius: 4px;
+    -ms-border-bottom-right-radius: 4px;
+    -khtml-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.segmented-button input:checked + label, .segmented-button label.selected {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e4e4e4), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(#e4e4e4, #ffffff);
+    background: -moz-linear-gradient(#e4e4e4, #ffffff);
+    background: -o-linear-gradient(#e4e4e4, #ffffff);
+    background: -ms-linear-gradient(#e4e4e4, #ffffff);
+    background: linear-gradient(#e4e4e4, #ffffff);
+}
+.segmented-button input:disabled + label {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+    background: -webkit-linear-gradient(#ffffff, #efefef);
+    background: -moz-linear-gradient(#ffffff, #efefef);
+    background: -o-linear-gradient(#ffffff, #efefef);
+    background: -ms-linear-gradient(#ffffff, #efefef);
+    background: linear-gradient(#ffffff, #efefef);
+    cursor: default;
+    color: #b2b2b2;
+    border-color: #cccccc;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+#browseJobs{
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+}
+.center
+{
+    text-align: center;
+}
+
+.btn-xlarge {
+    padding: 12px 22px;
+    font-size: 18px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+div.feature {
+
+    position: relative;
+    display:block;
+
+}
+div.feature a.jobLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 10; /* Places the link above everything else in the div */
+    background-color: white; /* Fix to make div clickable in IE */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+
+div.feature:hover {
+    border-width: 3px;
+    border-color: #33B6CC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 30px rgba(51, 182, 204, 0.7);
+    outline: 0 none;
+}
+.jobBox{
+    display: inline-block;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.jobBox.studentBox:first-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.jobBox.studentBox{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.ppRating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:500px;
+    height:350px;
+}
+form .progress {
+    line-height: 15px;
+}
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+.likeText{
+    border:none;
+    background-color: transparent;
+    width: 100px;
+}
+
+.heading{
+    font-size: 25px;
+}
+
+#notifications {
+    text-align: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fcd621;
+
+}
+
+
+fieldset, label { margin: 0; padding: 0; }
+body{  }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+   align-content: center;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+    font-size: 30px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+.ratebox{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+.rater{
+    display: inline-block;
+    text-align: center;
+}
+
+
+.rateImg{
+    width : 100px;
+    height:100px;
+}
+
+.estatusDiv{
+    max-width: 190px;
+    min-width: 100px;
+}
+.statusBall {
+    float:right;
+    text-align: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fcd621;
+}
+span.statusBall {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fcd621;
+    float:left;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+.statusDiv1{
+    float:right;
+}
+.applicantsBtns{
+    text-align:right;
+}
+.applicantsBtns > button{
+    width: 100px;
+}
+.applicantsBtns > a{
+    width: 100px;
+}
+.applicantsBtns > .applProvBtn{
+    width:160px;
+}
+
+.aplHeadingRow{
+    padding-right:15px;
+    padding-left:15px;
+}
+.statusDiv2{
+    text-align: center;
+}
+.statusBall1 {
+    margin-left: 35px;
+    float:left;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fcd621;
+}
+.statusBall2 {
+    float: left;
+    right: 100px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fcd621;
+}
+.comment{
+    width: 420px;
+}
+
+.jobPosts{
+    height: 240px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.sweet-alert > fieldset > input{
+    -webkit-text-security: disc;
+}
+.cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:500px;
+    height:350px;
+}
+.studentBanner{
+    background: linear-gradient(#b5d2ff, #8aa0c1);
+}
+.studentAppsPage{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.employerBanner{
+    background: linear-gradient(to top right, #e8cf77, #d7b14f);
+}
+
+.dashboxBlue{
+    border: 1px solid #23b7e5;
+    color: #23b7e5;
+}
+
+
+.dashboxGreen{
+    border: 1px solid #27c24c;
+    color: #27c24c;
+}
+
+.dashboxPurple{
+    border: 1px solid #7266ba;
+    color: #7266ba;
+}
+
+.dashboxMuted{
+    border: 1px solid #58666e;
+    color: #58666e;
+}
+
+.dashSlogan{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-top: 15px;
+   font-weight: 200;
+}
+
+.postButton{
+
+    background-color: #00b488;
+    padding: 18px 28px;
+    font-size: 20px; //change this to your desired size
+line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    width: 200px;
+    margin: 10px;
+    color: white;
+}
+
+.postButton:hover{
+    color: white;
+    background-color: #33B6CC;
+}
+
+.employerButton{
+    background-color: #33B6CC;
+    padding: 18px 28px;
+    font-size: 20px; //change this to your desired size
+line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    width: 200px;
+    margin: 10px;
+    color: white;
+}
+
+.employerButton:hover{
+    color: white;
+    background-color: #00b488;
+}
+
+
+.browseButton{
+    background-color: #808080;
+    padding: 18px 28px;
+    font-size: 20px; //change this to your desired size
+line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin: 10px;
+    color: white;
+}
+
+.browseButton:hover{
+    color: white;
+    background-color: #7266ba;
+}
+
+
+.greenText{
+   color:#00b488;
+}
+
+.blueText{
+   color: #33B6CC;
+}
+.jobHist{
+    border-radius:10px;
+}
+
+.greenBack{
+    color: white;
+    background-color:#00b488;
+}
+
+
+.blueBack{
+
+    color: white;
+    background-color: #33B6CC;
+}
+thead.blueBack{
+
+    background-color: transparent;
+}
+thead.blueBack th{
+
+    color: white;
+    background-color: #33B6CC;
+}
+
+.greenBorder{
+    border: 1px solid #00b488;
+    border-radius: 10px;
+}
+
+.blueBorder{
+    border: 1px solid #33B6CC;!important;
+    border-radius: 10px;!important;
+}
+#selectAllP{
+    display: none;
+}
+.timeSelect{
+    font-size: 18px;!important;
+    border-radius: 6px;
+    width: 160px;
+    border: 1px solid #33B6CC;
+}
+.timeSelect.active{
+    background-color:  #33B6CC;
+    color: white;
+}
+
+.categorySelect{
+    margin: 5px;
+    border: 1px solid #00b488;
+}
+
+.categorySelect.active{
+    background-color:  #00b488;
+    color: white;
+}
+
+
+
+.card-header{
+    font-size: 30px;
+    width:100%;
+    color: white;
+    margin:0;
+    border-top-left-radius: 9px;
+
+    border-top-right-radius: 9px;
+}
+
+.card-header>h4{
+    font-size: 25px;
+
+}
+.cards{
+
+    padding:0;
+
+}
+
+.browseHeaders{
+    font-size: 18px;
+}
+.block{
+    border-radius: 10px;
+}
+.card{
+    border-radius: 10px;
+}
+.profileRating{
+
+    
+    margin: 20px;
+    display: inline-block;
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: white;
+}
+.empProfileRating{
+
+
+    margin: 20px;
+
+    display: inline-block;
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: white;
+}
+.openOffers{
+
+    margin: 20px;
+
+    display: inline-block;
+    height: 180px;
+    width: 180px;
+    border-radius: 100%;
+    background-color: white;
+}
+div.studentRating > a:first-child{
+    display:none;
+}
+div.studentRating .button .material-icons{
+    font-size: 50px;!important;
+}
+div > .profileStars .button .material-icons {
+    font-size: 25px;!important;
+}
+div > .profileStars .star-button.star-on .material-icons
+{ color: #FFD700;!important;  }
+
+td.jobHistPMed{
+    height:100%;
+}
+.jobHistoryStars {
+    margin-top: 8px;
+    float:left;
+    margin-bottom: 8px;
+}
+td > .jobHistoryStars .button .material-icons {
+    font-size: 20px;!important;
+}
+td > .jobHistoryStars .star-button.star-on .material-icons {
+    color: #FFD700;!important;
+}
+.applicantStars{
+    border: none;
+    text-align: center;
+    width:109px;
+    margin:auto;
+}
+
+.applicantStars > input { display: none; }
+.applicantStars > label:before {
+    margin-left:5px;
+    font-size: 18px;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.applicantStars > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.applicantStars > label {
+    color: #ddd;
+    float: right;
+}
+.applicantStars > label.filled{
+    color: #FFD700;
+}
+.applicantStars > input:checked ~ label /* show gold star when clicked */
+{ color: #FFD700;  }
+
+.jobHistStars > input { display: none; }
+.jobHistStars > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.jobHistStars > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.jobHistStars > label {
+    color: #ddd;
+    float: right;
+}
+.jobHistStars > label.filled{
+    color: #FFD700;
+}
+.jobHistStars > input:checked ~ label /* show gold star when clicked */
+{ color: #FFD700;  }
+.numberRating{
+
+    text-align: center;
+    font-size: 70px;
+}
+.numberRat{
+    padding-top: 18px;
+    text-align: center;
+    font-size: 70px;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+}
+.center-col{
+    width: 100%;
+}
+
+.profileBalls{
+    width: 500px;
+}
+
+#status{
+    background-color: #f0f3f4;
+}
+.statusOption{
+    background-color: #f0f3f4;
+}
+
+div.jobContent{
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    min-width: 280px;
+    padding-bottom: 30px;
+}
+
+.jobPosts{
+    text-align: center;
+}
+
+.profileBox{
+    padding: 0;
+}
+.profileLeft{
+    padding-right: 10px;
+}
+.profileRight{
+    padding-left: 10px;
+}
+.timeSelect{
+    margin: 5px;
+    vertical-align: middle;
+    background-color: #F8F8F8;
+}
+
+#allP{
+    padding: 8px 16px;
+    border-color: #33B6CC;
+    border-radius: 6px;
+    height: 46px;
+}
+#allP.active{
+    background-color: #33B6CC;
+}
+
+.jobButtons{
+ width: 130px;
+    margin: 10px;
+}
+.btn-plain:hover{
+    background-color: #d3d3d3;
+}
+.browseLogos{
+    width: 140px;
+    height: 140px;
+}
+.applicantsLogos{
+    width: 140px;
+    height: 140px;
+}
+.jobsContainer{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.jobsContainer.studentContainer{
+    width:100%;
+}
+
+span.jobDescription{
+    margin-left: -8px;
+}
+
+.appHeading{
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin-left: 30px;
+}
+.tab{
+    margin-bottom: 0;
+}
+
+
+.applicantsTable{
+
+    background-color: #f6f7ff;
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    border-radius: 10px;
+
+}
+
+.applicantsTables tbody tr:hover{
+
+}
+.applicantsTables tbody tr td:last-child a{
+
+    margin-top: -7px;
+}
+
+
+
+
+.applicantsTables{
+
+    border-radius: 8px;
+
+}
+.applicantsTables thead tr{
+    background-color: #e9f8ff;
+}
+.applicantsTables tbody th:last-child {
+
+    float: right;
+    border: none;
+}
+.applicantsTables tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.applicantsTables tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.applicantsTables tbody tr td {
+    background-color: white;
+    padding-top: 11px;
+}
+
+.applicantsTables td.hover{
+    background-color: #e9f8ff;
+}
+
+td.hover {
+    background-color: white;
+}
+tr:last-child td.hover:last-child{
+    border-bottom-right-radius: 10px;
+}
+tr:last-child td.hover:first-child{
+    border-bottom-left-radius: 10px;
+}
+
+
+#jobEmployer{
+    display: inline-block;
+    text-align: center;
+    width:auto;
+    margin-left: -72px;
+}
+.jobPPMobile{
+    display: none;
+}
+#employerName{
+    display: inline-block;
+    margin-left: 4px;
+}
+.jobPp{
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+
+}
+.applicantsTable tbody tr td {
+
+    padding-top: 8px;
+}
+.applicantsTable tbody tr td:last-child {
+    padding-top:8px;
+    float: left;
+
+
+}
+.table tbody tr td button {
+
+    margin-top: -3px;
+
+
+
+}
+
+
+
+.applicantsDateHead{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.interviewReq{
+    color: red;
+    margin-top: 10px;
+    font-size: 15px;
+    float:left;
+}
+
+.btn.blueBack{
+    color: white;
+    border:none;
+}
+.btn.blueBack:hover{
+    color: white;
+    background-color: #00b488;
+}
+.btn.greenBack{
+    color: white;
+}
+.makeOffer{
+    margin-right:20px;
+}
+.btn.greenBack:hover{
+    color: white;
+    background-color: #33B6CC;
+}
+.applicantsHead {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    min-width: 100%;
+    height: 40px;
+
+    background-color:  #33B6CC;
+}
+
+.wordwrap {
+    white-space: pre-wrap;      /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap;     /* Opera <7 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    word-wrap: break-word;      /* IE */
+}
+
+.talentHistoryHead{
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+border-bottom: 0;
+   padding-top: 50px;
+    font-size: 20px;
+}
+.lilPp{
+    margin-top: -5px;
+    width: 25px;
+    height: 25px;
+}
+.tableFour{
+    display: inline-block;
+    background-color: #00FF00;
+}
+
+.cheviBox{
+    margin-right: 10px;
+    margin-top: 12px;
+}
+
+.jobsHead{
+    text-align: left;
+    margin-top: -22px;
+}
+.applHead{
+    text-align: left;
+    margin-top: 0px;
+    padding-left: 0px;
+}
+
+.jobInfoBox{
+    padding: 0;
+    margin-right: 2%;
+    width:16.6%;
+    height: 42px;
+    border: 1px solid #33B6CC;
+    display:inline-table;
+}
+.jobInfoBox:last-of-type{
+    margin-right: 0px;
+}
+.jobInfoBox.FirstBox{
+    width:24.9%;
+}
+.appInfoBox{
+    text-align: center;
+    width:23%;
+    padding: 0;
+    height: 42px;
+    border: 1px solid #33B6CC;
+    display:inline-table;
+    margin-right:2.1%;
+}
+.appInfoBox:last-of-type{
+    margin-right:0;
+}
+
+.institutionBox{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:50px;
+}
+
+table{
+
+    border-collapse: separate;
+}
+.tab > thead th:first-child{
+    border-top-left-radius: 10px;
+
+}
+.tab thead th:last-child{
+
+    border-top-right-radius: 10px;
+}
+.infoBoxHead{
+
+width: 100%;
+    text-align: center;
+    margin-top: -12px;
+    padding: 2px;
+
+}
+
+.minMarge{
+    margin-top: -42px;
+}
+.blueTop{
+    border-top: 1px solid #33B6CC;
+}
+
+
+
+.appBtns {
+    height: 51px;
+    width: 100%;
+}
+
+.jobSubHeader{
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+
+
+#additional{
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.buyBox{
+    display: inline-block;
+    width: 240px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 5px;
+}
+
+.buyInner{
+    display: inline-block;
+    width: 230px;
+    height: 260px;
+    background-color: white;
+}
+
+.buyTop{
+    font-size: 35px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.cart{
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.cost{
+    font-size: 61px;
+}
+
+.timeFrame{
+    font-size: 22px;
+    font-weight: 100;
+    color: rgba(127, 127, 127, 0.7);
+    margin-top: 35px;
+}
+
+.package{
+    display: inline-block;
+    font-size: 23px;
+    font-weight: 100;
+    width: 160px ;
+    color: black;
+    margin-top: 20px;
+}
+
+.filterOptions{
+    text-align: left;
+    background-color: #F8F8F8;
+    padding: 10px;
+    padding-right: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+div.filterOptions > div.row > div.col-md-1 > button.btn-sm.greenBack {
+    margin-top: 5px;
+}
+div.col-xs-3.location > h4{
+    margin-left: 60px;
+}
+div.col-xs-3.location > input.btn{
+    margin-top: 3px;
+    margin-left: 40px;
+    width: 80%;
+    position: absolute;
+}
+div.col-md-3 > h4.offersBtw{
+    margin-left: 60px;
+}
+div.col-md-2 > h4.filterBy{
+    margin-left: 80px;
+}
+
+#allP{
+    font-size: 18px;!important;
+    background-color: #F8F8F8;
+    font-weight: bold;
+}
+
+
+.jobTimePeriod{
+    display: block;
+    font-size: 12px;
+    margin-left:1px;
+    margin-top:5px;
+
+}
+.jobTimePeriod{
+    display: block;
+    font-size: 18px;
+    margin-top:5px;
+    color: lightgrey;
+}
+
+.jobCategory{
+margin-bottom: 0;
+}
+.applName{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.applyFilter{
+    margin: 10px;
+}
+
+.latestJobsTable > tbody > tr > td.fields{
+    width: 30%;
+}
+td.histPmed{
+    width:25%;
+}
+td.histPrating{
+    width:25%;
+}
+td.histPbig{
+    width:30%;
+}
+td.histPsm{
+    width:10%;
+}
+td.applicantsPsmall{
+    width: 2%;
+}
+td.applicantsPmed{
+    width: 18%;
+}
+td.applicantsP{
+    width: 22%;
+}
+td.jobHistPsmall{
+    width: 12%
+}
+td.jobHistPBig{
+    width: 40%;
+}
+td.jobHistPMed{
+    width: 100%;
+}
+.jobRow:hover{
+    background-color: #F8F8F8;
+    color: #808080;
+}
+.multiselect-parent .dropdown-menu {
+    overflow: hidden;!important;
+}
+.profileImage{
+    width:60px;
+}
+
+div.sweet-alert{
+    margin-left: -240px;
+}
+
+.maps iframe{
+    pointer-events: none;
+}
+
+div#loading-bar-spinner .spinner-icon {
+    width: 52px;
+    height: 52px;
+}
+
+div.modal-content {
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: #33B6CC;
+    padding-bottom:20px;
+    position:relative;
+    height: 430px;
+}
+
+div.modal-content.employerModal {
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: #00b488;
+    padding-bottom:20px;
+    position:relative;
+    height: 360px;
+}
+ul.steps-indicator{
+    position: fixed;
+    bottom: 50px;
+}
+ul.steps-indicator li a{
+    text-transform: none;
+    font-weight: 100;
+    color: black;
+    font-size: 12px;
+}
+
+ul.steps-indicator li.current a{
+    font-weight: bold;
+    color:#33B6CC;
+}
+ul.steps-indicator li.current a:before {
+    background-color: #33B6CC;
+}
+ul.steps-indicator li.done a:before {
+    background-color: #00b488;
+}
+ul.steps-indicator li.editing a:before {
+    background-color: #808080;
+}
+ul.steps-indicator li.editing a{
+    font-weight: bold;
+     color:#33B6CC;
+}
+
+div.employerModal ul.steps-indicator li.current a{
+    font-weight: bold;
+    color:#00b488;
+}
+div.employerModal ul.steps-indicator li.current a:before {
+    background-color: #00b488;
+}
+div.employerModal ul.steps-indicator li.done a:before {
+    background-color: #33B6CC;
+}
+div.employerModal ul.steps-indicator li.editing a:before {
+    background-color: #808080;
+}
+div.employerModal ul.steps-indicator li.editing a{
+    font-weight: bold;
+    color:#00b488;
+}

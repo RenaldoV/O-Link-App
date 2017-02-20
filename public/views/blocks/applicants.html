@@ -1,0 +1,189 @@
+<div><div ng-controller="employerApplicants" class="empApplicants">
+    <h4 ng-if="jobs.length == 0" class="white" style="text-align: center"><b>You have no open job offers to display.</b></h4>
+    <div style="margin-top:42px;"  ng-repeat="job in jobs" class="jobApps">
+        <div class="applicantsHead blueBack" ng-click="toggleApplicants(job._id)" style="cursor: pointer;">
+        <div ng-if="job.post.category != 'Other'" class="appHeading">
+             {{job.post.category}}
+        </div>
+            <div ng-if="job.post.category == 'Other'" class="appHeading">
+            {{job.post.OtherCategory}}
+        </div>
+            <div class="applicantsDateHead tableAdd">{{job.post.startingDate}}</div>
+            <div ng-if="job.post.interviewRequired" class="interviewReq tableAddSmall">(Interview Required)
+            </div>
+
+
+            <div class="pull-right cheviBox">
+                <span ng-if="job.show" class=" glyphicon glyphicon-chevron-up"></span>
+                <span ng-if="!job.show" class=" glyphicon glyphicon-chevron-down"></span>
+            </div>
+        </div>
+
+
+        <div ng-if="job.show" >
+            <div class="jobsContainer studentContainer container">
+                <div class="row jobBox feature blueTop studentBox" ng-repeat="app in job.applications" style="margin-bottom:10px; border:1px solid; border-color:#33B6CC; background-color: white; cursor: pointer;" >
+                    <div class="col-md-2 ppRating">
+                        <div>
+                            <img  ng-click="gotoProfile()" ng-src="data:image/png;base64,{{app.image}}" class="img-circle applicantsLogos"><br>
+                            <div style="margin-left:-5px;">
+                                <fieldset class="applicantStars">
+                                    <input type="radio" id="star5{{$index}}" name="rating{{$index}}" value=5 ng-model="app.studentID.rating"  disabled /><label class = "full" for="star5{{$index}}" title="Awesome - 5 stars"></label>
+                                    <input type="radio" id="star4half{{$index}}" name="rating{{$index}}" value=4.5 ng-model="app.studentID.rating" disabled/><label class="half" for="star4half{{$index}}" title="Pretty good - 4.5 stars"></label>
+                                    <input type="radio" id="star4{{$index}}" name="rating{{$index}}" value=4 ng-model="app.studentID.rating" disabled/><label class = "full" for="star4{{$index}}" title="Pretty good - 4 stars"></label>
+                                    <input type="radio" id="star3half{{$index}}" name="rating{{$index}}" value=3.5 ng-model="app.studentID.rating" disabled/><label class="half" for="star3half{{$index}}" title="Meh - 3.5 stars"></label>
+                                    <input type="radio" id="star3{{$index}}" name="rating{{$index}}" value=3 ng-model="app.studentID.rating" disabled/><label class = "full" for="star3{{$index}}" title="Meh - 3 stars"></label>
+                                    <input type="radio" id="star2half{{$index}}" name="rating{{$index}}" value=2.5 ng-model="app.studentID.rating" disabled /><label class="half" for="star2half{{$index}}" title="Kinda bad - 2.5 stars"></label>
+                                    <input type="radio" id="star2{{$index}}" name="rating{{$index}}" value=2 ng-model="app.studentID.rating" disabled/><label class = "full" for="star2{{$index}}" title="Kinda bad - 2 stars"></label>
+                                    <input type="radio" id="star1half{{$index}}" name="rating{{$index}}" value=1 ng-model="app.studentID.rating" disabled/><label class="half" for="star1half{{$index}}" title="Meh - 1.5 stars"></label>
+                                    <input type="radio" id="star1{{$index}}" name="rating{{$index}}" value=1.5 ng-model="app.studentID.rating" disabled/><label class = "full " for="star1{{$index}}" title="Sucks big time - 1 star"></label>
+                                    <input type="radio" id="starhalf{{$index}}" name="rating{{$index}}" value=0.5 ng-model="app.studentID.rating" disabled><label class="half" for="starhalf{{$index}}" title="Sucks big time - 0.5 stars"></label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row aplHeadingRow">
+                            <div class="col-xs-5 applHead">
+                                <h2 class="applName">{{app.studentID.name.name + " "+ app.studentID.name.surname}}</h2>
+                                <span class="applicantInfo">{{app.studentID.gender}} - {{getAge(app.studentID.dob);}}</span>
+                            </div>
+                            <div class="applicantsBtns col-xs-7" style="z-index: 100">
+                                <button ng-disabled="job.provisionalLeft == 0" ng-if="app.status == 'Pending'" ng-click="makeOffer(app, job)" class="btn greenBack makeOffer">Make Offer</button>
+                                <a style="width:70px" ng-if="app.status == 'Confirmed'" class="btn blueBack" href="mailto:{{app.studentID.contact.email}}?Subject=O-Link:{{job.post.category}}" target="_blank" >Contact</a>
+                                <button  ng-if="app.status == 'Pending'" class="btn btn-danger" ng-click="decline(app, job)">Decline</button>
+                                <button class="btn applProvBtn" ng-if="app.status == 'Provisionally accepted'" style="background-color: lawngreen; color:white;" disabled>Provisionally Accepted</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:left; padding-left:0px;">
+                                    <hr style="text-align: left;">
+                                    <div class="applicantDesc">
+                                        <span>{{app.studentID.aboutme}}</span>
+                                    </div>
+                                    <hr style="text-align: left;">
+                                </div>
+                            </div>
+
+                            <div class="row text-center app-info-boxes">
+                                <table  class="col-xs-2 appInfoBox FirstBox" title="Student Rating">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-send infoBoxHead"></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{app.distance}}km</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table  class="col-xs-2 appInfoBox">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-ok infoBoxHead "></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{app.studentID.numRatings}}<span ng-if="!app.studentID.numRatings">0</span> job<span ng-if="app.studentID.numRatings > 1 || !app.studentID.numRatings">s</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table  class="col-xs-2 appInfoBox">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-home infoBoxHead "></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="institutionBox">{{app.studentID.institution.name}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table  class="col-xs-2 appInfoBox">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-education infoBoxHead "></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td ng-if="app.studentID.institution.type == 'Tertiary'">{{app.studentID.qualification.name}}</td>
+                                        <td ng-if="app.studentID.institution.type == 'Secondary'">Matric</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row text-center job-info-boxes-mobi">
+                                <table  class="col-xs-4 appInfoBox FirstBox" title="Student Rating">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-send infoBoxHead"></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{app.distance}}km</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table  class="col-xs-4 appInfoBox">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-home infoBoxHead "></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="institutionBox">{{app.studentID.institution.name}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table  class="col-xs-4 appInfoBox">
+                                    <thead class="blueBack">
+                                    <th class="glyphicon glyphicon-education infoBoxHead "></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td ng-if="app.studentID.institution.type == 'Tertiary'">{{app.studentID.qualification.name}}</td>
+                                        <td ng-if="app.studentID.institution.type == 'Secondary'">Matric</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="jobLink" href="/profile?user={{app.studentID._id}}"> </a>
+
+                </div>
+            </div>
+
+            <!--<table ng-if="job.applications.length > 0" class="table applicantsTables">
+                <thead><th class="tableAddSmall"></th><th>Name</th><th class="applicantsTableAddSmall">Age</th><th class="applicantsTableAddSmall">Gender</th><th class="tableAddSmall">Rating</th><th class="tableAdd">Status</th><th class="tableAddBig"></th><th class="tableAddBig"></th><th class="tableAddBig"><th ng-if="isProv(app.status)"></th></th><th></th>
+                </thead>
+                <tbody>
+                <tr ng-mouseleave="unhighlightChildren($event)" ng-mouseover="highlightChildren($event)" ng-repeat="app in job.applications"  style="cursor: pointer;">
+                    <td ng-click="getApplicant(app.studentID._id)" class="lilPp tableAddSmall"><a ><img ng-src="data:image/png;base64,{{app.image}}"  class="animated pulse lilPp img-circle"></a></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="appName applicantsPmed"><a href="/profile?user={{app.studentID._id}}">{{app.studentID.name.name + " "+ app.studentID.name.surname}}</a></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="applicantsTableAddSmall applicantsPsmall">{{getAge(app.studentID.dob);}}</td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="applicantsTableAddSmall applicantsPsmall">{{app.studentID.gender}}</td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmall applicantsPsmall"><span ng-if="app.studentID.rating">{{app.studentID.rating}}</span><span ng-if="!app.studentID.rating">N/A</span></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAdd applicantsP"><div class="estatusDiv">
+                        {{app.status}}
+                        <span class="tableAdd"></span>
+                        <div ng-if="isDeclined(app.status)" style="background-color: red" class="statusBall"></div>
+                        <div ng-if="isPending(app.status)" style="background-color: orange" class="statusBall"></div>
+                        <div ng-if="isConfirmed(app.status)" style="background-color: #286090" class="statusBall"></div>
+                        <div ng-if="isProv(app.status)" style="background-color: lawngreen" class="statusBall"></div>
+                    </div>
+                    <td class="tableAddBig"></td>
+                    <td class="tableAddBig"></td>
+                    <td class="tableAddBig"></td>
+                    <td>
+                       <button ng-disabled="job.provisionalLeft == 0" ng-if="app.status == 'Pending'" ng-click="makeOffer(app, job)" class="btn greenBack makeOffer">Make Offer</button>
+                        <a ng-if="app.status == 'Confirmed'" class="btn blueBack" href="mailto:{{app.studentID.contact.email}}?Subject=O-Link:{{job.post.category}}" target="_blank" >Contact</a>
+                        <button ng-if="app.status == 'Pending'" class="btn btn-danger" ng-click="decline(app, job)">Decline</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>-->
+            <h4 ng-if="job.applications.length == 0" class="white" style="text-align: center">{{message}}</h4>
+        </div>
+        <br>
+    </div>
+
+
+
+</div>
+</div>

@@ -1,0 +1,41 @@
+<div ng-controller="studentApplications" class="studentAppsPage">
+
+    <table style="margin-top: 42px;" class="table tab applicantsTable twoHid">
+    <thead class="talentHistoryHead blueBack"><th class="tableAdd"><!--Company logo--></th ><th class='tableAdd'>Employer</th><th>Category</th><th class="applicantsTableAddSmall">Date</th><th class="tableAdd">Location</th><th>Status</th><th class=""></th>
+    </thead>
+    <tbody>
+    <tr ng-mouseleave="unhighlightChildren($event)" ng-mouseover="highlightChildren($event)" ng-repeat="app in applications"  style="cursor: pointer;" class="appStatRowStu" ng-if="app.status != 'Completed'">
+        <td ng-click="getJob(app.jobID._id)" class="lilPp tableAdd"><a ><img ng-src="data:image/png;base64,{{app.image}}"  class="animated pulse lilPp img-circle"></a></td>
+        <td ng-click="getJob(app.jobID._id)" class="tableAdd" ng-if="app.employerID.employerType == 'Company'">{{app.employerID.company.name}}</td>
+        <td ng-click="getJob(app.jobID._id)" class="tableAdd" ng-if="app.employerID.employerType != 'Company'">{{app.employerID.contact.name}}</td>
+        <td ng-click="getJob(app.jobID._id)" ng-if="app.jobID.post.category != 'Other'">{{app.jobID.post.category}}</td>
+        <td ng-click="getJob(app.jobID._id)" ng-if="app.jobID.post.category == 'Other'">{{app.jobID.post.OtherCategory}}</td>
+        <td ng-click="getJob(app.jobID._id)" class="applicantsTableAddSmall">{{app.jobID.post.startingDate}}</td>
+
+        <td ng-click="getJob(app.jobID._id)" class="tableAdd">{{app.jobID.post.location.address.split(',')[1]}}</td>
+        <td ng-click="getJob(app.jobID._id)">
+            <div class="statusDiv"><span>{{app.status}}</span>
+                <div ng-if="isDeclined(app.status)" style="background-color: red" class="statusBall"></div>
+                <div ng-if="isPending(app.status)" style="background-color: orange" class="statusBall"></div>
+                <div ng-if="isProv(app.status)" style="background-color: lawngreen" class="statusBall"></div>
+                <div ng-if="isConfirmed(app.status)" style="background-color: #286090" class="statusBall"></div>
+            </div>
+        </td>
+        <td class="appBtns">
+            <span ng-if="app.status == 'Provisionally accepted' && !app.edited" class="transparent"><button class="btn greenBack" ng-click="accept(app._id, app.employerID._id,app.jobID._id, app.jobID)">Accept</button></span>
+            <span ng-if="app.offered == 'accepted' && !app.edited"><a class="btn blueBack" ng-click="contect()" href="mailto:{{app.employerID.contact.email}}?Subject=O-Link:{{app.jobID.post.category}}" target="_blank">Contact</a></span>
+            <span ng-if="app.edited && (app.status == 'Pending' || app.status =='Confirmed')"><button class="btn greenBack" ng-click="acceptChanges(app)" >Accept Changes</button></span>
+            <span ng-if="app.edited && app.status =='Provisionally accepted'"><button class="btn greenBack" ng-click="acceptChanges(app)" >Commit to Job</button></span>
+            <span ng-if="app.status == 'Provisionally accepted' && !app.edited"><button class="btn btn-danger" ng-click="decline(app._id, app.employerID._id,app.jobID._id, app.jobID)">Withdraw</button></span>
+            <button ng-if="app.edited && application.status !='Declined'" class="btn btn-danger" ng-click="withdraw(app, app.jobID)">
+                <span ng-if="app.status =='Pending' || app.status =='Provisionally accepted'">Withdraw Application</span>
+                <span ng-if="app.status =='Confirmed'">Withdraw Commitment</span>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+    <div style="margin-left: 42px; color: white;">{{message}}</div>
+</div>

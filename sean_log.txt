@@ -1,0 +1,25 @@
+What colour should job offer bar on applicants page be?
+
+Talent dashboard 
+"If I select a job offer in the “Latest Job Offers” block Paul has made, I can view it, but if
+I try browse for the job using the categories and time frames, I cannot. The filters
+don’t appear to be working." -- Ek kan die nie recreate nie
+
+
+
+--emails
+
+On application:check
+On application interview:check
+offered: check
+offered interview: check
+declined: check
+accept offer: check
+accept interview: check
+withdraw: check
+job edited to talent: check
+job edited to emp: check
+rate talent:check
+rate emp:check
+rated talent:check
+rated emp:check

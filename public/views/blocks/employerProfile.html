@@ -1,0 +1,142 @@
+<!-- content -->
+<div id="content">
+    <div class="app-content-body text-center" ng-controller='employerProfileControl'>
+        <div class="profileRating">
+            <div class="numberRat">
+                {{offers}}
+            </div>
+            <span class="small">Open offer<span ng-if="offers != 1">s</span></span>
+        </div>
+
+        <div class="text-center" ng-if="user.employerType == 'Company'">
+            <div ng-if="user.employerType = 'Company'" class="row text-center ">
+
+                <div class=" profileBox profileLeft col-md-6 ">
+                    <div class="panel blueBorder cards">
+                        <div  class="card-header blueBack">
+                            <h4 class="font-thin m-t-none m-b-none ">Info</h4>
+                        </div>
+
+                        <div master class="wrapper" >
+                            <img ng-if="showProfilePic" ng-src="data:image/png;base64,{{image}}"
+                                 class="profileImage img-circle">
+
+                            <div class="studies">
+                                <h4 class="m-t-xs m-b-xs">Company</h4>
+                                <ul class="list-group no-bg no-borders pull-in">
+                                    <li class="list-group-item">
+                                        <div class="clear">
+                                            <div>Company Name</div>
+                                            <small class="text-muted">{{user.company.name}}</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="clear">
+                                            <div>Company Description</div>
+                                            <small class="text-muted">{{user.company.description}}</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="clear">
+                                            <div>Location</div>
+                                            <small class="text-muted">{{user.company.location.address}}</small>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div  class="profileBox profileRight col-md-6" >
+                    <div  class="panel center-col greenBorder cards" id="contact">
+                        <div class="card-header greenBack">
+                            <h4 class="font-thin m-t-none m-b-none ">Contact</h4>
+                        </div>
+                        <div ng-style="style" class="wrapper" style="overflow-y:scroll">
+
+
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li class="list-group-item">
+                                    <div class="clear">
+                                        <div>Name</div>
+                                        <small class="text-muted">{{user.contact.name}} {{user.contact.surname}}</small>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" ng-if="user.employerType == 'Company'">
+                                    <div class="clear">
+                                        <div>Position in company</div>
+                                        <small class="text-muted">{{user.company.position}}</small>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="clear">
+                                        <div>Contact Number</div>
+                                        <small class="text-muted">{{user.contact.contactNo}}</small>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="clear">
+                                        <div>Email</div>
+                                        <small class="text-muted">{{user.contact.email}}</small>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="user.employerType == 'Individual'" class="row text-center">
+            <div class="col-md-3"></div>
+            <div class=" profileBox col-md-6">
+                <div class="panel  greenBorder cards" id="contactBox">
+                    <div ng-style="style" class="card-header greenBack">
+                        <h4 class="font-thin m-t-none m-b-none ">Contact</h4>
+                    </div>
+                    <div class="cards">
+
+
+                        <ul class="list-group no-bg no-borders pull-in">
+                            <li class="list-group-item">
+                                <div class="clear">
+                                    <div>Name</div>
+                                    <small class="text-muted">{{user.contact.name}} {{user.contact.surname}}</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item" ng-if="user.employerType == 'Company'">
+                                <div class="clear">
+                                    <div>Position in company</div>
+                                    <small class="text-muted">{{user.company.position}}</small>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="clear">
+                                    <div>Contact Number</div>
+                                    <small class="text-muted">{{user.contact.contactNo}}</small>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="clear">
+                                    <div>Email</div>
+                                    <small class="text-muted">{{user.contact.email}}</small>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <a ng-if="myProfile" class="btn employerButton btn-xlarge" href="/editProfile">Edit</a>
+
+    </div>
+</div>

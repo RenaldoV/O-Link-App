@@ -1,0 +1,135 @@
+<div class="modal fade" style="margin-top:50px; z-index:20000">
+    <div class="modal-dialog">
+        <div class="modal-content employerModal">
+            <div class="modal-body">
+                <wizard on-finish="finishedWizard()">
+                    <wz-step wz-title="Post a Job Offer">
+                        <div class="hitRow row">
+                            <div class="col-xs-8 col-xs-offset-2" style="text-align: center"><h1>Post a Job Offer</h1></div>
+                            <div class="col-xs-2" style="text-align: right; margin-top:8px">
+                                <a ng-click="dismissModal()" style="border:1px solid black; border-radius: 4px;" class="btn btn-sm">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-4" style="margin-top: 20px;">
+                            </div>
+                            <div class="col-xs-4" style="text-align: center">
+                                <img src="../../img/Icons/select-a-catagory-Green.png" width="72px" height="72px">
+                            </div>
+                            <div class="col-xs-4" style="float:right; right:0px; margin-top: 20px;">
+                                <a style="float:right; right:0px;" ng-click="goNext()" href=""><i class="fa fa-angle-right fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-10 col-xs-offset-1" style="padding-left: 25px; padding-right: 25px; text-align: center;">
+                                <p>Post the details of a job vacancy you are trying to
+                                    fill. Include the specific details of the job, any
+                                    minimum requirements (avoid ineligible
+                                    applications) and an application threshold to
+                                    manage the number of applications you are
+                                    willing to consider per vacancy (avoid excess
+                                    applications).</p>
+                            </div>
+                        </div>
+                    </wz-step>
+                    <wz-step wz-title="Review, Accept, Decline">
+                        <div class="hitRow row">
+                            <div class="col-xs-8 col-xs-offset-2" style="text-align: center"><h1>Review, Accept, Decline</h1></div>
+                            <div class="col-xs-2" style="text-align: right; margin-top:8px">
+                                <a ng-click="dismissModal()" style="border:1px solid black; border-radius: 4px;" class="btn btn-sm">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-4" style="margin-top: 20px;">
+                                <a ng-click="goBack()" href=""><i class="fa fa-angle-left fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="col-xs-4" style="text-align: center">
+                                <img src="../../img/Icons/employer-type-green-new.png" width="72px" height="72px">
+                            </div>
+                            <div class="col-xs-4" style="float:right; right:0px; margin-top: 20px;">
+                                <a style="float:right; right:0px;" ng-click="goNext()" href=""><i class="fa fa-angle-right fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-10 col-xs-offset-1" style="padding-left: 25px; padding-right: 25px; text-align: center;">
+                                <p>The job offer will be visible for a month to the
+                                    pool of students looking for jobs, who will then
+                                    apply to fill your vacancy. You will be able to
+                                    review the O-Link CV’s and provide provisional
+                                    acceptance to those you like, and decline the
+                                    others, knowing that your inbox will not be
+                                    flooded as you can control the number of
+                                    applications you will accept.</p>
+                            </div>
+                        </div>
+                    </wz-step>
+                    <wz-step wz-title="Job Commitment">
+                        <div class="hitRow row">
+                            <div class="col-xs-8 col-xs-offset-2" style="text-align: center"><h1>Job Commitment</h1></div>
+                            <div class="col-xs-2" style="text-align: right; margin-top:8px">
+                                <a ng-click="dismissModal()" style="border:1px solid black; border-radius: 4px;" class="btn btn-sm">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-4" style="margin-top: 20px;">
+                                <a ng-click="goBack()" href=""><i class="fa fa-angle-left fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="col-xs-4" style="text-align: center">
+                                <img src="../../img/Icons/work-experience-green-NEW.png" width="72px" height="72px">
+                            </div>
+                            <div class="col-xs-4" style="float:right; right:0px; margin-top: 20px;">
+                                <a style="float:right; right:0px;" ng-click="goNext()" href=""><i class="fa fa-angle-right fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-10 col-xs-offset-1" style="padding-left: 25px; padding-right: 25px;">
+                                <p>Once provisional acceptance has been made, you
+                                    will have access to the contact details of those
+                                    students while you await their commitment to
+                                    take on the job.</p>
+                            </div>
+                        </div>
+                    </wz-step>
+                    <wz-step wz-title="Enjoy Platform">
+                        <div class="hitRow row">
+                            <div class="col-xs-8 col-xs-offset-2" style="text-align: center"><h1>Enjoy Platform</h1></div>
+                            <div class="col-xs-2" style="text-align: right; margin-top:8px">
+                                <a ng-click="dismissModal()" style="border:1px solid black; border-radius: 4px;" class="btn btn-sm">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-4" style="margin-top: 20px;">
+                                <a ng-click="goBack()" href=""><i class="fa fa-angle-left fa-3x greenText" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="col-xs-4" style="text-align: center; margin-top:-5px;">
+                                <span class="fa-stack fa-3x greenText">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </div>
+                            <div class="col-xs-4" style="float:right; right:0px; margin-top: 20px;">
+
+                            </div>
+                        </div>
+                        <div class="hitRow row">
+                            <div class="col-xs-10 col-xs-offset-1" style="padding-left: 25px; padding-right: 25px; text-align: center;">
+                                <p>Enjoy the simplicity and ease-of-use offered to
+                                    you through our interactive, on demand
+                                    employment platform.</p>
+                            </div>
+                        </div>
+                    </wz-step>
+                </wizard>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

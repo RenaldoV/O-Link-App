@@ -1,0 +1,96 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm empDash">
+  <!-- main -->
+  <div class="col">
+    <!-- / main header -->
+    <div class="wrapper-md">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5" ng-controller="stats">
+          <div class="row row-sm text-center">
+            <div class="col-xs-6 ">
+              <div class="panel padder-v item card dashboxBlue">
+                <div class="h1 font-thin h1" id="newJobs">{{stats.jobsCount}}</div>
+                <span class="text-muted text-xs">Total Jobs</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6 ">
+              <div href class="block panel padder-v item card dashboxGreen">
+                <span class=" font-thin h1 block" id="newStudents">{{stats.myPosts}}</span>
+                <span class="text-muted text-xs">My Total Posts</span>
+              </div>
+            </div>
+            <div class="col-xs-6 ">
+              <div href class="block panel padder-v item card dashboxPurple">
+                <span class="font-thin h1 block" id="totalEmployers">{{stats.employerCount}}</span>
+                <span class="text-muted text-xs">Employers</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="panel padder-v item card  dashboxMuted">
+                <div class="font-thin h1" id="totalStudents">{{stats.studentCount}}</div>
+                <span class="text-muted text-xs">Students</span>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="dashSlogan">Innovative Thinking <br> Real World Solutions</div>
+        </div>
+        <div class="col-md-7">
+          <div class="cards panel wrapper blueBorder text-center">
+
+            <div class="card-header blueBack">
+              <div class="row">
+                <div class="col-xs-2 col-centered" style="width:240px; ">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2 col-centered" style="width:240px;">
+                  <h2 class="font-thin m-t-none m-b-none">My Job Offers</h2>
+                </div>
+            </div>
+              </div>
+            <br>
+            <div ng-controller="myJobFeed"  class="jobPosts">
+              <table class="table text-left">
+                <thead><th>Category</th><th>Date</th><th>Number of Applicants</th>
+                </thead>
+                <tbody>
+                <tr class="jobRow" ng-repeat="job in jobs"  ng-click="getJob(job._id)" ng-click="getJob(job._id)" style="cursor: pointer;"  >
+                  <td ng-if="job.post.category != 'Other'">{{job.post.category}}</td>
+                  <td ng-if="job.post.category == 'Other'">{{job.post.OtherCategory}}</td>
+
+                  <td>{{job.post.startingDate}}</td>
+                  <td>{{job.applicants.length}}</td>
+
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / stats -->
+
+      <!-- service -->
+
+
+                <div class="center" style="margin-top: 25px;" >
+
+
+                    <a class="btn postButton btn-xlarge" href="/postJob">Post Job</a>
+                  <a class="btn employerButton btn-xlarge" href="/applicants">Applicants</a>
+                  <a class="btn employerButton btn-xlarge" href="/myJobPosts">Open Job Offers</a>
+                  <a class="btn employerButton btn-xlarge" href="/pastJobPosts">Past Job Offers</a>
+
+                </div>
+
+
+
+
+  </div>
+</div>
+  </div>

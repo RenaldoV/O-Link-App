@@ -1,0 +1,23 @@
+
+
+<a href="#" class="dropdown-toggle menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+
+        <ul id="menuDrop" ng-controller="studentNav" class="dropdown-menu">
+            <li ng-controller="logoClick"><a ng-click="toDash()"><i class="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp;Home </a></li>
+            <li ng-controller="goBrowse"><a href="#" ng-click="toBrowser()"><i class="fa fa-briefcase" aria-hidden="true"></i> &nbsp;&nbsp;Open Job Offers</a></li>
+            <li><a href="#" ng-click="myProfile()"><i class="fa fa-user" aria-hidden="true"></i> &nbsp;&nbsp;User Profile (CV)</a></li>
+            <li><a href="/applications"><i class="fa fa-hourglass-end" aria-hidden="true"></i> &nbsp;&nbsp;Application Status</a></li>
+            <li><a href="/myJobHistory"><i class="fa fa-history" aria-hidden="true"></i> &nbsp;&nbsp;Job History</a></li>
+            <li><a href="/buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;&nbsp;Buy Applications</a></li>
+            <li><a ng-click="gooiHITStudent()" href=""><i class="fa fa-wrench" aria-hidden="true"></i> &nbsp;&nbsp;How It Works</a></li>
+            <li role="separator" class="divider"></li>
+            <li ng-controller="notifications">
+                <a ng-click="toggleEmail()"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;&nbsp;Email Notifications &nbsp;&nbsp;<i class="fa {{toggle}}" style="font-size: 15px;" aria-hidden="true"></i></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" ng-click="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp;&nbsp;Log Out</a></li>
+        </ul>
+
+
+
+

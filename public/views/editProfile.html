@@ -1,0 +1,579 @@
+<div class=" signupBox container w-xxl w-auto-xs s" ng-controller="editProfile">
+
+
+    <div class="type wrapper text-center">
+        <strong>Edit Profile</strong>
+
+    </div>
+
+
+    <div class="text-danger wrapper text-center">
+
+    </div>
+
+
+
+    <div>
+        <div style="text-align: center;"><button type="button" class="btn btn-primary blueBack" ng-click="uploadPp()">Upload Profile Picture</button></div>
+        <div  id="talentPane" ng-hide="user.type != 'student'">
+            <br/>
+            <br/>
+            <form novalidate id="studentSUForm" class="form-validation" name="studentForm" ng-submit="submitForm()">
+
+
+                <div ng-hide="next">
+                    <div class="row">
+                        <img src="../img/Icons/talent-info-new.png" class="heading-img img-responsive">
+                        <div class="content-heading"><h4 class="form-section-label">Talent Info</h4><br/></div>
+                    </div>
+                    <div class="list-group list-group-sm form-group">
+                        <fieldset class="form-group">
+                            <div class="list-group-item">
+                                <input name="stuName" type="text" class="form-control no-border" placeholder="Name" ng-model="user.name.name" ng-required="true" ng-minlength="2">
+                                <div ng-show="studentForm.$submitted || studentForm.stuName.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuName.$error.required" class="has-error">This field is required</p>
+                                    <p ng-show="studentForm.stuName.$error.minlength" class="has-error">Minimum length is 2</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <input name="stuSurname" type="text" class="form-control no-border" placeholder="Surname" ng-model="user.name.surname" ng-required="true" ng-minlength="2">
+                                <div ng-show="studentForm.$submitted || studentForm.stuSurname.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuSurname.$error.required" class="has-error">This field is required</p>
+                                    <p ng-show="studentForm.stuSurname.$error.minlength" class="has-error">Minimum length is 2</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <textarea name="stuAboutMe" id="aboutMe" rows=4 class="form-control" placeholder="About Me (100 - 500 characters)" ng-model="user.aboutme" ng-maxlength="500" ng-minlength="100" required></textarea>
+                                <div id="textarea_feedback"></div><br/>
+                                <div ng-show="studentForm.$submitted || studentForm.stuAboutMe.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuAboutMe.$error.required" class="has-error">This field is required</p>
+                                    <p ng-show="studentForm.stuAboutMe.$error.minlength" class="has-error">Minimum length is 100</p>
+                                    <p ng-show="studentForm.stuAboutMe.$error.maxlength" class="has-error">Maximum length is 500</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <input disabled type="email" name="stuEmail"
+                                       class="form-control no-border" placeholder="Valid Student Email Address" ng-model="user.contact.email" ng-required="true">
+                                <div ng-show="studentForm.$submitted || studentForm.stuEmail.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuEmail.$error.required" class="has-error">This field is required</p>
+                                    <p ng-show="studentForm.stuEmail.$error.validStuEmail" class="has-error">Not a valid academic institutions email address</p>
+                                    <p ng-show="studentForm.stuEmail.$error.email" class="has-error">Not a valid email address</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <input name="stuContact" type="text" class="form-control no-border" placeholder="Contact Number" ng-model="user.contact.contactNo" ng-pattern="/^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$/" ng-required="true">
+                                <div ng-show="studentForm.$submitted || studentForm.stuContact.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuContact.$error.required" class="has-error">This field is required</p>
+                                    <p ng-show="studentForm.stuContact.$error.pattern" class="has-error">Not a valid cell number</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <select class="form-control no-border" id="stuGender" name="stuGender" ng-model="user.gender" ng-required="true">
+                                    <option value="" selected disabled>Gender</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                                <div ng-show="studentForm.$submitted || studentForm.stuGender.$touched" class="error-block">
+                                    <p ng-show="studentForm.stuGender.$error.required" class="has-error">This field is required</p>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <input name="searchTextField1" id="searchTextField1" g-places-autocomplete force-selection="true" type="text" class="location controls form-control no-border"
+                                       ng-model="user.location.address" options="autocompleteOptions" placeholder="Residential Address" ng-required="true">
+                                <div ng-show="studentForm.$submitted || studentForm.searchTextField1.$touched" class="error-block">
+                                    <p ng-show="studentForm.searchTextField1.$error.required" class="has-error">This field is required</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="row">
+                        <img src="../img/Icons/institution-type-2-new.png" class="heading-img img-responsive">
+                        <div class="content-heading"><h4 class="form-section-label">Institution Type</h4><br/></div>
+                    </div>
+                    <div class="type1 list-group list-group-sm wrapper text-center">
+                        <div class="list-group list-group-sm">
+                            <label class="radio-inline">
+                                <input type="radio" name="type2" id="SecondaryRadio" ng-model="user.institution.type" value="Secondary" ng-required="next">Secondary Institution
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="type2" id="TertiaryRadio" ng-model="user.institution.type" value="Tertiary" ng-required="next">Tertiary Institution
+                            </label>
+                        </div>
+                        <div ng-show="studentForm.$submitted || studentForm.type2.$touched" class="error-block">
+                            <p ng-show="studentForm.type2.$error.required" class="has-error">Choose one of the options</p>
+                        </div>
+                    </div>
+
+                    <div class="instituteSection" ng-show="user.institution.type">
+                        <div class="row">
+                            <img src="../img/Icons/add-info-new.png" class="heading-img img-responsive">
+                            <div class="content-heading"><h4 class="form-section-label">Additional Info</h4><br/></div>
+                        </div>
+                        <div class="list-group list-group-sm form-group">
+                            <fieldset class="form-group">
+                                <div class="list-group-item">
+                                    <input id="schoolName" name="schoolName" placeholder="School Name" class="form-control no-border"
+                                           ng-model="user.institution.name" ng-show="user.institution.type == 'Secondary'" ng-required="user.institution.type == 'Secondary'">
+                                    <select id="uniName" name="uniName" class=" form-control no-border" ng-model="user.institution.name"
+                                            ng-show="user.institution.type == 'Tertiary'" ng-required="user.institution.type == 'Tertiary'">
+                                        <option value="" selected disabled>Select a Tertiary Institute</option>
+
+                                        <option ng-repeat="inst in tertInst" value="{{inst}}">{{inst}}</option>
+                                    </select>
+                                    <div ng-show="studentForm.$submitted || studentForm.schoolName.$touched" class="error-block">
+                                        <p ng-show="studentForm.schoolName.$error.required" class="has-error">This field is required</p>
+                                    </div>
+                                    <div ng-show="studentForm.$submitted || studentForm.uniName.$touched" class="error-block">
+                                        <p ng-show="studentForm.uniName.$error.required" class="has-error">This field is required</p>
+                                    </div>
+                                </div>
+                                <div id="uniOther" name="uniOther" class="list-group-item" ng-show="user.institution.name == 'Other'">
+                                    <input type="text" id="uniOtherVal" placeholder="Tertiary Institute Name" class="form-control no-border"
+                                           ng-model="user.institution.otherName" ng-required="user.institution.name == 'Other'">
+                                    <div ng-show="studentForm.$submitted || studentForm.uniOther.$touched" class="error-block">
+                                        <p ng-show="studentForm.uniOther.$error.required" class="has-error">This field is required</p>
+                                    </div>
+                                </div>
+                                <div id="qualName" class="list-group-item" ng-show="user.institution.type == 'Tertiary'">
+                                    <input type="text" id="qualifName"  placeholder="Qualification Name (optional)" class="form-control no-border" ng-model="user.qualification.name">
+                                </div>
+                                <div id='gpaBox' class="list-group-item" ng-show="user.qualification.name  || (user.institution.name && user.institution.type == 'Secondary')">
+                                    <input id="gpa" name="gpa"  type="number" step="any" class="controls form-control no-border" width="50px"
+                                           placeholder="GPA Percentage (optional)" min="0" max="100" ng-model="user.qualification.GPA">
+                                    <div ng-show="studentForm.$submitted || studentForm.gpa.$touched" class="error-block">
+                                        <p ng-show="studentForm.gpa.$error.min" class="has-error">Minimum length is 0</p>
+                                        <p ng-show="studentForm.gpa.$error.max" class="has-error">Maximum length is 100</p>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <select class=" form-control no-border" id="sel1" name="how" ng-model="user.suggested">
+                                        <option value="" selected disabled>How did you hear about us?</option>
+                                        <option value="Word of mouth">Word of mouth</option>
+                                        <option value="Social media">Social media</option>
+                                        <option value="Academic institution">Academic institution</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="row" ng-show="user.institution.type == 'Tertiary'">
+                            <img src="../img/Icons/matric-results-new.png" class="heading-img img-responsive">
+                            <div class="content-heading">
+                                <h4 class="form-section-label">Matric Results</h4>
+                                <br/>
+                            </div>
+                        </div>
+                        <div ng-show="user.institution.type == 'Tertiary'" class="list-group list-group-sm form-group">
+                            <div id="reqGroup" class="list-group-item" style="text-align: center;">
+                                <label>Matric Certificate Type</label>
+                                <div class="list-group list-group-sm">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type3" id="CambridgeRadio" ng-click="matricTypeClick(user.institution.matricType)" ng-model="user.institution.matricType" value="Cambridge">Cambridge
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type3" id="NSCRadio" ng-click="matricTypeClick(user.institution.matricType)" ng-model="user.institution.matricType" value="NSC">NSC
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type3" id="IEBRadio" ng-click="matricTypeClick(user.institution.matricType)" ng-model="user.institution.matricType" value="IEB">IEB
+                                    </label>
+                                </div>
+                                <div id="reqInputs">
+                                    <div class="reqBox" ng-repeat="req in user.results">
+                                        <ng-form name="matricForm">
+                                            <select id="mRes" name="mRes" class="cluttered form-control no-border" ng-model="req.name" ng-change="changeSub()" ng-required="true">
+                                                <option value="" selected disabled>Choose Subject</option>
+                                                <option ng-if="req.name == reqName || tempReq.indexOf(reqName) > -1 " ng-click="changeSub()" ng-repeat="reqName in reqNames" value="{{reqName}}">{{reqName}}</option>
+                                            </select>
+
+                                            <div ng-show="studentForm.$submitted || matricForm.mRes.$touched" class="error-block">
+                                                <p ng-show="matricForm.mRes.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <select id="mSymbol" name="mSymbol" class="cluttered form-control no-border" ng-model="req.symbol" ng-required="true">
+                                                <option value="" selected disabled>Choose Symbol</option>
+                                                <option value="A">A (80-100%)</option>
+                                                <option value="B">B (70-79%)</option>
+                                                <option value="C">C (60-69%)</option>
+                                                <option value="D">D (50-59%)</option>
+                                                <option value="F">F (40-49%)</option>
+                                            </select>
+                                            <div ng-show="studentForm.$submitted || matricForm.mSymbol.$touched" class="error-block">
+                                                <p ng-show="matricForm.mSymbol.$error.required" class="has-error">This field is required</p>
+                                            </div>
+                                        </ng-form>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div id="reqButtonGrp" class="btn-group-vertical" role="group">
+
+                                    <button ng-if="user.results" type="button" class="removeReq btn btn-default" ng-click="close(user.results); changeSub()">Remove<span class="glyphicon glyphicon-minus"></span></button>
+                                    <button ng-if="user.institution.matricType" type="button" id="addReq" class="btn btn-default" ng-click="add()">Add Matric Result <span class="glyphicon glyphicon-plus"></span></button>
+                                </div><br/><br/>
+                                <div ng-if="!user.matricFile" class="inputWrapper btn" ng-if="user.results">
+                                    <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="upload($file,'matric')"
+                                           accept="application/pdf" ngf-max-size="5MB"
+                                           ngf-model-invalid="errorFile">Upload Matric Certificate
+                                </div>
+                                <div ng-if="user.matricFile" class="inputWrapper btn" ng-if="user.results">
+                                    <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="upload($file,'matric')"
+                                           accept="application/pdf" ngf-max-size="5MB"
+                                           ngf-model-invalid="errorFile">Change Matric Certificate
+                                </div><br/>
+                                <small ng-if="user.results" style="color: grey">Only PDF's accepted</small>
+                                <div style="font-size:15px;" class="greenText" ng-if="user.matricFile">File Uploaded</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <img src="../img/Icons/briefcase.svg" class="heading-img img-responsive">
+                            <div class="content-heading"><h4 class="form-section-label">Work Experience</h4><br/></div>
+                        </div>
+                        <div class="list-group list-group-sm form-group">
+                            <div id="workExpBox" class="list-group-item" style="text-align: center;">
+
+                                <div id="workInputs">
+
+                                    <div class="workBox" ng-repeat="cat in user.work" >
+                                        <ng-form name="workForm">
+                                            <label>Were You Hired By:</label>
+                                            <div class="list-group list-group-sm">
+                                                <label class="radio-inline">
+                                                    <input type="radio" class="workTypeCompany" ng-model="cat.employerType" value="Company" ng-required="true">Company
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" class="workTypeIndividual" ng-model="cat.employerType" value="Individual" ng-required="true">Individual
+                                                </label>
+                                                <div ng-show="studentForm.$submitted" class="error-block">
+                                                    <p ng-show="cat.employerType == undefined" class="has-error">This field is required</p>
+                                                </div>
+                                            </div>
+
+                                            <select id="workCategory" name="workCategory" class="cluttered form-control no-border" ng-model="cat.category" ng-change="changeWork(cat.category)" ng-required="true">
+                                                <option value="" selected disabled>* Choose Work Category</option>
+                                                <option ng-if="cat.category == workName || tempWork.indexOf(workName) > -1 " ng-click="changeWork()" ng-repeat="workName in workNames" value="{{workName}}">{{workName}}</option>
+                                            </select>
+                                            <div ng-show="studentForm.$submitted || workForm.workCategory.$touched" class="error-block">
+                                                <p ng-show="workForm.workCategory.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <input id="otherCategory" name="otherCategory" id="otherCategory" type="text" placeholder="* Please name your work experience" class="cluttered form-control no-border"
+                                                   ng-model="cat.otherCategory" ng-show="cat.category == 'Other'" ng-required="cat.category == 'Other'">
+                                            <div ng-show="studentForm.$submitted || workForm.otherCategory.$touched" class="error-block">
+                                                <p ng-show="workForm.otherCategory.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+
+                                            <textarea name="workRole" id="workRole" rows=2 class="form-control cluttered" placeholder="About my work experience, a brief description (20 - 500 characters)" ng-model="cat.roleDescription" ng-maxlength="500" ng-minlength="20"></textarea>
+                                            <div ng-show="studentForm.$submitted || workForm.workRole.$touched" class="error-block">
+                                                <p ng-show="workForm.workRole.$error.minlength" class="has-error">Minimum length is 20</p>
+                                                <p ng-show="workForm.workRole.$error.maxlength" class="has-error">Maximum length is 500</p>
+                                            </div>
+
+
+                                            <select id="period" name="period" class="cluttered form-control no-border" ng-model="cat.duration" required>
+                                                <option value="" selected disabled>* Duration of Experience?</option>
+                                                <option ng-repeat="period in timePeriods" value="{{period.name}}">{{period.name}} ({{period.description}})</option>
+                                            </select>
+                                            <div ng-show="studentForm.$submitted || workForm.period.$touched" class="error-block">
+                                                <p ng-show="workForm.period.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <input type="text" name="companyHired" placeholder="* Company Who Hired Me" class="cluttered form-control no-border"
+                                                   ng-model="cat.contact.company" ng-show="cat.employerType == 'Company'"
+                                                   ng-required="cat.employerType == 'Company'">
+                                            <div ng-show="studentForm.$submitted || workForm.companyHired.$touched" class="error-block">
+                                                <p ng-show="workForm.companyHired.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <input type="text" name="personHired" placeholder="* Person Who Hired Me" class="cluttered form-control no-border"
+                                                   ng-model="cat.contact.name" ng-required="true">
+                                            <div ng-show="studentForm.$submitted || workForm.personHired.$touched" class="error-block">
+                                                <p ng-show="workForm.personHired.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <input name="workContact" type="text"  placeholder="Contact Person Number"
+                                                   class="cluttered form-control no-border" ng-model="cat.contact.number"
+                                                   ng-pattern="/^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$/" ng-required="!cat.contact.email">
+                                            <div ng-show="studentForm.$submitted || workForm.workContact.$touched" class="error-block">
+                                                <p ng-show="workForm.workContact.$error.pattern" class="has-error">Not a valid contact number</p>
+                                            </div>
+
+                                            <input type="email" name="workEmail"  placeholder="Contact Person Email" class="cluttered form-control no-border"
+                                                   ng-model="cat.contact.email" ng-required="!cat.contact.number">
+                                            <div ng-show="studentForm.$submitted" class="error-block">
+                                                <p ng-show="workForm.workEmail.$error.email" class="has-error">Not a valid email address</p>
+                                                <p ng-show="workForm.workContact.$error.required || studentForm.workContact.$error.required" class="has-error">Please enter a contact number or email address</p>
+                                            </div>
+
+                                        </ng-form>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div id="workButtonGrp" class="btn-group-vertical" role="group">
+
+                                    <button ng-if="user.work" type="button" class="removeReq btn btn-default" ng-click="closeWork(user.work); changeWork()">Remove<span class="glyphicon glyphicon-minus"></span></button>
+                                    <button type="button" id="addWork" class="btn btn-default" ng-click="addWork()">Add Work Experience <span class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <img src="../img/Icons/work-experience-new.png" class="heading-img img-responsive">
+                            <div class="content-heading">
+                                <h4 class="form-section-label">Additional Qualifications / Certifications</h4>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="list-group list-group-sm form-group">
+                            <div id="reqGroup" class="list-group-item" style="text-align: center;">
+                                <div id="certInputs">
+                                    <div class="certBox" ng-repeat="cert in user.certifications">
+                                        <ng-form name="certificationForm">
+                                            <input type="text" name="certName"  placeholder="Name of Qualification / Certification" class="cluttered form-control no-border"
+                                                   ng-model="cert.name" ng-required="true">
+                                            <div ng-show="studentForm.$submitted || certificationForm.certName.$touched" class="error-block">
+                                                <p ng-show="certificationForm.certName.$error.required" class="has-error">This field is required</p>
+                                            </div>
+
+                                            <textarea name="certDesc" rows=2 class="form-control cluttered" placeholder="About my qualification / certification, a brief description (20 - 500 characters)"
+                                                      ng-model="cert.roleDescription" ng-maxlength="500" ng-minlength="20"></textarea>
+                                            <div ng-show="studentForm.$submitted || certificationForm.certDesc.$touched" class="error-block">
+                                                <p ng-show="certificationForm.certDesc.$error.minlength" class="has-error">Minimum length is 20</p>
+                                                <p ng-show="certificationForm.certDesc.$error.maxlength" class="has-error">Maximum length is 500</p>
+                                            </div>
+                                            <div ng-if="!cert.file" class="inputWrapper btn">
+                                                <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="upload($file,$index)"
+                                                       accept="application/pdf" ngf-max-size="5MB"
+                                                       ngf-model-invalid="errorFile">Upload Certificate / Proof of Qualification
+                                            </div>
+                                            <div ng-if="cert.file" class="inputWrapper btn">
+                                                <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="upload($file,$index)"
+                                                       accept="application/pdf" ngf-max-size="5MB"
+                                                       ngf-model-invalid="errorFile">Change Certificate / Proof of Qualification
+                                            </div><br/>
+                                            <small style="color: grey">Only PDF's accepted</small>
+                                            <div style="font-size:15px;" class="greenText" ng-if="cert.file">File Uploaded</div>
+                                        </ng-form>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div id="reqButtonGrp" class="btn-group-vertical" role="group">
+
+                                    <button ng-if="user.certifications" type="button" class="removeReq btn btn-default" ng-click="closeCert(user.certifications);">Remove <span class="glyphicon glyphicon-minus"></span></button>
+                                    <button type="button" id="addCert" class="btn btn-default" ng-click="addCert()">Add Qualification / Certification <span class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="checkbox m-b-md m-t-none">
+                            <label class="i-checks">
+                                <input type="checkbox" ng-model="user.driversLicence"><i></i>I have a driver’s license and my own vehicle.
+                            </label>
+                        </div>
+                        <div ng-if="user.driversLicence" style="width:100%; text-align: center">
+                            <div ng-if="user.driversFile" class="inputWrapper btn">
+                                <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="uploadDrivers($file,'drivers')"
+                                       accept="application/pdf" ngf-max-size="5MB"
+                                       ngf-model-invalid="errorFile">Change Driver's License
+                            </div>
+                            <div ng-if="!user.driversFile" class="inputWrapper btn">
+                                <input type="file" style="width: 100%" class="fileInput btn blueBack" ngf-select="uploadDrivers($file,'drivers')"
+                                       accept="application/pdf" ngf-max-size="5MB"
+                                       ngf-model-invalid="errorFile">Upload Driver's License
+                            </div><br/>
+                            <small style="color: grey">Only PDF's accepted</small>
+                            <div style="font-size:15px;" class="greenText" ng-if="user.driversFile">File Uploaded</div>
+                        </div><br/>
+                    </div>
+                </div>
+
+
+
+                <button type="submit" class="sign-in-btn btn btn-lg btn-primary btn-block">Confirm Changes</button><br/>
+            </form>
+        </div>
+
+        <div id="employerPane"  ng-hide="user.type != 'employer'">
+            <br/>
+            <br/>
+            <form id="employerSUForm" class="form-validation" novalidate name="employerForm" ng-submit="submitForm()">
+
+
+                <div class="row">
+                    <img src="../img/Icons/employer-contact-green-new.png" class="heading-img img-responsive">
+                    <div class="content-heading">
+                        <h4 class="form-section-label">Employer Contact Info</h4>
+                        <br/>
+                    </div>
+                </div>
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item">
+                        <input type="text" name="empName" ng-minlength="2"  placeholder="Name" class="form-control no-border" ng-model="user.contact.name" ng-required="true">
+                        <div ng-show="employerForm.$submitted || employerForm.empName.$touched" class="error-block">
+                            <p ng-show="employerForm.empName.$error.required" class="has-error">This field is required</p>
+                            <p ng-show="employerForm.empName.$error.minlength" class="has-error">Minimum length is 2</p>
+                        </div>
+                    </div>
+
+                    <div class="list-group-item">
+                        <input type="text" name="empSurn" ng-minlength="2"  placeholder="Surname" class="form-control no-border" ng-model="user.contact.surname" ng-required="true">
+                        <div ng-show="employerForm.$submitted || employerForm.empSurn.$touched" class="error-block">
+                            <p ng-show="employerForm.empSurn.$error.required" class="has-error">This field is required</p>
+                            <p ng-show="employerForm.empSurn.$error.minlength" class="has-error">Minimum length is 2</p>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="text"  name="empID" ng-maxlength="13" placeholder="ID Number" class="form-control no-border" ng-model="user.IDnumber"
+                               ng-pattern="/[\d]{13,13}/" ng-required="true">
+                        <div ng-show="employerForm.$submitted || employerForm.empID.$touched" class="error-block">
+                            <p ng-show="employerForm.empID.$error.required" class="has-error">This field is required</p>
+                            <p ng-show="employerForm.empID.$error.pattern" class="has-error">Not a valid ID number</p>
+                            <p ng-show="employerForm.empID.$error.maxlength" class="has-error">Not a valid ID number</p>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <input name="empEmail" type="email" placeholder="Email Address" class="form-control no-border" ng-model="user.contact.email"
+                               ng-pattern="/^[^@]+@[^@]+\.[^@]+$/" ng-required="true" disabled>
+                        <div ng-show="employerForm.$submitted || employerForm.empEmail.$touched" class="error-block">
+                            <p ng-show="employerForm.empEmail.$error.required" class="has-error">This field is required</p>
+                            <p ng-show="employerForm.empEmail.$error.pattern" class="has-error">Not a valid email address</p>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <input name="empContact" type="text" placeholder="Contact Number" class="form-control no-border" ng-model="user.contact.contactNo"
+                               ng-pattern="/^((?:\+27|27)|0)(\d{2})-?(\d{3})-?(\d{4})$/" ng-required="true">
+                        <div ng-show="employerForm.$submitted || employerForm.empContact.$touched" class="error-block">
+                            <p ng-show="employerForm.empContact.$error.required" class="has-error">This field is required</p>
+                            <p ng-show="employerForm.empContact.$error.pattern" class="has-error">Not a valid cell number</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <img src="../img/Icons/employer-type-green-new.png" class="heading-img img-responsive">
+                    <div class="content-heading">
+                        <h4 class="form-section-label">Employer Type</h4>
+                        <br/>
+                    </div>
+                </div>
+                <div class="type1 list-group list-group-sm wrapper text-center">
+
+                    <div class="list-group list-group-sm">
+                        <label class="radio-inline">
+                            <input type="radio" name="type1" id="Individualradio" ng-model="user.employerType" value="Individual" ng-required="next">Individual
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type1" id="Companyradio" ng-model="user.employerType" value="Company" ng-required="next">Company
+                        </label>
+                    </div>
+                    <div ng-show="employerForm.$submitted || employerForm.type1.$touched" class="error-block">
+                        <p ng-show="employerForm.type1.$error.required" class="has-error">This field is required</p>
+                    </div>
+                </div>
+
+
+                <div class="companysection" ng-show="user.employerType == 'Company'">
+                    <div class="row">
+                        <img src="../img/Icons/company-info-green-new.png" class="heading-img img-responsive">
+                        <div class="content-heading">
+                            <h4 class="form-section-label">Company Info</h4>
+                            <br/>
+                        </div>
+                    </div>
+                    <div class="list-group list-group-sm form-group" >
+                        <div class="list-group-item">
+                            <input id="compName" name="compName" type="text" class="form-control no-border" placeholder="Company Name"
+                                   ng-model="user.company.name" ng-required="user.employerType == 'Company'">
+                            <div ng-show="employerForm.$submitted || employerForm.compName.$touched" class="error-block">
+                                <p ng-show="employerForm.compName.$error.required" class="has-error">This field is required</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <select id="compDesc" name="compCat" class=" form-control no-border" ng-model="user.company.category" ng-required="user.employerType == 'Company'">
+                                <option value="" selected disabled>Select a Company Category</option>
+
+                                <option ng-repeat="cat in compCat" value="{{cat}}">{{cat}}</option>
+                            </select>
+                            <div ng-show="employerForm.$submitted || employerForm.compCat.$touched" class="error-block">
+                                <p ng-show="employerForm.compCat.$error.required" class="has-error">This field is required</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <input id="searchTextField" name="searchTextField" type="text" g-places-autocomplete force-selection="true" class="location controls form-control no-border"
+                                   placeholder="Enter Company Location" ng-model="user.company.location.address" ng-required="user.employerType == 'Company'">
+                            <div ng-show="employerForm.$submitted || employerForm.searchTextField.$touched" class="error-block">
+                                <p ng-show="employerForm.searchTextField.$error.required" class="has-error">This field is required</p>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <input  type="text" placeholder="Position Within Company" class="form-control no-border" ng-model="user.company.position" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <img src="../img/Icons/add-info-green-new.png" class="heading-img img-responsive">
+                    <div class="content-heading">
+                        <h4 class="form-section-label">Additional info</h4>
+                        <br/>
+                    </div>
+                </div>
+                <div class="list-group list-group-sm form-group">
+                    <fieldset class="form-group">
+                        <div class="list-group-item">
+                            <select class=" form-control no-border" id="sel1" name="how" ng-model="user.suggested">
+                                <option value="" selected disabled>How did you hear about us?</option>
+                                <option value="Word of mouth">Word of mouth</option>
+                                <option value="Social media">Social media</option>
+                                <option value="Academic institution">Academic institution</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <div ng-show="employerForm.$submitted || employerForm.terms.$touched" class="error-block">
+                    <p ng-show="employerForm.terms.$error.required" class="has-error">Agree to the terms and conditions</p>
+                </div>
+                <button type="submit" class="sign-in-btn btn btn-lg btn-primary btn-block" >Confirm Changes</button><br/>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+<script>
+    $( ".passTooltip" ).tooltip();
+    var options = {
+        componentRestrictions: {country: 'us'}
+    };
+
+    function initialize() {
+        var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input,options);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script src="../js/helpers/userForms.js"></script>
+
+

@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="appbg dashBG" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, , maximum-scale=1, user-scalable=0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<base href="/">
+
+	<title>O-Link</title>
+	<link rel="icon" href="../logo/Logo_email.ico">
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="libs/jquery-ui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="libs/angularjs-slider/dist/rzslider.css"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="./libs/ng-img-crop/compile/unminified/ng-img-crop.css">
+	<link rel="stylesheet" type="text/css" href="./libs/ng-dialog/css/ngDialog.css">
+	<link rel="stylesheet" type="text/css" href="./libs/ng-dialog/css/ngDialog-theme-default.css">
+	<link rel="stylesheet" type="text/css" href="./libs/jt.timepicker/jquery.timepicker.css">
+	<link rel="stylesheet" type="text/css" href="./css/angular-toggle-switch.css">
+	<link rel="stylesheet" href="./libs/angular-google-places-autocomplete/src/autocomplete.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/added.css">
+	<link rel="stylesheet" href="css/mobiApp.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' href='libs/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+	<link rel="stylesheet" type="text/css" href="./libs/angular-wizard/dist/angular-wizard.min.css">
+	<link rel="stylesheet" type="text/css" href="./libs/ng-image-gallery/dist/ng-image-gallery.min.css">
+	<link href="./libs/angular-jk-rating-stars/dist/jk-rating-stars.css" rel="stylesheet" type="text/css" />
+	<!-- custom styles -->
+
+	<!-- JS -->
+
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXnlJCOOsZVSdd-iUvTejH13UcZ0-jN0o&libraries=places"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/jquery-ui/jquery-ui.js"></script>
+	<script src="libs/jt.timepicker/jquery.timepicker.min.js"></script>
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-cookies/angular-cookies.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="libs/sweetalert/dist/sweetalert.min.js"></script>
+	<script src='./libs/angular-upload/angular-upload.min.js'></script>
+	<script src="./libs/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+	<script src="./libs/ng-file-upload/ng-file-upload.min.js"></script>
+	<script src="./libs/ng-img-crop/compile/unminified/ng-img-crop.js"></script>
+	<script src="./libs/ng-dialog/js/ngDialog.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="libs/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+	<script src="js/helpers/jquery.ba-bbq.js"></script>
+	<script src="libs/angular-toggle-switch/angular-toggle-switch.js"></script>
+	<script src="libs/webshim/js-webshim/minified/polyfiller.js"></script>
+	<script type="text/javascript" src="libs/angular-ui-date/dist/date.js"></script>
+	<script type="text/javascript" src="libs/angular-ui-validate/dist/validate.js"></script>
+	<script src="libs/angular-google-places-autocomplete/src/autocomplete.js"></script>
+	<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="libs/angularjs-slider/dist/rzslider.js"></script>
+	<script src="libs/lodash/dist/lodash.js"></script>
+	<script src="js/helpers/myforce-angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js"></script>
+	<script type='text/javascript' src='libs/angular-loading-bar/build/loading-bar.min.js'></script>
+	<script type="text/javascript" src="libs/angular-wizard/dist/angular-wizard.min.js"></script>
+	<script src="libs/angular-modal-service/dst/angular-modal-service.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+	<script type="text/javascript" src="libs/ng-image-gallery/dist/ng-image-gallery.min.js"></script>
+	<script type="text/javascript" src="js/helpers/hammer.js"></script>
+	<script src="libs/angular-jk-rating-stars/dist/jk-rating-stars.js"></script>
+	<!-- ANGULAR CUSTOM -->
+
+	<script src="js/helper.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/appDirectives.js"></script>
+	<script src="js/services/constants.js"></script>
+	<script src="js/services/authService.js"></script>
+	<script src="js/services/notifications.js"></script>
+	<script src="js/controllers/profiles.js"></script>
+	<script src="js/controllers/applications.js"></script>
+	<script src="js/controllers/preAuthentication.js"></script>
+	<script src="js/controllers/navigation.js"></script>
+	<script src="js/controllers/jobs.js"></script>
+	<script src="js/controllers/payments.js"></script>
+
+</head>
+<script>//check for cookie
+$('.segmented-button label').click(function(evt){
+	evt.stopPropagation();
+});
+</script>
+<body ng-app="o-link" >
+<div class="container" ng-controller="ApplicationController">
+	
+	<!-- HEADER -->
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+
+	<div data-ng-include="'views/blocks/header.html'"></div>
+	<div class="app-content">
+		<div ui-butterbar></div>
+		<a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+			</div>
+	<div class="page hbox hbox-auto-xs hbox-auto-sm" ng-view></div>
+	<div><br/></div>
+</div>
+</body>
+</html>

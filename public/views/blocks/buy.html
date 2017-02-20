@@ -1,0 +1,35 @@
+<div ng-controller="buy" class="buye">
+    <div class="row">
+        <div class="text-center">
+            <h3 class="white" style="font-size: 27px;">2 <b style="color:#33B6CC;">FREE</b> APPLICATIONS PER DAY!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <h4 class="white" style="font-size: 23px;">If you’d like to make additional applications, you will have to purchase a package.</h4>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4 text-center" ng-repeat="package in packages" >
+    <a class="buyBox blueBack"  ng-click="goPay(package.name)">
+        <div class="buyTop">{{package.name.toUpperCase()}}</div>
+        <div class="buyInner">
+            <div class="cost blueText">
+                R {{package.cost}}
+            </div>
+            <div class="package">
+                {{package.description}}
+            </div>
+            <div class="timeFrame">
+               VALID FOR {{package.timeframe}}
+            </div>
+        </div>
+
+            <span class="cart glyphicon glyphicon-shopping-cart"></span>
+
+    </a>
+        </div>
+
+    </div>
+</div>

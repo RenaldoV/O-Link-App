@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html class="nojs html" lang="en-US">
+ <head>
+
+  <script type="text/javascript">
+   if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["jquery-1.8.3.min.js", "museutils.js", "jquery.watch.js", "jquery.musepolyfill.bgsize.js", "webpro.js", "jquery.scrolleffects.js", "musewpslideshow.js", "jquery.museoverlay.js", "touchswipe.js", "jquery.musemenu.js", "how-it-works.css"], "outOfDate":[]};
+</script>
+  
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2015.1.2.344"/>
+  <title>How It Works</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/site_global.css?313314827"/>
+  <link rel="stylesheet" type="text/css" href="css/how-it-works.css?3991051761" id="pagesheet"/>
+  <!-- Other scripts -->
+  <script type="text/javascript">
+   document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+</script>
+  <!-- JS includes -->
+  <!--[if lt IE 9]>
+  <script src="scripts/html5shiv.js?4241844378" type="text/javascript"></script>
+  <![endif]-->
+    <!--custom head HTML-->
+  <link rel="stylesheet" href="assets/animations.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<style>
+
+#buttonu14164 {
+transition-property: top;
+transition-duration: 0.6s;
+transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+
+-webkit-transition-property: top;
+-webkit-transition-duration: 0.6s;
+-webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+</style>
+
+
+<script>
+
+var theMenu;
+var originLeft;
+
+window.onload = function() {
+   //Click to open on the Muse Icon
+   element = document.getElementById("buttonu14161");
+   element.onclick = openMenu;
+   $('#buttonu14161').css('cursor', 'pointer');
+
+   //save the Left position
+   originLeft = document.getElementById("buttonu14164").style.top;
+   //Get the Menu element
+   theMenu = document.getElementById("buttonu14164");
+
+   //Click to close
+   closeBtn = document.getElementById("buttonu14351");
+   closeBtn.onclick = closeMenu;
+   $('#buttonu14351').css('cursor', 'pointer');
+}
+
+function openMenu(){
+   theMenu.style.top = 0;
+}
+
+function closeMenu(){
+   theMenu.style.top = originLeft;
+}
+
+</script>
+
+<script>
+	
+$(window).scroll(function() {
+		$(".left").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("slideLeft");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".right").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("slideRight");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".up").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("slideUp");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".down").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("slideDown");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".fadezoom").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".expandup").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("slideExpandUp");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".expandopen").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("expandOpen");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".rightstretch").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("stretchRight");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".leftstretch").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("stretchLeft");
+			}
+		});
+	});
+
+$(window).scroll(function() {
+		$(".downpull").each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+550) {
+				$(this).addClass("pullDown");
+			}
+		});
+	});
+
+</script>
+
+<!-- Smooth Scroll Script -->
+<script>
+
+ function ssc_init(){if(document.body){var e=document.body,s=document.documentElement,c=window.innerHeight,t=e.scrollHeight;if(ssc_root=document.compatMode.indexOf("CSS")>=0?s:e,ssc_activeElement=e,ssc_initdone=!0,top!=self)ssc_frame=!0;else if(t>c&&(e.offsetHeight<=c||s.offsetHeight<=c)&&ssc_root.offsetHeight<=c){var r=document.createElement("div");r.style.clear="both",e.appendChild(r)}ssc_fixedback||(e.style.backgroundAttachment="scroll",s.style.backgroundAttachment="scroll"),ssc_keyboardsupport&&ssc_addEvent("keydown",ssc_keydown)}}function ssc_scrollArray(e,s,c,t){if(t||(t=1e3),ssc_directionCheck(s,c),ssc_que.push({x:s,y:c,lastX:0>s?.99:-.99,lastY:0>c?.99:-.99,start:+new Date}),!ssc_pending){var r=function(){for(var o=+new Date,n=0,a=0,i=0;i<ssc_que.length;i++){var l=ssc_que[i],_=o-l.start,u=_>=ssc_animtime,d=u?1:_/ssc_animtime;ssc_pulseAlgorithm&&(d=ssc_pulse(d));var f=l.x*d-l.lastX>>0,m=l.y*d-l.lastY>>0;n+=f,a+=m,l.lastX+=f,l.lastY+=m,u&&(ssc_que.splice(i,1),i--)}if(s){var p=e.scrollLeft;e.scrollLeft+=n,n&&e.scrollLeft===p&&(s=0)}if(c){var h=e.scrollTop;e.scrollTop+=a,a&&e.scrollTop===h&&(c=0)}s||c||(ssc_que=[]),ssc_que.length?setTimeout(r,t/ssc_framerate+1):ssc_pending=!1};setTimeout(r,0),ssc_pending=!0}}function ssc_wheel(e){ssc_initdone||ssc_init();var s=e.target,c=ssc_overflowingAncestor(s);if(!c||e.defaultPrevented||ssc_isNodeName(ssc_activeElement,"embed")||ssc_isNodeName(s,"embed")&&/\.pdf/i.test(s.src))return!0;var t=e.wheelDeltaX||0,r=e.wheelDeltaY||0;t||r||(r=e.wheelDelta||0),Math.abs(t)>1.2&&(t*=ssc_stepsize/120),Math.abs(r)>1.2&&(r*=ssc_stepsize/120),ssc_scrollArray(c,-t,-r),e.preventDefault()}function ssc_keydown(e){var s=e.target,c=e.ctrlKey||e.altKey||e.metaKey;if(/input|textarea|embed/i.test(s.nodeName)||s.isContentEditable||e.defaultPrevented||c)return!0;if(ssc_isNodeName(s,"button")&&e.keyCode===ssc_key.spacebar)return!0;var t,r=0,o=0,n=ssc_overflowingAncestor(ssc_activeElement),a=n.clientHeight;switch(n==document.body&&(a=window.innerHeight),e.keyCode){case ssc_key.up:o=-ssc_arrowscroll;break;case ssc_key.down:o=ssc_arrowscroll;break;case ssc_key.spacebar:t=e.shiftKey?1:-1,o=-t*a*.9;break;case ssc_key.pageup:o=.9*-a;break;case ssc_key.pagedown:o=.9*a;break;case ssc_key.home:o=-n.scrollTop;break;case ssc_key.end:var i=n.scrollHeight-n.scrollTop-a;o=i>0?i+10:0;break;case ssc_key.left:r=-ssc_arrowscroll;break;case ssc_key.right:r=ssc_arrowscroll;break;default:return!0}ssc_scrollArray(n,r,o),e.preventDefault()}function ssc_mousedown(e){ssc_activeElement=e.target}function ssc_setCache(e,s){for(var c=e.length;c--;)ssc_cache[ssc_uniqueID(e[c])]=s;return s}function ssc_overflowingAncestor(e){var s=[],c=ssc_root.scrollHeight;do{var t=ssc_cache[ssc_uniqueID(e)];if(t)return ssc_setCache(s,t);if(s.push(e),c===e.scrollHeight){if(!ssc_frame||ssc_root.clientHeight+10<c)return ssc_setCache(s,document.body)}else if(e.clientHeight+10<e.scrollHeight&&(overflow=getComputedStyle(e,"").getPropertyValue("overflow"),"scroll"===overflow||"auto"===overflow))return ssc_setCache(s,e)}while(e=e.parentNode)}function ssc_addEvent(e,s,c){window.addEventListener(e,s,c||!1)}function ssc_removeEvent(e,s,c){window.removeEventListener(e,s,c||!1)}function ssc_isNodeName(e,s){return e.nodeName.toLowerCase()===s.toLowerCase()}function ssc_directionCheck(e,s){e=e>0?1:-1,s=s>0?1:-1,(ssc_direction.x!==e||ssc_direction.y!==s)&&(ssc_direction.x=e,ssc_direction.y=s,ssc_que=[])}function ssc_pulse_(e){var s,c,t;return e*=ssc_pulseScale,1>e?s=e-(1-Math.exp(-e)):(c=Math.exp(-1),e-=1,t=1-Math.exp(-e),s=c+t*(1-c)),s*ssc_pulseNormalize}function ssc_pulse(e){return e>=1?1:0>=e?0:(1==ssc_pulseNormalize&&(ssc_pulseNormalize/=ssc_pulse_(1)),ssc_pulse_(e))}var ssc_framerate=150,ssc_animtime=500,ssc_stepsize=50,ssc_pulseAlgorithm=!0,ssc_pulseScale=6,ssc_pulseNormalize=1,ssc_keyboardsupport=!0,ssc_arrowscroll=50,ssc_frame=!1,ssc_direction={x:0,y:0},ssc_initdone=!1,ssc_fixedback=!0,ssc_root=document.documentElement,ssc_activeElement,ssc_key={left:37,up:38,right:39,down:40,spacebar:32,pageup:33,pagedown:34,end:35,home:36},ssc_que=[],ssc_pending=!1,ssc_cache={};setInterval(function(){ssc_cache={}},1e4);var ssc_uniqueID=function(){var e=0;return function(s){return s.ssc_uniqueID||(s.ssc_uniqueID=e++)}}(),ischrome=/chrome/.test(navigator.userAgent.toLowerCase());ischrome&&(ssc_addEvent("mousedown",ssc_mousedown),ssc_addEvent("mousewheel",ssc_wheel),ssc_addEvent("load",ssc_init));
+
+</script>
+  <!--/*
+
+*/
+-->
+ </head>
+ <body>
+
+  <div class="clearfix" id="page"><!-- group -->
+   <a class="anchor_item grpelem" id="top"></a>
+   <div class="clearfix grpelem" id="pu15295"><!-- group -->
+    <div class="browser_width grpelem" id="u15295-bw">
+     <div id="u15295"><!-- column -->
+      <div class="clearfix" id="u15295_align_to_page">
+       <!-- m_editable region-id="editable-static-tag-U12467-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="slideLeft h3 clearfix colelem" id="u12467-5" data-muse-uid="U12467" data-muse-type="txt_frame"><!-- content -->
+        <h3><span>Our </span><span>Services</span></h3>
+       </div>
+       <!-- /m_editable -->
+       <div class="clearfix colelem" id="pfeatureworks"><!-- group -->
+        <a class="anchor_item grpelem" id="featureworks"></a>
+        <div class="left clearfix grpelem" id="u12531"><!-- group -->
+         <!-- m_editable region-id="editable-static-tag-U12532-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="right h6 clearfix grpelem" id="u12532-4" data-muse-uid="U12532" data-muse-type="txt_frame"><!-- content -->
+          <h6>Request more information about our services. Or get a quote.</h6>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U12534" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+         <a class="nonblock nontext Button right clearfix grpelem" id="buttonu12534" href="t-s---c-s.html" data-href="page:U10662" data-muse-uid="U12534"><!-- container box --><!-- m_editable region-id="editable-static-tag-U12536-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="h6 clearfix colelem" id="u12536-4" data-muse-uid="U12536" data-muse-type="txt_frame"><!-- content --><h6>Contact Us</h6></div><!-- /m_editable --><div class="colelem" id="u12535"><!-- simple frame --></div></a>
+         <!-- /m_editable -->
+        </div>
+       </div>
+       <!-- m_editable region-id="editable-static-tag-U12773-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="left h3 clearfix colelem" id="u12773-5" data-muse-uid="U12773" data-muse-type="txt_frame"><!-- content -->
+        <h3><span>Featured</span><span> Works</span></h3>
+       </div>
+       <!-- /m_editable -->
+       <div class="clearfix colelem" id="pbuttonu17488"><!-- group -->
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17488"><!-- container box -->
+         <div class="clearfix colelem" id="u17490"><!-- group -->
+          <!-- m_editable region-id="editable-static-tag-U18497" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18497" href="work-single.html" data-href="page:U12412" data-muse-uid="U18497"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18498-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18498-4" data-muse-uid="U18498" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17489-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17489-6" data-muse-uid="U17489" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17489-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17489-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17498"><!-- container box -->
+         <div class="clearfix colelem" id="pu17500"><!-- group -->
+          <div class="grpelem" id="u17500"><!-- simple frame --></div>
+          <!-- m_editable region-id="editable-static-tag-U18499" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18499" href="work-single.html" data-href="page:U12412" data-muse-uid="U18499"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18500-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18500-4" data-muse-uid="U18500" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17499-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17499-6" data-muse-uid="U17499" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17499-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17499-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17506"><!-- container box -->
+         <div class="clearfix colelem" id="pu17509"><!-- group -->
+          <div class="grpelem" id="u17509"><!-- simple frame --></div>
+          <!-- m_editable region-id="editable-static-tag-U18501" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18501" href="work-single.html" data-href="page:U12412" data-muse-uid="U18501"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18502-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18502-4" data-muse-uid="U18502" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17507-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17507-6" data-muse-uid="U17507" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17507-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17507-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+       </div>
+       <div class="clearfix colelem" id="pprocess"><!-- group -->
+        <a class="anchor_item grpelem" id="process"></a>
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17518"><!-- container box -->
+         <div class="clearfix colelem" id="pu17520"><!-- group -->
+          <div class="grpelem" id="u17520"><!-- simple frame --></div>
+          <!-- m_editable region-id="editable-static-tag-U18507" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18507" href="work-single.html" data-href="page:U12412" data-muse-uid="U18507"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18508-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18508-4" data-muse-uid="U18508" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17519-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17519-6" data-muse-uid="U17519" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17519-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17519-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17510"><!-- container box -->
+         <div class="clearfix colelem" id="pu17513"><!-- group -->
+          <div class="grpelem" id="u17513"><!-- simple frame --></div>
+          <!-- m_editable region-id="editable-static-tag-U18505" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18505" href="work-single.html" data-href="page:U12412" data-muse-uid="U18505"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18506-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18506-4" data-muse-uid="U18506" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17511-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17511-6" data-muse-uid="U17511" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17511-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17511-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="Button thumb-container clearfix grpelem" id="buttonu17514"><!-- container box -->
+         <div class="clearfix colelem" id="pu17517"><!-- group -->
+          <div class="grpelem" id="u17517"><!-- simple frame --></div>
+          <!-- m_editable region-id="editable-static-tag-U18503" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+          <a class="nonblock nontext Button thumb-btn clearfix grpelem" id="buttonu18503" href="work-single.html" data-href="page:U12412" data-muse-uid="U18503"><!-- container box --><!-- m_editable region-id="editable-static-tag-U18504-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><div class="rounded-corners clearfix grpelem" id="u18504-4" data-muse-uid="U18504" data-muse-type="txt_frame"><!-- content --><p></p></div><!-- /m_editable --></a>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U17515-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="thumb-title clearfix colelem" id="u17515-6" data-muse-uid="U17515" data-muse-type="txt_frame"><!-- content -->
+          <h6 class="h6" id="u17515-2">Your Work's Title Will Go Here</h6>
+          <p class="p" id="u17515-4">In Design &amp; Illustrations</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+       </div>
+       <!-- m_editable region-id="editable-static-tag-U13502-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="left h3 clearfix colelem" id="u13502-5" data-muse-uid="U13502" data-muse-type="txt_frame"><!-- content -->
+        <h3><span>Work </span><span>Process</span></h3>
+       </div>
+       <!-- /m_editable -->
+       <div class="clearfix colelem" id="pu13503"><!-- group -->
+        <div class="rounded-corners clearfix grpelem" id="u13503"><!-- group -->
+         <!-- m_editable region-id="editable-static-tag-U13562-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="fadezoom rounded-corners p clearfix grpelem" id="u13562-4" data-muse-uid="U13562" data-muse-type="txt_frame"><!-- content -->
+          <p>1</p>
+         </div>
+         <!-- /m_editable -->
+         <div class="clearfix grpelem" id="u13610"><!-- column -->
+          <!-- m_editable region-id="editable-static-tag-U13571-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="h6 clearfix colelem" id="u13571-4" data-muse-uid="U13571" data-muse-type="txt_frame"><!-- content -->
+           <h6>We will interact with you</h6>
+          </div>
+          <!-- /m_editable -->
+          <!-- m_editable region-id="editable-static-tag-U13572-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="p clearfix colelem" id="u13572-4" data-muse-uid="U13572" data-muse-type="txt_frame"><!-- content -->
+           <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence.</p>
+          </div>
+          <!-- /m_editable -->
+         </div>
+         <div class="clearfix grpelem" id="u13604"><!-- group -->
+          <!-- m_editable region-id="editable-static-tag-U13591-BP_infinity" template="how-it-works.html" data-type="image" -->
+          <div class="fadezoom clip_frame grpelem" id="u13591" data-muse-uid="U13591" data-muse-type="img_frame"><!-- image -->
+           <img class="block" id="u13591_img" src="images/meeting.png" alt="" width="50" height="50" data-muse-src="images/meeting.png"/>
+          </div>
+          <!-- /m_editable -->
+         </div>
+        </div>
+        <div class="clearfix grpelem" id="pu13504"><!-- column -->
+         <div class="rightstretch colelem" id="u13504"><!-- simple frame --></div>
+         <div class="downpull colelem" id="u13541"><!-- simple frame --></div>
+        </div>
+       </div>
+       <div class="clearfix colelem" id="ppu13554"><!-- group -->
+        <div class="clearfix grpelem" id="pu13554"><!-- column -->
+         <div class="leftstretch colelem" id="u13554"><!-- simple frame --></div>
+         <div class="downpull colelem" id="u13555"><!-- simple frame --></div>
+        </div>
+        <div class="rounded-corners clearfix grpelem" id="u13536"><!-- group -->
+         <div class="clearfix grpelem" id="u13612"><!-- group -->
+          <!-- m_editable region-id="editable-static-tag-U13580-BP_infinity" template="how-it-works.html" data-type="image" -->
+          <div class="fadezoom clip_frame grpelem" id="u13580" data-muse-uid="U13580" data-muse-type="img_frame"><!-- image -->
+           <img class="block" id="u13580_img" src="images/idea.png" alt="" width="50" height="50" data-muse-src="images/idea.png"/>
+          </div>
+          <!-- /m_editable -->
+         </div>
+         <div class="clearfix grpelem" id="u13609"><!-- column -->
+          <!-- m_editable region-id="editable-static-tag-U13606-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="h6 clearfix colelem" id="u13606-4" data-muse-uid="U13606" data-muse-type="txt_frame"><!-- content -->
+           <h6>We will develop ideas for your new product</h6>
+          </div>
+          <!-- /m_editable -->
+          <!-- m_editable region-id="editable-static-tag-U13605-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="p clearfix colelem" id="u13605-4" data-muse-uid="U13605" data-muse-type="txt_frame"><!-- content -->
+           <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence.</p>
+          </div>
+          <!-- /m_editable -->
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U13563-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="fadezoom rounded-corners p clearfix grpelem" id="u13563-4" data-muse-uid="U13563" data-muse-type="txt_frame"><!-- content -->
+          <p>2</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+       </div>
+       <div class="clearfix colelem" id="pu13552"><!-- group -->
+        <div class="rounded-corners clearfix grpelem" id="u13552"><!-- group -->
+         <!-- m_editable region-id="editable-static-tag-U13567-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="fadezoom rounded-corners p clearfix grpelem" id="u13567-4" data-muse-uid="U13567" data-muse-type="txt_frame"><!-- content -->
+          <p>3</p>
+         </div>
+         <!-- /m_editable -->
+         <div class="clearfix grpelem" id="u13611"><!-- column -->
+          <!-- m_editable region-id="editable-static-tag-U13578-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="h6 clearfix colelem" id="u13578-4" data-muse-uid="U13578" data-muse-type="txt_frame"><!-- content -->
+           <h6>We will develop your product</h6>
+          </div>
+          <!-- /m_editable -->
+          <!-- m_editable region-id="editable-static-tag-U13577-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <div class="p clearfix colelem" id="u13577-4" data-muse-uid="U13577" data-muse-type="txt_frame"><!-- content -->
+           <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence.</p>
+          </div>
+          <!-- /m_editable -->
+         </div>
+         <div class="clearfix grpelem" id="u13608"><!-- group -->
+          <!-- m_editable region-id="editable-static-tag-U13623-BP_infinity" template="how-it-works.html" data-type="image" -->
+          <div class="fadezoom clip_frame grpelem" id="u13623" data-muse-uid="U13623" data-muse-type="img_frame"><!-- image -->
+           <img class="block" id="u13623_img" src="images/laptop.png" alt="" width="60" height="60" data-muse-src="images/laptop.png"/>
+          </div>
+          <!-- /m_editable -->
+         </div>
+        </div>
+        <div class="clearfix grpelem" id="pu13551"><!-- column -->
+         <div class="rightstretch colelem" id="u13551"><!-- simple frame --></div>
+         <div class="downpull colelem" id="u13550"><!-- simple frame --></div>
+        </div>
+       </div>
+       <div class="rounded-corners clearfix colelem" id="u13553"><!-- group -->
+        <div class="clearfix grpelem" id="u13613"><!-- group -->
+         <!-- m_editable region-id="editable-static-tag-U13596-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="fadezoom clip_frame grpelem" id="u13596" data-muse-uid="U13596" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u13596_img" src="images/speaker.png" alt="" width="50" height="50" data-muse-src="images/speaker.png"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="clearfix grpelem" id="u13614"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U13616-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="h6 clearfix colelem" id="u13616-4" data-muse-uid="U13616" data-muse-type="txt_frame"><!-- content -->
+          <h6>We will market the product to new customers</h6>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U13615-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="p clearfix colelem" id="u13615-4" data-muse-uid="U13615" data-muse-type="txt_frame"><!-- content -->
+          <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence.</p>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <!-- m_editable region-id="editable-static-tag-U13566-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="fadezoom rounded-corners p clearfix grpelem" id="u13566-4" data-muse-uid="U13566" data-muse-type="txt_frame"><!-- content -->
+         <p>4</p>
+        </div>
+        <!-- /m_editable -->
+       </div>
+       <!-- m_editable region-id="editable-static-tag-U13569-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="left h3 clearfix colelem" id="u13569-5" data-muse-uid="U13569" data-muse-type="txt_frame"><!-- content -->
+        <h3><span>Our </span><span>Pricing</span></h3>
+       </div>
+       <!-- /m_editable -->
+       <div class="clearfix colelem" id="ptestimonials"><!-- group -->
+        <a class="anchor_item grpelem" id="testimonials"></a>
+        <div class="Button up clearfix grpelem" id="buttonu15055"><!-- container box -->
+         <div class="clearfix grpelem" id="u15058"><!-- column -->
+          <div class="clearfix colelem" id="pu15062-4"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15062-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="h6 clearfix grpelem" id="u15062-4" data-muse-uid="U15062" data-muse-type="txt_frame"><!-- content -->
+            <h6>Basic</h6>
+           </div>
+           <!-- /m_editable -->
+           <!-- m_editable region-id="editable-static-tag-U15068-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15068-4" data-muse-uid="U15068" data-muse-type="txt_frame"><!-- content -->
+            <p>$50</p>
+           </div>
+           <!-- /m_editable -->
+          </div>
+          <div class="colelem" id="u15065"><!-- simple frame --></div>
+          <div class="clearfix colelem" id="pu15071-24"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15071-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15071-24" data-muse-uid="U15071" data-muse-type="txt_frame"><!-- content -->
+            <p>1 Design</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>3 Revisions</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>2 GB of Data</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Documentation</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Video Tutorials</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Logo Included</p>
+           </div>
+           <!-- /m_editable -->
+           <div class="grpelem" id="u15073"><!-- simple frame --></div>
+           <div class="grpelem" id="u15076"><!-- simple frame --></div>
+           <div class="grpelem" id="u15079"><!-- simple frame --></div>
+           <div class="grpelem" id="u15082"><!-- simple frame --></div>
+           <div class="grpelem" id="u15085"><!-- simple frame --></div>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="u15060"><!-- column -->
+          <div class="clearfix colelem" id="pu15063-4"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15063-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="h6 clearfix grpelem" id="u15063-4" data-muse-uid="U15063" data-muse-type="txt_frame"><!-- content -->
+            <h6>Starter</h6>
+           </div>
+           <!-- /m_editable -->
+           <!-- m_editable region-id="editable-static-tag-U15069-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15069-4" data-muse-uid="U15069" data-muse-type="txt_frame"><!-- content -->
+            <p>$90</p>
+           </div>
+           <!-- /m_editable -->
+          </div>
+          <div class="colelem" id="u15066"><!-- simple frame --></div>
+          <div class="clearfix colelem" id="pu15072-24"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15072-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15072-24" data-muse-uid="U15072" data-muse-type="txt_frame"><!-- content -->
+            <p>1 Design</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>3 Revisions</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>2 GB of Data</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Documentation</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Video Tutorials</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Logo Included</p>
+           </div>
+           <!-- /m_editable -->
+           <div class="grpelem" id="u15074"><!-- simple frame --></div>
+           <div class="grpelem" id="u15077"><!-- simple frame --></div>
+           <div class="grpelem" id="u15080"><!-- simple frame --></div>
+           <div class="grpelem" id="u15083"><!-- simple frame --></div>
+           <div class="grpelem" id="u15086"><!-- simple frame --></div>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="u15059"><!-- column -->
+          <div class="clearfix colelem" id="pu15089-4"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15089-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="h6 clearfix grpelem" id="u15089-4" data-muse-uid="U15089" data-muse-type="txt_frame"><!-- content -->
+            <h6>Business</h6>
+           </div>
+           <!-- /m_editable -->
+           <!-- m_editable region-id="editable-static-tag-U15091-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15091-4" data-muse-uid="U15091" data-muse-type="txt_frame"><!-- content -->
+            <p>$150</p>
+           </div>
+           <!-- /m_editable -->
+          </div>
+          <div class="colelem" id="u15090"><!-- simple frame --></div>
+          <div class="clearfix colelem" id="pu15092-24"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15092-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15092-24" data-muse-uid="U15092" data-muse-type="txt_frame"><!-- content -->
+            <p>1 Design</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>3 Revisions</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>2 GB of Data</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Documentation</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Video Tutorials</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Logo Included</p>
+           </div>
+           <!-- /m_editable -->
+           <div class="grpelem" id="u15093"><!-- simple frame --></div>
+           <div class="grpelem" id="u15094"><!-- simple frame --></div>
+           <div class="grpelem" id="u15095"><!-- simple frame --></div>
+           <div class="grpelem" id="u15096"><!-- simple frame --></div>
+           <div class="grpelem" id="u15097"><!-- simple frame --></div>
+          </div>
+         </div>
+         <div class="clearfix grpelem" id="u15061"><!-- column -->
+          <div class="clearfix colelem" id="pu15064-4"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15064-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="h6 clearfix grpelem" id="u15064-4" data-muse-uid="U15064" data-muse-type="txt_frame"><!-- content -->
+            <h6>Professional</h6>
+           </div>
+           <!-- /m_editable -->
+           <!-- m_editable region-id="editable-static-tag-U15070-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15070-4" data-muse-uid="U15070" data-muse-type="txt_frame"><!-- content -->
+            <p>$200</p>
+           </div>
+           <!-- /m_editable -->
+          </div>
+          <div class="colelem" id="u15067"><!-- simple frame --></div>
+          <div class="clearfix colelem" id="pu15088-24"><!-- group -->
+           <!-- m_editable region-id="editable-static-tag-U15088-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+           <div class="p clearfix grpelem" id="u15088-24" data-muse-uid="U15088" data-muse-type="txt_frame"><!-- content -->
+            <p>1 Design</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>3 Revisions</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>2 GB of Data</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Documentation</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Video Tutorials</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Logo Included</p>
+           </div>
+           <!-- /m_editable -->
+           <div class="grpelem" id="u15075"><!-- simple frame --></div>
+           <div class="grpelem" id="u15078"><!-- simple frame --></div>
+           <div class="grpelem" id="u15081"><!-- simple frame --></div>
+           <div class="grpelem" id="u15084"><!-- simple frame --></div>
+           <div class="grpelem" id="u15087"><!-- simple frame --></div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- m_editable region-id="editable-static-tag-U15169-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="left h3 clearfix colelem" id="u15169-5" data-muse-uid="U15169" data-muse-type="txt_frame"><!-- content -->
+        <h3><span>Clients &amp;</span><span> Testimonials</span></h3>
+       </div>
+       <!-- /m_editable -->
+      </div>
+     </div>
+    </div>
+    <div class="browser_width grpelem" id="u12444-bw">
+     <div class="museBGSize" id="u12444"><!-- simple frame --></div>
+    </div>
+    <div class="browser_width grpelem" id="u14146-bw">
+     <div id="u14146"><!-- group -->
+      <div class="clearfix" id="u14146_align_to_page">
+       <a class="anchor_item grpelem" id="services"></a>
+       <!-- m_editable region-id="editable-static-tag-U14147-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="gradient h1 clearfix grpelem" id="u14147-6" data-muse-uid="U14147" data-muse-type="txt_frame"><!-- content -->
+        <h1>We are a Total</h1>
+        <h1>Solution Provider</h1>
+       </div>
+       <!-- /m_editable -->
+       <!-- m_editable region-id="editable-static-tag-U14143-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="slideLeft p clearfix grpelem" id="u14143-7" data-muse-uid="U14143" data-muse-type="txt_frame"><!-- content -->
+        <p><span class="actAsDiv normal_text" id="u14144"><!-- content --><!-- m_editable region-id="editable-static-tag-U14145-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" --><span class="actAsDiv rounded-corners h2 clearfix" id="u14145-4" data-muse-uid="U14145" data-muse-type="txt_frame"><!-- content --><span class="actAsPara">Q</span></span><!-- /m_editable --></span>uickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</p>
+        <p>&nbsp;</p>
+        <p>Progressively e-enable impactful resources vis-a-vis corporate platforms. Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals. Dynamically coordinate high-quality services and tactical synergy. Phosfluorescently architect premium e-services rather than dynamic catalysts for change. Collaboratively negotiate value-added e-business vis-a-vis sustainable process improvements. Progressively e-enable impactful resources vis-a-vis corporate platforms. Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches.</p>
+       </div>
+       <!-- /m_editable -->
+      </div>
+     </div>
+    </div>
+    <div class="PamphletWidget clearfix grpelem" id="pamphletu12538"><!-- none box -->
+     <div class="popup_anchor" id="u12541popup">
+      <div class="ContainerGroup clearfix" id="u12541"><!-- stack box -->
+       <div class="Container clearfix grpelem" id="u12542"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U12528-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u12528-22" data-muse-uid="U12528" data-muse-type="txt_frame"><!-- content -->
+         <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</p>
+         <p>&nbsp;</p>
+         <ul class="list0 nls-None" id="u12528-20">
+          <li>Dynamically coordinate high-quality services and tactical synergy.</li>
+          <li>Phosfluorescently architect premium e-services rather than dynamic catalysts for change. Collaboratively negotiate value-added e-business vis-a-vis sustainable</li>
+          <li>Progressively e-enable impactful resources vis-a-vis corporate platforms.</li>
+          <li>Quickly enhance exceptional convergence vis-a-vis strategic human capital.</li>
+          <li>Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</li>
+          <li>Conveniently pursue intermandated core competencies through 2.0 growth strategies.</li>
+          <li>Compellingly disintermediate extensive growth strategies with high-payoff potentialities.</li>
+          <li>Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</li>
+         </ul>
+        </div>
+        <!-- /m_editable -->
+        <!-- m_editable region-id="editable-static-tag-U12522-BP_infinity" template="how-it-works.html" data-type="image" -->
+        <div class="fadezoom clip_frame grpelem" id="u12522" data-muse-uid="U12522" data-muse-type="img_frame"><!-- image -->
+         <img class="block" id="u12522_img" src="images/imac1.jpg" alt="" width="570" height="556" data-muse-src="images/imac1.jpg"/>
+        </div>
+        <!-- /m_editable -->
+       </div>
+       <div class="Container invi clearfix grpelem" id="u12578"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17088-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17088-22" data-muse-uid="U17088" data-muse-type="txt_frame"><!-- content -->
+         <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</p>
+         <p>&nbsp;</p>
+         <ul class="list0 nls-None" id="u17088-20">
+          <li>Dynamically coordinate high-quality services and tactical synergy.</li>
+          <li>Phosfluorescently architect premium e-services rather than dynamic catalysts for change. Collaboratively negotiate value-added e-business vis-a-vis sustainable</li>
+          <li>Progressively e-enable impactful resources vis-a-vis corporate platforms.</li>
+          <li>Quickly enhance exceptional convergence vis-a-vis strategic human capital.</li>
+          <li>Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</li>
+          <li>Conveniently pursue intermandated core competencies through 2.0 growth strategies.</li>
+          <li>Compellingly disintermediate extensive growth strategies with high-payoff potentialities.</li>
+          <li>Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</li>
+         </ul>
+        </div>
+        <!-- /m_editable -->
+        <!-- m_editable region-id="editable-static-tag-U17089-BP_infinity" template="how-it-works.html" data-type="image" -->
+        <div class="clip_frame grpelem" id="u17089" data-muse-uid="U17089" data-muse-type="img_frame"><!-- image -->
+         <img class="block" id="u17089_img" src="images/ipad.jpg" alt="" width="570" height="429" data-muse-src="images/ipad.jpg"/>
+        </div>
+        <!-- /m_editable -->
+       </div>
+       <div class="Container invi clearfix grpelem" id="u12581"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17108-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17108-22" data-muse-uid="U17108" data-muse-type="txt_frame"><!-- content -->
+         <p>Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies through 2.0 growth strategies. Compellingly disintermediate extensive growth strategies with high-payoff potentialities. Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</p>
+         <p>&nbsp;</p>
+         <ul class="list0 nls-None" id="u17108-20">
+          <li>Dynamically coordinate high-quality services and tactical synergy.</li>
+          <li>Phosfluorescently architect premium e-services rather than dynamic catalysts for change. Collaboratively negotiate value-added e-business vis-a-vis sustainable</li>
+          <li>Progressively e-enable impactful resources vis-a-vis corporate platforms.</li>
+          <li>Quickly enhance exceptional convergence vis-a-vis strategic human capital.</li>
+          <li>Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</li>
+          <li>Conveniently pursue intermandated core competencies through 2.0 growth strategies.</li>
+          <li>Compellingly disintermediate extensive growth strategies with high-payoff potentialities.</li>
+          <li>Dramatically utilize stand-alone technologies and resource-leveling niches. Efficiently generate maintainable networks rather than cost effective portals.</li>
+         </ul>
+        </div>
+        <!-- /m_editable -->
+        <!-- m_editable region-id="editable-static-tag-U17162-BP_infinity" template="how-it-works.html" data-type="image" -->
+        <div class="clip_frame grpelem" id="u17162" data-muse-uid="U17162" data-muse-type="img_frame"><!-- image -->
+         <img class="block" id="u17162_img" src="images/imac2.jpg" alt="" width="547" height="531" data-muse-src="images/imac2.jpg"/>
+        </div>
+        <!-- /m_editable -->
+       </div>
+      </div>
+     </div>
+     <div class="ThumbGroup clearfix grpelem" id="u12557"><!-- none box -->
+      <div class="popup_anchor">
+       <div class="Thumb popup_element right clearfix" id="u12559"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U12577-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" -->
+        <div class="h5 clearfix grpelem" id="u12577-4" data-muse-uid="U12577" data-muse-type="txt_frame"><!-- content -->
+         <h5>Business Softwares</h5>
+        </div>
+        <!-- /m_editable -->
+       </div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element right clearfix" id="u12579"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U12583-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" -->
+        <div class="h5 clearfix grpelem" id="u12583-4" data-muse-uid="U12583" data-muse-type="txt_frame"><!-- content -->
+         <h5>Consulting Services</h5>
+        </div>
+        <!-- /m_editable -->
+       </div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element right clearfix" id="u12582"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U12584-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" -->
+        <div class="h5 clearfix grpelem" id="u12584-4" data-muse-uid="U12584" data-muse-type="txt_frame"><!-- content -->
+         <h5>Web Services</h5>
+        </div>
+        <!-- /m_editable -->
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="browser_width grpelem" id="u15098-bw">
+     <div id="u15098"><!-- group -->
+      <div class="clearfix" id="u15098_align_to_page">
+       <!-- m_editable region-id="editable-static-tag-U15100-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+       <div class="left h5 clearfix grpelem" id="u15100-6" data-muse-uid="U15100" data-muse-type="txt_frame"><!-- content -->
+        <h5 id="u15100-2">Always Stay Tuned With Us</h5>
+        <h5 id="u15100-4">Subscribe to Our Newsletter</h5>
+       </div>
+       <!-- /m_editable -->
+      </div>
+     </div>
+    </div>
+    <div class="browser_width grpelem" id="u15099-bw">
+     <div id="u15099"><!-- group -->
+      <div class="clearfix" id="u15099_align_to_page">
+       <a class="anchor_item grpelem" id="pricing"></a>
+       <div class="Button fadezoom clearfix grpelem" id="buttonu15166"><!-- container box -->
+        <form class="form-grp clearfix grpelem" id="widgetu15148" method="post" enctype="multipart/form-data" action="scripts/form-u15148.php"><!-- none box -->
+         <div class="fld-grp clearfix grpelem" id="widgetu15150" data-required="true" data-type="email"><!-- none box -->
+          <!-- m_editable region-id="editable-static-tag-U15151-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+          <label class="fld-label actAsDiv p clearfix grpelem" id="u15151-4" data-muse-uid="U15151" data-muse-type="txt_frame" for="widgetu15150_input"><!-- content --><span class="actAsPara">Enter your Email below to subscribe</span></label>
+          <!-- /m_editable -->
+          <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u15152-3"><!-- content --><input class="wrapped-input" type="email" spellcheck="false" id="widgetu15150_input" name="Email" tabindex="1"/></span>
+         </div>
+         <!-- m_editable region-id="editable-static-tag-U15154-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="clearfix grpelem" id="u15154-4" data-muse-uid="U15154" data-muse-type="txt_frame"><!-- content -->
+          <p>Subscribing...</p>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U15149-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="clearfix grpelem" id="u15149-4" data-muse-uid="U15149" data-muse-type="txt_frame"><!-- content -->
+          <p>The server encountered an error.</p>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U15155-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+         <div class="clearfix grpelem" id="u15155-4" data-muse-uid="U15155" data-muse-type="txt_frame"><!-- content -->
+          <p>Request Send Successfully!</p>
+         </div>
+         <!-- /m_editable -->
+         <input class="submit-btn NoWrap grpelem" id="u15164-17" type="submit" value="" tabindex="2"/><!-- state-based BG images -->
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="PamphletWidget clearfix grpelem" id="pamphletu17324"><!-- none box -->
+     <div class="popup_anchor" id="u17325popup">
+      <div class="ContainerGroup clearfix" id="u17325"><!-- stack box -->
+       <div class="Container invi clearfix grpelem" id="u17326"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17323-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17323-10" data-muse-uid="U17323" data-muse-type="txt_frame"><!-- content -->
+         <p id="u17323-2">Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence vis-a-vis strategic human capital.&nbsp; Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</p>
+         <p id="u17323-3">&nbsp;</p>
+         <p id="u17323-6"><span>John Doe / </span>Chief Executive Officer</p>
+         <p>Creative Co. Pvt. Ltd.</p>
+        </div>
+        <!-- /m_editable -->
+        <div class="rounded-corners grpelem" id="u15378"><!-- simple frame --></div>
+       </div>
+       <div class="Container invi clearfix grpelem" id="u17363"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17369-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17369-10" data-muse-uid="U17369" data-muse-type="txt_frame"><!-- content -->
+         <p id="u17369-2">Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence vis-a-vis strategic human capital.&nbsp; Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</p>
+         <p id="u17369-3">&nbsp;</p>
+         <p id="u17369-6"><span>John Doe / </span>Chief Executive Officer</p>
+         <p>Creative Co. Pvt. Ltd.</p>
+        </div>
+        <!-- /m_editable -->
+        <div class="rounded-corners grpelem" id="u17370"><!-- simple frame --></div>
+       </div>
+       <div class="Container invi clearfix grpelem" id="u17367"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17371-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17371-10" data-muse-uid="U17371" data-muse-type="txt_frame"><!-- content -->
+         <p id="u17371-2">Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence vis-a-vis strategic human capital.&nbsp; Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</p>
+         <p id="u17371-3">&nbsp;</p>
+         <p id="u17371-6"><span>John Doe / </span>Chief Executive Officer</p>
+         <p>Creative Co. Pvt. Ltd.</p>
+        </div>
+        <!-- /m_editable -->
+        <div class="rounded-corners grpelem" id="u17372"><!-- simple frame --></div>
+       </div>
+       <div class="Container invi clearfix grpelem" id="u17381"><!-- group -->
+        <!-- m_editable region-id="editable-static-tag-U17385-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link" -->
+        <div class="p clearfix grpelem" id="u17385-10" data-muse-uid="U17385" data-muse-type="txt_frame"><!-- content -->
+         <p id="u17385-2">Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas. Conveniently pursue intermandated core competencies. Quickly enhance exceptional convergence vis-a-vis strategic human capital.&nbsp; Quickly enhance exceptional convergence vis-a-vis strategic human capital. Continually brand backward-compatible leadership skills vis-a-vis premium schemas.</p>
+         <p id="u17385-3">&nbsp;</p>
+         <p id="u17385-6"><span>John Doe / </span>Chief Executive Officer</p>
+         <p>Creative Co. Pvt. Ltd.</p>
+        </div>
+        <!-- /m_editable -->
+        <div class="rounded-corners grpelem" id="u17386"><!-- simple frame --></div>
+       </div>
+      </div>
+     </div>
+     <div class="ThumbGroup clearfix grpelem" id="u17341"><!-- none box -->
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17344"><!-- simple frame --></div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17366"><!-- simple frame --></div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17368"><!-- simple frame --></div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17384"><!-- simple frame --></div>
+      </div>
+     </div>
+    </div>
+    <div class="PamphletWidget clearfix grpelem" id="pamphletu17227"><!-- none box -->
+     <div class="popup_anchor" id="u17228popup">
+      <div class="ContainerGroup clearfix" id="u17228"><!-- stack box -->
+       <div class="Container invi clearfix grpelem" id="u17229"><!-- group -->
+        <div class="clearfix grpelem" id="pu17232"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17232-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17232" data-muse-uid="U17232" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17232_img" src="images/client-logo4.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo4.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17234-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17234" data-muse-uid="U17234" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17234_img" src="images/client-logo5.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo5.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="clearfix grpelem" id="pu17238"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17238-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17238" data-muse-uid="U17238" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17238_img" src="images/client-logo1.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo1.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17236-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17236" data-muse-uid="U17236" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17236_img" src="images/client-logo3.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo3.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="clearfix grpelem" id="pu17230"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17230-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17230" data-muse-uid="U17230" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17230_img" src="images/client-logo2.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo2.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17240-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17240" data-muse-uid="U17240" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17240_img" src="images/client-logo6.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo6.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+       </div>
+       <div class="Container invi clearfix grpelem" id="u17404"><!-- group -->
+        <div class="clearfix grpelem" id="pu17424"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17424-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17424" data-muse-uid="U17424" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17424_img" src="images/client-logo4.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo4.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17430-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17430" data-muse-uid="U17430" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17430_img" src="images/client-logo5.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo5.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="clearfix grpelem" id="pu17434"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17434-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17434" data-muse-uid="U17434" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17434_img" src="images/client-logo1.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo1.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17432-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17432" data-muse-uid="U17432" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17432_img" src="images/client-logo3.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo3.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+        <div class="clearfix grpelem" id="pu17428"><!-- column -->
+         <!-- m_editable region-id="editable-static-tag-U17428-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17428" data-muse-uid="U17428" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17428_img" src="images/client-logo2.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo2.jpg"/>
+         </div>
+         <!-- /m_editable -->
+         <!-- m_editable region-id="editable-static-tag-U17426-BP_infinity" template="how-it-works.html" data-type="image" -->
+         <div class="clip_frame colelem" id="u17426" data-muse-uid="U17426" data-muse-type="img_frame"><!-- image -->
+          <img class="block" id="u17426_img" src="images/client-logo6.jpg" alt="" width="170" height="90" data-muse-src="images/client-logo6.jpg"/>
+         </div>
+         <!-- /m_editable -->
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="ThumbGroup clearfix grpelem" id="u17258"><!-- none box -->
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17259"><!-- simple frame --></div>
+      </div>
+      <div class="popup_anchor">
+       <div class="Thumb popup_element" id="u17423"><!-- simple frame --></div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <nav class="MenuBar fadeIn clearfix mse_pre_init" id="menuu12468"><!-- horizontal box -->
+    <div class="MenuItemContainer clearfix grpelem" id="u12490"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U12491" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u12491" href="how-it-works.html#top" data-href="anchor:U10579:U12511" data-muse-uid="U12491"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U12493-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u12493-4" data-muse-uid="U12493" data-muse-type="txt_frame"><!-- content --><p>Overview</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+    <div class="MenuItemContainer clearfix grpelem" id="u12476"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U12479" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u12479" href="how-it-works.html#services" data-href="anchor:U10579:U12512" data-muse-uid="U12479"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U12482-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u12482-4" data-muse-uid="U12482" data-muse-type="txt_frame"><!-- content --><p>Services</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+    <div class="MenuItemContainer clearfix grpelem" id="u13006"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U13009" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u13009" href="how-it-works.html#featureworks" data-href="anchor:U10579:U13013" data-muse-uid="U13009"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U13010-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u13010-4" data-muse-uid="U13010" data-muse-type="txt_frame"><!-- content --><p>Featured Works</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+    <div class="MenuItemContainer clearfix grpelem" id="u12483"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U12486" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u12486" href="how-it-works.html#process" data-href="anchor:U10579:U13568" data-muse-uid="U12486"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U12489-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u12489-4" data-muse-uid="U12489" data-muse-type="txt_frame"><!-- content --><p>Process</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+    <div class="MenuItemContainer clearfix grpelem" id="u12504"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U12505" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u12505" href="how-it-works.html#pricing" data-href="anchor:U10579:U13570" data-muse-uid="U12505"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U12506-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u12506-4" data-muse-uid="U12506" data-muse-type="txt_frame"><!-- content --><p>Pricing</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+    <div class="MenuItemContainer clearfix grpelem" id="u12469"><!-- vertical box -->
+     <!-- m_editable region-id="editable-static-tag-U12472" template="how-it-works.html" data-type="html" data-ice-options="clickable" data-ice-editable="link" -->
+     <a class="nonblock nontext MenuItem MenuItemWithSubMenu anim_swing clearfix colelem" id="u12472" href="how-it-works.html#testimonials" data-href="anchor:U10579:U15170" data-muse-uid="U12472"><!-- horizontal box --><!-- m_editable region-id="editable-static-tag-U12473-BP_infinity" template="how-it-works.html" data-type="html" data-ice-options="disableImageResize,link,clickable" --><div class="MenuItemLabel NoWrap p clearfix grpelem" id="u12473-4" data-muse-uid="U12473" data-muse-type="txt_frame"><!-- content --><p>Testimonials</p></div><!-- /m_editable --></a>
+     <!-- /m_editable -->
+    </div>
+   </nav>
+   <div class="verticalspacer"></div>
+  </div>
+  <div class="preload_images">
+   <img class="preload" src="images/u15164-17-r.png" alt=""/>
+   <img class="preload" src="images/u15164-17-m.png" alt=""/>
+   <img class="preload" src="images/u15164-17-fs.png" alt=""/>
+   <img class="preload" src="images/u15164-17-r_2x.png" alt=""/>
+   <img class="preload" src="images/u15164-17-m_2x.png" alt=""/>
+   <img class="preload" src="images/u15164-17-fs_2x.png" alt=""/>
+  </div>
+  <!-- JS includes -->
+  <script type="text/javascript">
+   if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn2.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+</script>
+  <script type="text/javascript">
+   window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+</script>
+  <script src="scripts/museutils.js?3790713428" type="text/javascript"></script>
+  <script src="scripts/whatinput.js?84559013" type="text/javascript"></script>
+  <script src="scripts/jquery.watch.js?4244854265" type="text/javascript"></script>
+  <script src="scripts/jquery.musepolyfill.bgsize.js?3918880840" type="text/javascript"></script>
+  <script src="scripts/webpro.js?329496574" type="text/javascript"></script>
+  <script src="scripts/musewpslideshow.js?394033048" type="text/javascript"></script>
+  <script src="scripts/jquery.museoverlay.js?4265131668" type="text/javascript"></script>
+  <script src="scripts/touchswipe.js?497316881" type="text/javascript"></script>
+  <script src="scripts/jquery.musemenu.js?238543590" type="text/javascript"></script>
+  <script src="scripts/jquery.scrolleffects.js?4219894366" type="text/javascript"></script>
+  <!-- Other scripts -->
+  <script type="text/javascript">
+   $(document).ready(function() { try {
+(function(){var a={},b=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),16);return 0};(function(){$('link[type="text/css"]').each(function(){var b=($(this).attr("href")||"").match(/\/?css\/([\w\-]+\.css)\?(\d+)/);b&&b[1]&&b[2]&&(a[b[1]]=b[2])})})();(function(){$("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
+for(var c=$(".version"),d=0;d<Muse.assets.required.length;){var f=Muse.assets.required[d],g=f.match(/([\w\-\.]+)\.(\w+)$/),k=g&&g[1]?g[1]:null,g=g&&g[2]?g[2]:null;switch(g.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");c.addClass(k);var g=b(c.css("color")),h=b(c.css("background-color"));g!=0||h!=0?(Muse.assets.required.splice(d,1),"undefined"!=typeof a[f]&&(g!=a[f]>>>24||h!=(a[f]&16777215))&&Muse.assets.outOfDate.push(f)):d++;c.removeClass(k);break;case "js":k.match(/^jquery-[\d\.]+/gi)&&
+typeof $!="undefined"?Muse.assets.required.splice(d,1):d++;break;default:throw Error("Unsupported file type: "+g);}}c.remove();if(Muse.assets.outOfDate.length||Muse.assets.required.length)c="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",(d=location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi))&&Muse.assets.outOfDate.length&&(c+="\nOut of date: "+Muse.assets.outOfDate.join(",")),d&&Muse.assets.required.length&&(c+="\nMissing: "+Muse.assets.required.join(",")),alert(c)})()})();/* body */
+Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
+Muse.Utils.detectScreenResolution();/* HiDPI screens */
+Muse.Utils.prepHyperlinks(true);/* body */
+Muse.Utils.resizeHeight('.browser_width');/* resize height */
+Muse.Utils.requestAnimationFrame(function() { $('body').addClass('initialized'); });/* mark body as initialized */
+Muse.Utils.fullPage('#page');/* 100% height page */
+Muse.Utils.initWidget('#pamphletu12538', ['#bp_infinity'], function(elem) { return new WebPro.Widget.ContentSlideShow(elem, {contentLayout_runtime:'stack',event:'click',deactivationEvent:'none',autoPlay:false,displayInterval:3000,transitionStyle:'horizontal',transitionDuration:0,hideAllContentsFirst:false,shuffle:false,enableSwipe:true,resumeAutoplay:true,resumeAutoplayInterval:3000,playOnce:false,autoActivate_runtime:false}); });/* #pamphletu12538 */
+Muse.Utils.initWidget('#widgetu15148', ['#bp_infinity'], function(elem) { return new WebPro.Widget.Form(elem, {validationEvent:'submit',errorStateSensitivity:'high',fieldWrapperClass:'fld-grp',formSubmittedClass:'frm-sub-st',formErrorClass:'frm-subm-err-st',formDeliveredClass:'frm-subm-ok-st',notEmptyClass:'non-empty-st',focusClass:'focus-st',invalidClass:'fld-err-st',requiredClass:'fld-err-st',ajaxSubmit:true}); });/* #widgetu15148 */
+Muse.Utils.initWidget('#pamphletu17324', ['#bp_infinity'], function(elem) { return new WebPro.Widget.ContentSlideShow(elem, {contentLayout_runtime:'stack',event:'click',deactivationEvent:'none',autoPlay:true,displayInterval:4000,transitionStyle:'horizontal',transitionDuration:100,hideAllContentsFirst:true,shuffle:false,enableSwipe:true,resumeAutoplay:true,resumeAutoplayInterval:3000,playOnce:false,autoActivate_runtime:false}); });/* #pamphletu17324 */
+Muse.Utils.initWidget('#pamphletu17227', ['#bp_infinity'], function(elem) { return new WebPro.Widget.ContentSlideShow(elem, {contentLayout_runtime:'stack',event:'mouseover',deactivationEvent:'none',autoPlay:true,displayInterval:4000,transitionStyle:'vertical',transitionDuration:100,hideAllContentsFirst:true,shuffle:false,enableSwipe:true,resumeAutoplay:true,resumeAutoplayInterval:100,playOnce:false,autoActivate_runtime:false}); });/* #pamphletu17227 */
+Muse.Utils.initWidget('.MenuBar', ['#bp_infinity'], function(elem) { return $(elem).museMenu(); });/* unifiedNavBar */
+$('#u12444').registerBackgroundPositionScrollEffect([{"speed":[0,0.1],"in":[-Infinity,400]},{"speed":[0,0.1],"in":[400,Infinity]}]);/* scroll effect */
+$('#u15098').registerBackgroundPositionScrollEffect([{"speed":[0,0.1],"in":[-Infinity,4088.05]},{"speed":[0,0.1],"in":[4088.05,Infinity]}]);/* scroll effect */
+$('#menuu12468').registerPositionScrollEffect([{"speed":[0,1],"in":[-Infinity,244.4]},{"speed":[0,0],"in":[244.4,Infinity]}]);/* scroll effect */
+Muse.Utils.showWidgetsWhenReady();/* body */
+Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
+} catch(e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }});
+</script>
+   </body>
+</html>

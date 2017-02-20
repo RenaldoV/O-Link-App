@@ -1,0 +1,125 @@
+mongoDB
+
+Students
+
+
+name	: {	name
+		surname
+		}
+dob
+studentNo
+contact:{
+		email
+		contactNo
+	}
+IDnumber
+gender
+location
+gender
+fieldOfStudy
+qualification: {
+		name
+		description
+		status
+		category
+		gradYear
+		GPA
+		}
+
+GPA
+paswordHash
+signUpDate
+profilePicture
+lastSeen
+matricResults: {
+		subject
+		mark
+		}[]
+
+photoAlbum: {
+		path
+		}[]
+notifications[]
+jobHistory: {
+		jobID
+		rating
+		comment
+		}
+
+
+
+Employers
+
+
+company: {
+		name
+		businessCategory
+		description
+		regNo
+		location
+	}
+contact: {
+		name
+		surname
+		IDnumber
+		position
+		email
+		contactNo
+	}
+alternate: {
+		name
+		surname
+		contactNo
+		}[]
+paswordHash
+signUpDate
+profilePicture
+lastSeen
+suggested
+notifications[]
+
+
+
+Jobs
+
+
+
+
+post : {
+	role
+	description
+	location
+	timePeriod
+	pay
+	category
+	spotsAvailable
+	postDate
+	dates[]
+	requirements:{
+			name
+			symbol
+			}
+	hours{
+		begin
+		end
+		}
+	tips
+	gender
+
+	}
+employerEmail(key)
+
+
+Applications
+
+status
+•Yellow - Pending
+• Green - Provisionally accepted
+• Blue - Confirmed
+• Red - Declined 
+
+jobID
+message
+status
+
+

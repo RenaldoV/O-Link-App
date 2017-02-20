@@ -1,0 +1,60 @@
+<!-- navbar header -->
+<div class='navbar-wrapper' ng-controller="navControl">
+
+<div id="userType" style="display: none">{{userType}}</div>
+<nav class="navbar navbar-inverse transparent navbar-default {{type}}" >
+    <div class="container nav-container">
+        <div class="header-text center" >
+
+            <h2 class="navbar-text navbar-left">
+                <p ng-if="slogan"  class="navbar-slog">{{slog1}}<br/>{{slog2}}</p>
+                <p ng-if="welcoming" class="navbar-txt">{{welcome}}
+                    <span class='green'>{{employer}}</span>
+                    <span class='blue'>{{talent}}</span>
+                </p>
+                <p ng-if="studentProfile" class="profileHeader">{{cache.name.name + " " + cache.name.surname}}</p>
+                <p ng-if="individualProfile" class="profileHeader">{{cache.contact.name + " " + cache.contact.surname}}</p>
+                <p ng-if="companyProfile" class="profileHeader">{{cache.company.name}}</p>
+                <p ng-if="companyProfile" class="appCount">{{cache.contact.name + " " + cache.contact.surname}}</p>
+                <p ng-if="browse" class="profileHeader">Open Job Offers</p>
+                <p ng-if="jobHistory" class="profileHeader">Job History</p>
+                <p ng-if="myApplications" class="profileHeader">My Applications</p>
+                <p ng-if="myApplicants" class="profileHeader">My Applicants</p>
+                <p ng-if="myJobs" class="profileHeader">Open Job Offers</p>
+                <p ng-if="myJobHistory" class="profileHeader">Past Job Offers</p>
+                <p ng-if="empHistory" class="profileHeader">Employment History</p>
+                <p ng-if="buyApplications" class="profileHeader">Buy Applications</p>
+                <p ng-if="empBuy" class="profileHeader">Buy</p>
+                <p ng-if="job" class="profileHeader">Job Offer</p>
+                <p ng-hide="disableNumApps" ng-if="loggedIn" class="appCount muted">Applications remaining: {{numApps}}</p>
+            </h2>
+
+
+        </div>
+
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" ng-controller="logoClick">
+
+            <a href="/"><img ng-click="toDash()" class="animated pulse banner-logo web" src="/logo/Logo_white.png">
+            <img ng-click="toDash()" class="animated pulse banner-logo mobile" src="/logo/Logo_email.png" hidden></a>
+
+        </div>
+
+
+
+
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="menuButton" data-ng-include="getNav()" ></li>
+            <li class="noti" ng-if="loggedIn" data-ng-include="'views/blocks/notifications.html'" ng-controller="notifications"></li>
+            <li class="ppHeader"><a href="/myProfile"><img ng-src="data:image/png;base64,{{image}}"  class="animated pulse img-circle banner-pp"></a></li>
+        </ul>
+
+        </div><!-- /.navbar-collapse -->
+   <!-- /.container-fluid -->
+</nav>
+</div>

@@ -1,0 +1,99 @@
+div.navbar-wrapper > nav.navbar.navbar-inverse{
+    display:none;!important;
+}
+div.row > div.dashTops{
+    display:none;!important;
+}
+
+html.appbg.dashBG{
+    background:none;!important;
+}
+body.ng-scope > div.container{
+    width:100%;
+    padding:0px;
+}
+
+div.app-content{
+    margin:5px;
+}
+
+.filterOptions{
+
+}
+
+.filterOptionsMHeading{
+    cursor: pointer;
+}
+
+div.col-md-2 > h4.filterBy {
+    margin-right: 40px;!important;
+    margin-left: 0px;!important;
+}
+
+span.fa-stack.fa-lg.green {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.mobiEditBtn{
+    margin-top:5px;
+}
+.mobiLocInput{
+    border-color: grey;
+}
+.mobiBrowseLogos{
+    width:90%;
+    height:90%;
+}
+
+.mobiJobsLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobiJobBox{
+    border-radius: 10px;
+}
+
+.firstJobRowMobi{
+    display: flex;
+    flex-direction: row;
+}
+
+.jobInfoBoxMobi{
+    padding:0px;
+    width:24%;
+    margin-right:1%;
+    text-align: center;
+}
+.jobInfoBoxMobi:last-of-type{
+    margin-right:0px;
+}
+
+div.statusBall1.Mobi{
+    margin-left: 10px;
+    margin-top:13px
+}
+
+div.profileRating {
+    background-color: lightgrey;
+}
+span.jobGoBack{
+    display: none;
+}
+
+div.jobContent{
+    width:100%;
+}
+.heading-img {
+    width: 45px;
+    height: 45px;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.content-heading > h4.form-section-label {
+    margin-left: 0px;
+}

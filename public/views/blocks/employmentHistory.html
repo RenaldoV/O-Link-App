@@ -1,0 +1,69 @@
+<div><div ng-controller="employmentHistory" class="empApplicants">
+    <h4 ng-if="jobs.length == 0" class="white" style="text-align: center"><b>{{message}}</b></h4>
+    <div style="margin-top:42px;" ng-if="job.applications.length > 0" ng-repeat="job in jobs" class="jobApps">
+        <div class="applicantsHead blueBack" ng-click="toggleApplicants(job._id)">
+            <div ng-if="job.post.category != 'Other'" class="appHeading">
+                {{job.post.category}}
+            </div>
+            <div ng-if="job.post.category == 'Other'" class="appHeading">
+                {{job.post.OtherCategory}}
+            </div>
+            <div class="applicantsDateHead tableAddSmall">{{job.post.startingDate}}</div>
+
+            <div class="pull-right cheviBox">
+                <span ng-if="job.show" class=" glyphicon glyphicon-chevron-up"></span>
+                <span ng-if="!job.show" class=" glyphicon glyphicon-chevron-down"></span>
+            </div>
+        </div>
+
+
+        <div ng-if="job.show">
+            <table class="table applicantsTables">
+                <thead>
+                <th></th>
+                <th class="tableAddSmallEmpHist"></th>
+                <th>Student</th>
+                <th class="tableAdd"></th>
+                <th class="tableAddSmall">Comment</th>
+                <th >Rating</th>
+                <td></td>
+
+                </thead>
+                <tbody>
+                <tr ng-mouseleave="unhighlightChildren($event)" ng-mouseover="highlightChildren($event)" ng-repeat="app in job.applications"  style="cursor: pointer;">
+                    <td ng-click="getApplicant(app.studentID._id)" class="lilPp histPsm"><a ><img ng-src="data:image/png;base64,{{app.image}}"  class="animated pulse lilPp img-circle"></a></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmallEmpHist"></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="appName histPmed"><a href="/profile?user={{app.studentID._id}}">{{app.studentID.name.name + " "+ app.studentID.name.surname}}</a></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAdd"></td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmall histPbig" ng-if="app.commentToStudent">{{app.commentToStudent}}</td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmall histPbig" ng-if="!app.commentToStudent">No Comment</td>
+                    <td ng-click="getApplicant(app.studentID._id)" class="histPrating">
+                        <span ng-if="app.studentRating" class="jobHistNumRating">{{app.studentRating}}</span>
+                        <span ng-if="!app.studentRating" class="jobHistNumRating">N/A</span>
+                        <fieldset class="jobHistStars jobHistPMed">
+                            <label  class = "full {{app.filled[9]}}" for="star5{{$index}}" title="Awesome - 5 stars"></label>
+                            <label class="half {{app.filled[8]}}" for="star4half{{$index}}" title="Pretty good - 4.5 stars"></label>
+                            <label class = "full {{app.filled[7]}}" for="star4{{$index}}" title="Pretty good - 4 stars"></label>
+                            <label class="half {{app.filled[6]}}" for="star3half{{$index}}" title="Meh - 3.5 stars"></label>
+                            <label class = "full {{app.filled[5]}}" for="star3{{$index}}" title="Meh - 3 stars"></label>
+                            <label class="half {{app.filled[4]}}" for="star2half{{$index}}" title="Kinda bad - 2.5 stars"></label>
+                            <label class = "full {{app.filled[3]}}" for="star2{{$index}}" title="Kinda bad - 2 stars"></label>
+                            <label class="half {{app.filled[2]}}" for="star1half{{$index}}" title="Meh - 1.5 stars"></label>
+                            <label class = "full {{app.filled[1]}}" for="star1{{$index}}" title="Sucks big time - 1 star"></label>
+                            <label style="color: #FFD700" class="half {{app.filled[0]}}" for="starhalf{{$index}}" title="Sucks big time - 0.5 stars"></label>
+                        </fieldset>
+                    </td>
+
+
+                    <td ng-click="getApplicant(app.studentID._id)"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+    </div>
+
+
+
+</div>
+</div>

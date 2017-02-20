@@ -1,0 +1,144 @@
+<div ng-controller="jobBrowser" class="text-center">
+    <div class="panel panel-default filterOptionsMobile">
+            <div class="panel-heading filterOptionsMHeading" ng-click="hideMobiFilter()">
+                <h4><i class="pull-left fa fa-sliders" aria-hidden="true"></i>Filter Jobs<span class="pull-right glyphicon" ng-class="glyphForDropdown"></span></h4>
+            </div>
+            <div class="panel-body filterOptionsMobileContent" ng-hide="hideFilter">
+                <div class="row">
+                    <div class="col-md-2">
+                        <span class="fa-stack fa-lg blue" style="float:left;">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-sort-amount-asc fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="filterBy">Filter By:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <div ng-dropdown-multiselect="" options="catData" selected-model="catModel"
+                             translation-texts="catLabel" extra-settings="dropSettings" events="catSelectEvent"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div ng-dropdown-multiselect="" options="timeData" selected-model="timeModel"
+                             translation-texts="timeLabel" extra-settings="dropSettings" events="timeSelectEvent"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-2 location">
+                        <span class="fa-stack fa-lg green" style="float:left;">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-1">
+                        <h4 ng-hide="editLoc">{{resAddress}}</h4>
+                        <input type="text" id="searchTextField" name="searchTextField" options="autocompleteOptions"
+                               class="btn btn-block mobiLocInput" placeholder="Location"
+                               ng-model="resAddress" g-places-autocomplete force-selection="true" ng-show="editLoc"
+                               ng-blur="locFocusOut()">
+                    </div>
+                    <div class="col-xs-3" style="padding-left:0px; font-size: 10px;">
+                        <button title="Edit Adress" ng-click="editLocation()" class="btn btn-sm greenBack pull-right mobiEditBtn">Edit</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <span class="fa-stack fa-lg green" style="float:left;">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4 class="offersBtw">Offers Between:</h4>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div >
+                            <rzslider rz-slider-model="slider.minValue"
+                                      rz-slider-options="slider.options"></rzslider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="jobsContainer container">
+        <h4 class="black"><b>{{message}}</b></h4>
+        <div ng-click="gotoJob(job._id)" class=" jobBox mobiJobBox blueTop" ng-repeat="job in jobs" style="width:100%;margin-bottom:10px; border:1px solid; border-radius: 10px; border-color:#33B6CC; background-color: white; cursor:pointer;" >
+            <div class="row firstJobRowMobi">
+                <div class="col-xs-3 mobiJobsLogo">
+                        <img ng-src="data:image/png;base64,{{job.logo}}" class="img-circle mobiBrowseLogos"><br>
+                </div>
+                <div class="col-xs-5 jobsHead" style="padding-left:5px; padding-right:5px; margin-top:2px;">
+                    <h4 class="jobCategory" ng-if="job.post.category != 'Other'">{{job.post.category}}</h4>
+                    <h4 class="jobCategory" ng-if="job.post.category == 'Other'">{{job.post.OtherCategory}}</h4>
+                </div>
+                <div class="col-xs-2 jobsHead interviewDanger"  style="margin-top:13px; padding:0px;">
+                    <span style="font-size: 12px; background-color: lightgrey; border-radius: 3px;" class="text-danger" ng-if="job.post.interviewRequired">Interview</span>
+                </div>
+                <div class="statusDiv2 col-xs-2" style="padding:0px;">
+                    <div ng-if="isDeclined(job.appStat)" style="background-color: red" class="statusBall1 Mobi"></div>
+                    <div ng-if="isPending(job.appStat)" style="background-color: orange" class="statusBall1 Mobi"></div>
+                    <div ng-if="isProv(job.appStat)" style="background-color: lawngreen" class="statusBall1 Mobi"></div>
+                    <div ng-if="isConfirmed(job.appStat)" style="background-color: #286090" class="statusBall1 Mobi"></div>
+                </div>
+            </div>
+            <br/>
+            <div class="row text-center job-info-boxes-mobi">
+                <table class="col-xs-3 jobInfoBoxMobi">
+                    <thead class="blueBack">
+                    <th class=" glyphicon glyphicon-send infoBoxHead "></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{job.distance}}km</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="col-xs-3 jobInfoBoxMobi">
+                    <thead class="blueBack">
+                    <th class="glyphicon glyphicon-credit-card infoBoxHead "></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td ng-if="job.post.payPer == 'hour'"> R{{job.post.pay + getPer(job.post.timePeriod) }}</td>
+                        <td ng-if="job.post.payPer == 'tips'">{{job.post.tips == 'individualTips' ? "Individual Tips" : "Shared Tips"}}</td>
+                        <td ng-if="job.post.payPer == 'hourAndTips'">{{job.post.pay + getPer(job.post.timePeriod) + " + Tips" }}</td>
+                        <td ng-if="job.post.payPer == 'commission'">
+                            <span ng-if="job.post.commission.type == 'percentage'">{{job.post.commission.percentage}}% per {{job.post.commission.per}}</span>
+                            <span ng-if="job.post.commission.type == 'rand'">R{{job.post.commission.amount}} per {{job.post.commission.per}}</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="col-xs-3 jobInfoBoxMobi">
+                    <thead class="blueBack">
+                    <th class="glyphicon glyphicon-time infoBoxHead "></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{job.post.timePeriod}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="col-xs-3 jobInfoBoxMobi">
+                    <thead class="blueBack">
+                    <th class=" glyphicon glyphicon-calendar infoBoxHead "></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{job.post.startingDate}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $( ".jobInfoBox" ).tooltip();
+</script>

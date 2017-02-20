@@ -1,0 +1,221 @@
+<div ng-controller="jobCtrl" class="text-center">
+
+
+
+
+    <div class="signupBox jobContent blueBorder container">
+
+        <h2 ng-if="job.post.category == 'Other'"><b>{{job.post.OtherCategory}}</b></h2>
+        <h2 ng-if="job.post.category != 'Other'"><b>{{job.post.category}}</b></h2>
+        <span class="jobSubHeader">For</span><br><br>
+        <div id="jobEmployer">
+
+            <a href="/profile?user={{job.employerID._id}}"><img ng-src="data:image/png;base64,{{image}}"  class="animated pulse img-circle jobPp"></a><br class="jobPPMobile">
+            <div id="employerName">
+            <h2 ng-if="job.employerID.employerType=='Company'">{{job.employerID.company.name}}</h2>
+            <h2 ng-if="job.employerID.employerType=='Individual'">{{job.employerID.contact.name +" "+job.employerID.contact.surname}}</h2>
+            </div>
+        </div>
+        <hr>
+        <div ng-if="job.post.interviewRequired" class="text-danger">Interview Required</div>
+        <div ng-if="!job.post.interviewRequired" style="color: grey">Interview Not Required</div>
+        <hr>
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/job-details-green-new.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div class="content-heading"><h4 class="form-section-label"><b>Description </b></h4><br/></div>
+            </div>
+        </div>
+        <div class="wordwrap" > {{job.post.description}}
+        </div>
+        <hr>
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/Pay-Green-new.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div class="content-heading"><h4 class="form-section-label"><b>Pay </b></h4></div>
+            </div>
+        </div>
+        <div ng-if="job.post.pay" class="wordwrap" style="font-size: 16px;"> R{{job.post.pay}} <span ng-if="job.post.timePeriod == 'Once Off'">/hour</span><span ng-if="job.post.timePeriod != 'Once Off'">/Hour</span></div>
+        <div ng-if="job.post.tips" class="wordwrap" style="font-size: 16px;"> Payed In {{job.post.tips == 'sharedTips' ? 'Shared Tips' : 'Individual Tips'}} </div>
+        <div ng-if="job.post.payPer == 'commission'" style="font-size: 16px;">
+            <span ng-if="job.post.commission.type == 'percentage'">{{job.post.commission.percentage}}% per {{job.post.commission.per}}</span>
+            <span ng-if="job.post.commission.type == 'rand'">R{{job.post.commission.amount}} per {{job.post.commission.per}}</span>
+        </div>
+        <hr>
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/dates-green-new.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div ng-if="job.post.timePeriod == 'Once Off'" class="content-heading"><h4 class="form-section-label"><b>Date </b></h4></div>
+                <div ng-if="job.post.timePeriod != 'Once Off'" class="content-heading"><h4 class="form-section-label"><b>Dates </b></h4></div>
+            </div>
+        </div>
+        <ul class="jobpg list-group no-bg no-borders pull-in">
+
+            <span >{{job.post.startingDate}}</span><span ng-if="job.post.endDate"> - {{job.post.endDate}}</span>
+
+
+        </ul>
+
+        <hr>
+        <div ng-if="job.post.timePeriod == 'Once Off'">
+            <div class="row" style="text-align: left;">
+                <div class="col-xs-3 col-xs-offset-1">
+                    <img src="../img/Icons/Times-Green-New.png" class="heading-img img-responsive">
+                </div>
+                <div class="col-xs-8">
+                    <div  class="content-heading"><h4 class="form-section-label"><b>Times </b></h4></div>
+                </div>
+            </div>
+            <ul class="jobpg list-group no-bg no-borders pull-in">
+
+                <span ng-if="job.post.hours"> {{job.post.hours.begin + " - " +job.post.hours.end}}</span>
+
+            </ul>
+            <hr>
+        </div>
+        <hr ng-if="job.post.timePeriod == !'Once Off'">
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/Requirements-green-NEW.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div class="content-heading"><h4 class="form-section-label"><b>Requirements </b></h4></div>
+            </div>
+        </div>
+        <ul ng-if="job.post.requirements.length > 0 " class="jobpg list-group no-borders pull-in">
+            <div class="row">
+                <img src="../img/Icons/matric-results-green-NEW.png" class="sub-heading-img">
+                <div class="content-heading"><b class="form-section-label">Matric Results </b></div>
+            </div>
+            <li   ng-repeat="res in job.post.requirements">
+                <div class="clear">
+                    <div>{{res.name}}  {{res.symbol}}</div>
+                </div>
+            </li>
+
+        </ul>
+        <ul ng-if="job.post.experience.length > 0 " class="jobpg list-group no-bg no-borders pull-in">
+            <div class="row">
+                    <img src="../img/Icons/work-experience-green-NEW.png" class="sub-heading-img">
+
+
+                    <div class="content-heading"><b class="form-section-label">Experience </b></div>
+
+            </div>
+            <li   ng-repeat="res in job.post.experience">
+                <div class="clear">
+                    <div>{{res.category}}</div>
+                </div>
+            </li>
+
+        </ul>
+        <ul class="jobpg list-group no-bg no-borders pull-in">
+            <div class="row">
+
+                    <img src="../img/Icons/gender.png" class="sub-heading-img">
+
+
+                    <div class="content-heading"><b class="form-section-label">Gender </b></div>
+
+            </div>
+            <li>
+                <div class="clear">
+                    <div>{{job.post.gender}}</div>
+                </div>
+            </li>
+        </ul>
+        <ul ng-if="job.post.transport || job.post.driversLicense"  class="jobpg list-group no-bg no-borders pull-in">
+            <div class="row">
+
+                    <img src="../img/Icons/transport-green-NEW.png" class="sub-heading-img">
+
+                    <div class="content-heading"><b class="form-section-label">Transport </b></div>
+            </div>
+
+            <div ng-if="job.post.driversLicense"><span >Driver's License And Own Transport</span></div>
+        </ul>
+
+
+        <hr>
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/threshold2green-new.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div  class="content-heading"><h4 class="form-section-label"><b>Threshold </b></h4></div>
+            </div>
+        </div>
+        <ul class="jobpg list-group no-bg no-borders pull-in">
+
+            <span>Positions Available:  <b>{{job.positionsLeft}}</b></span><br>
+            <span>Remaining Applications:  <b>{{job.applicationsLeft}}</b></span>
+
+
+        </ul>
+
+        <hr>
+        <div class="row" style="text-align: left;">
+            <div class="col-xs-3 col-xs-offset-1">
+                <img src="../img/Icons/Location-Green-NEW.png" class="heading-img img-responsive">
+            </div>
+            <div class="col-xs-8">
+                <div class="content-heading"><h4 class="form-section-label"><b>Location </b></h4></div>
+            </div>
+        </div>
+        <br/>
+        <div class='embed-container maps'>
+            <iframe id="location"
+                    width="300"
+                    height="300"
+                    frameborder="0" style="border:0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <hr>
+
+
+
+
+
+
+
+    <div class="center">
+        <a ng-click="goBack()"><span class="jobGoBack glyphicon glyphicon-arrow-left"></span></a>
+        <button ng-if="application.edited && application.status !='Declined'" class="btn greenBack btn-xlarge" ng-click="acceptChanges(application)">
+            <span ng-if="application.status =='Application Pending' || application.status =='Confirmed'">Accept Changes</span>
+            <span ng-if="application.status =='Provisionally accepted'">Commit to Job</span>
+        </button>
+        <button ng-if="application.edited && application.status !='Declined'" class="btn btn-danger btn-xlarge" ng-click="withdraw(application, job)">
+            <span ng-if="application.status =='Application Pending' || application.status =='Provisionally accepted'">Withdraw Application</span>
+            <span ng-if="application.status =='Confirmed'">Withdraw Commitment</span>
+        </button>
+
+        <button ng-if="application.edited && application.status == 'Declined'" class="btn btn-danger btn-xlarge" disabled>Declined</button>
+
+        <span ng-if="!application.edited">
+            <span ng-if="application.status == 'Provisionally accepted'" >
+
+                <button class="btn greenBack btn-xlarge" ng-click="accept(application._id, application.employerID, application.jobID, job)">Accept Offer</button>
+
+                <button class="btn btn-danger btn-xlarge" ng-click="decline(application._id, application.employerID, application.jobID, job)">Withdraw</button>
+            </span>
+            <a ng-if="application.offered == 'accepted'" class="btn blueBack btn-xlarge" href="mailto:{{job.employerID.contact.email}}?Subject=O-Link:{{job.post.category}}" target="_blank">Contact</a>
+
+            <button ng-if="canApply" ng-disabled="hasApplied || clicked || job.applicationsLeft == 0" class="btn greenBack btn-xlarge" ng-click="apply()">Apply</button>
+            <button ng-if="hasApplied && application.offered != 'accepted' && application.status != 'Provisionally accepted' && application.status != 'Declined' && !clicked" class="btn greenBack btn-xlarge" disabled style="background-color: orange">{{application.status}}</button>
+            <button ng-if="hasApplied && application.status == 'Declined'" class="btn btn-danger btn-xlarge" disabled>Declined</button>
+            <button ng-if="admin" class="btn btn-plain btn-xlarge jobButtons" ng-click="edit(job._id)">Edit</button>
+            <button ng-if="admin" class="btn btn-danger btn-xlarge  jobButtons" ng-click="delete()">Delete</button>
+        </span>
+    </div>
+    </div>
+</div>
+        <br/>
+        <br/>

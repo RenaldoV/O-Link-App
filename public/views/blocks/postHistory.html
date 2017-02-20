@@ -1,0 +1,26 @@
+<div ng-controller="pastJobFeed">
+    <h4 ng-if="jobs.length == 0" class="white" style="text-align: center"><b>{{message}}</b></h4>
+    <div ng-if="jobs.length > 0" style="margin-top: 42px; padding-bottom: 0;">
+    <table class="table tab applicantsTable postHistory">
+        <thead class="talentHistoryHead blueBack"><th>Category</th><th class="applicantsTableAddSmall">Date</th><th class="tableAdd"></th><th></th><th></th><th></th>
+        </thead>
+        <tbody>
+        <tr  ng-repeat="job in jobs" ng-mouseleave="unhighlightChildren($event)" ng-mouseover="highlightChildren($event)" style="cursor: pointer;">
+            <td ng-click="getEmployees(job._id)" ng-if="job.post.category != 'Other'">{{job.post.category}}</td>
+            <td ng-click="getEmployees(job._id)" ng-if="job.post.category == 'Other'">{{job.post.OtherCategory}}</td>
+            <td ng-click="getEmployees(job._id)" class="applicantsTableAddSmall">{{job.post.startingDate}}</td>
+            <td ng-click="getEmployees(job._id)" class="tableAdd"></td>
+            <td>
+                <button class="btn blueBack editAndRepost" ng-click="repost(job._id)">Edit and Repost</button>
+            </td>
+            <td>
+                <a class="btn blueBack"  href="/employmentHistory" style="margin-top: -3px;">View Employees</a>
+            </td>
+            <td ng-click="getEmployees(job._id)" style="width: 100%; height: 49px;" class="tableAdd"></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</div>

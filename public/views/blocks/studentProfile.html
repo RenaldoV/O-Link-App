@@ -1,0 +1,215 @@
+<!-- content -->
+<div id="content">
+    <div class="app-content-body text-center" ng-controller='studentProfileControl'>
+
+
+        <div class="profileRating">
+            <div ng-if="user.rating" class="numberRating">
+                {{user.rating}}
+
+            </div>
+            <span ng-if="user.rating" class="small">From {{user.numRatings}} review<span
+                    ng-if="user.numRatings != 1">s</span></span>
+
+            <div ng-if="!user.rating" class="numberRating">
+                N/A
+            </div>
+            <span ng-if="!user.rating" class="small">From 0 reviews</span>
+
+            <div>
+                <jk-rating-stars class="profileStars" max-rating="5" rating="user.rating" read-only="true"></jk-rating-stars>
+            </div>
+        </div>
+        <div class="hbox hbox-auto-xs hbox-auto-sm">
+
+
+            <div class="profileBox profileLeft col-md-6">
+                <div  class="panel blueBorder cards" id="info">
+                    <div class="card-header blueBack">
+                        <h4 class="font-thin m-t-none m-b-none ">Required Info</h4>
+                    </div>
+                    <div master class="wrapper cards" style="margin-top:20px">
+                        <img ng-if="showProfilePic" ng-src="data:image/png;base64,{{image}}"
+                             class="profileImage img-circle">
+                        <ul ng-if="myProfile" class="list-group no-bg no-borders pull-in">
+                            <li class="list-group-item">
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1">
+                                        <b class="pull-left">Contact Number</b>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <small class="text-muted pull-left">{{user.contact.contactNo}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1">
+                                        <b class="pull-left">Email</b>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <small class="text-muted pull-left">{{user.contact.email}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <hr ng-if="myProfile">
+                        <ul class="list-group no-bg no-borders pull-in">
+                            <li class="list-group-item">
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1">
+                                        <b class="pull-left">Gender</b>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <small class="text-muted pull-left">{{user.gender}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1">
+                                        <b class="pull-left">ID Number</b>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <small class="text-muted pull-left">{{user.IDnumber}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1">
+                                        <b class="pull-left">Date Of Birth</b>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <small class="text-muted pull-left">{{user.dob}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="list-group no-bg no-borders pull-in">
+                            <li class="list-group-item">
+                                <div class="clear">
+                                    <div><b>About</b></div>
+                                    <small class="text-muted">{{user.aboutme}}</small>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profileBox profileRight col-md-6">
+                <div  class="panel greenBorder cards ">
+                    <div class="card-header greenBack">
+                        <h4 class="font-thin m-t-none m-b-none ">Additional Info</h4>
+                    </div>
+
+                    <div ng-style="style" class="wrapper" style="overflow-y: scroll; margin-bottom:40px;">
+                        <div class="studies" ng-if="user.qualification">
+                            <h4 class="m-t-xs m-b-xs"><b>Academia</b></h4>
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li class="list-group-item">
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1">
+                                            <b class="pull-left">Institution Type</b>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <small class="text-muted pull-left">{{user.institution.type}}</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1">
+                                            <b class="pull-left">Institution Name</b>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <small ng-if="user.institution.name != 'Other'" class="text-muted pull-left">
+                                                {{user.institution.name}}
+                                            </small>
+                                            <small ng-if="user.institution.name == 'Other'" class="text-muted pull-left">
+                                                {{user.institution.otherName}}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item" ng-if="user.qualification.name">
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1">
+                                            <b class="pull-left">Qualification Name</b>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <small class="text-muted pull-left">{{user.qualification.name}}</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <hr>
+                                <h4 class="m-t-xs m-b-xs"><b>Drivers License</b></h4>
+                                <li class="list-group-item">
+                                    <div class="clear">
+                                        <small class="greenText" ng-if="user.driversLicence">Has License<br></small>
+                                        <small class="text-danger" ng-if="!user.driversLicence">No License<br></small>
+                                    </div>
+                                    <a ng-if="user.driversFile" class="btn btn-sm blueBack" target="_blank" ng-href="data:application/pdf;base64,{{driversFile}}">View Driver's License</a>
+                                </li>
+                                <hr>
+                            </ul>
+                        </div>
+
+                        <div class="matric" ng-if="user.results.length > 0">
+                            <h4 class="m-t-xs m-b-xs"><b>Matric results</b></h4>
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li class="list-group-item">
+                                    <div class="clear">
+                                        <small class="text-muted" ng-repeat="res in user.results">{{res.name + " "+res.symbol}}</b><br></small>
+                                    </div>
+                                </li>
+                                <a ng-if="matricFile" class="btn btn-sm blueBack" target="_blank" ng-href="data:application/pdf;base64,{{matricFile}}">View Results</a>
+                                <hr>
+                            </ul>
+                        </div>
+                        <div class="expr" ng-if="user.work.length > 0">
+                            <h4 class="m-t-xs m-b-xs"><b>Work Experience</b></h4>
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li class="list-group-item" ng-repeat="work in user.work">
+                                    <div class="clear">
+                                        <div ng-if="work.category != 'Other'"><b>{{work.category}}</b></div>
+                                        <div ng-if="work.category == 'Other'"><b>{{work.otherCategory}}</b></div>
+                                        <small class="text-muted"><b>Job description:</b><br/>
+                                            {{work.roleDescription}}<br></small>
+                                        <small class="text-muted">{{work.duration}}<br></small>
+                                        <small class="text-muted">{{work.contact.name}}<br></small>
+                                        <small class="text-muted">{{work.contact.email}}<br></small>
+                                        <small class="text-muted">{{work.contact.number}}</small>
+                                    </div>
+                                </li>
+                                <hr>
+                            </ul>
+                        </div>
+                        <div class="expr" ng-if="user.certifications.length > 0">
+                            <h4 class="m-t-xs m-b-xs"><b>Additional Qualifications / Certifications</b></h4>
+                            <ul class="list-group no-bg no-borders pull-in">
+                                <li class="list-group-item" ng-repeat="cert in user.certifications">
+                                    <div class="clear">
+                                        <div><b>{{cert.name}}</b></div>
+                                        <small class="text-muted"><b>Qualification description:</b><br/>
+                                            {{cert.roleDescription}}<br></small>
+                                        <a ng-if="cert.file" class="btn btn-sm blueBack" target="_blank" ng-href="data:application/pdf;base64,{{cert.file}}">View Qualification</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <a ng-if="myProfile" class="btn employerButton btn-xlarge" href="/editProfile">Edit</a>
+
+
+    </div>
+</div>

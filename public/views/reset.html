@@ -1,0 +1,115 @@
+<div class="signupBox container w-xxl w-auto-xs s" ng-controller="reset">
+
+  <div class="m-b-lg">
+    <div class="wrapper text-center">
+      <strong >Type New Password</strong>
+    </div>
+    <form name="form" class="form-validation" ng-submit="submitForm()">
+      <div class="text-danger wrapper text-center">
+          
+      </div>
+        <div class="passTooltip" title="6 or more Character, 1 or more Capital letters, 1 or more Special Characters (eg: !,@,#,$)">
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <!-- password req  Minimum 8 chars at least 1 alphabet char and 1 number-->
+                        <input id="stuPassw" name="stuPassw" type="password" placeholder="Password" class="form-control no-border pwd2" ng-model="user.passwordHash" pattern="((?=.*\d)(?=.*[A-Z])(?=.+\W).{6,20})" required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default reveal2 no-border" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+                                </span>
+                    </div>
+                </div>
+                <div class="list-group-item">
+                    <div class="input-group">
+                        <input id="stuRePassw" name="stuRePassw" type="password" placeholder="Confirm password" class="form-control no-border pwd3" required>
+                                <span class="input-group-btn">
+                                    <button class=" btn btn-default reveal3 no-border" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+                                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <button target="_self" type="submit" class="sign-in-btn btn btn-lg btn-primary btn-block">Reset Password</button>
+      <div class="line line-dashed"></div>
+    </form>
+  </div>
+ <div>{{result}}</div>
+</div>
+
+
+<script>
+    if (document.addEventListener) {
+        document.addEventListener('invalid', function(e) {
+            var element = $(e.target);
+            element.addClass("invalid");
+        }, true);
+    }
+    $(document).bind('change', function(e){
+
+        if( $(e.target).is(':invalid') ){
+            $(e.target).addClass('invalid');
+        } else {
+            $(e.target).removeClass('invalid');
+        }
+    });
+    $(document).bind('keypress', function(e){
+
+        if( $(e.target).is(':invalid') ){
+            $(e.target).addClass('invalid');
+        } else {
+            $(e.target).removeClass('invalid');
+        }
+    });
+    $( ".passTooltip" ).tooltip();
+
+    $(".reveal2").mousedown(function() {
+      $(".pwd2").get(0).type='text';
+    })
+    .mouseup(function() {
+      $(".pwd2").get(0).type='password';
+    })
+    .mouseout(function() {
+      $(".pwd2").get(0).type='password';
+    });
+
+    $(".reveal3").mousedown(function() {
+      $(".pwd3").get(0).type='text';
+    })
+    .mouseup(function() {
+      $(".pwd3").get(0).type='password';
+    })
+    .mouseout(function() {
+      $(".pwd3").get(0).type='password';
+    });
+
+    $("input[name=stuPassw]").on("invalid", function () {
+        this.setCustomValidity("Password must contain at least 6 characters, 1 uppercase character, 1 number and 1 special character");
+    });
+    $("input[name=stuPassw]").on("change", function () {
+        this.setCustomValidity("");
+    });
+
+    $(".sign-in-btn").on('click', function()
+    {
+        if($("#stuRePassw").val() != $("#stuPassw").val())
+        {
+            document.getElementById("stuRePassw").setCustomValidity("Passwords do not match.");
+        }
+        else
+        {
+            document.getElementById("stuRePassw").setCustomValidity("");
+        }
+    });
+
+    $("#stuRePassw").focusout(function () {
+        if($("#stuRePassw").val() != $("#stuPassw").val())
+        {
+            this.setCustomValidity("Passwords do not match.");
+        }
+        else
+        {
+            this.setCustomValidity("");
+        }
+
+    });
+</script>

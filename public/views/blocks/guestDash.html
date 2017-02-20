@@ -1,0 +1,145 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm">
+  <!-- main -->
+  <div class="col">
+    <!-- / main header -->
+    <div class="wrapper-md">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5" ng-controller="stats">
+          <div class="row row-sm text-center">
+            <div class="col-xs-6">
+              <div class="panel padder-v item card dashboxBlue">
+                <div class="h1 font-thin h1" id="newJobs">{{stats.jobsCount}}</div>
+                <span class="text-muted text-xs">Total Jobs</span>
+
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <a href class="block panel padder-v item card dashboxGreen">
+                <span class="font-thin h1 block" id="newStudents">0</span>
+                <span class="text-muted text-xs">My Total Applications</span>
+
+              </a>
+            </div>
+            <div class="col-xs-6">
+              <a href class="block panel padder-v item card dashboxPurple">
+                <span class="font-thin h1 block" id="totalEmployers">{{stats.employerCount}}</span>
+                <span class="text-muted text-xs">Employers</span>
+
+              </a>
+            </div>
+            <div class="col-xs-6">
+              <div class="panel padder-v item card dashboxMuted">
+                <div class="font-thin h1" id="totalStudents">{{stats.studentCount}}</div>
+                <span class="text-muted text-xs">Talent</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="dashSlogan">Innovative Thinking <br> Real World Solutions</div>
+        </div>
+        <div class="col-md-7">
+          <div class="panel wrapper  blueBorder  text-center cards">
+
+            <div class="card-header blueBack">
+              <h4 class="font-thin m-t-none m-b">Latest Job Posts</h4>
+            </div>
+
+            <div ng-controller="jobFeed"  class="jobPosts">
+              <table class="table text-left">
+                <thead><th>Category</th><th>Pay</th><th>Location</th>
+                </thead>
+                <tbody>
+                <tr  ng-repeat="job in jobs" ng-click="getJob(job._id)" style="cursor: pointer;">
+                  <td>{{job.post.category}}</td>
+
+                  <td>R{{job.post.pay + "/" + getPer(job.post.timePeriod)}}</td>
+                  <td>{{job.post.location}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / stats -->
+<br>
+      <!-- service -->
+      <div class="panel hbox hbox-auto-xs greenBorder text-center" ng-controller="goBrowse">
+        <div class="col wrapper cards">
+          <div class="card-header greenBack">
+            <h4 class="font-thin m-t-none m-b-none ">Browse Jobs</h4>
+          </div>
+          <form id="browseForm" ng-submit="submit()" >
+
+
+            <br>
+            <div class="btn-group" data-toggle="buttons">
+
+              <label class="btn btn-primary-outline timeSelect" id="allP" style="height:54px;" ng-click="selectAllP()">
+                <input
+                        id="selectAllP"
+                        type="checkbox"
+                        name="selectAll"
+                        value="Select All"
+
+                /> {{allPer}}
+              </label>
+              <label class="btn btn-primary-outline  timeSelect" ng-repeat="period in timePeriods" ng-click="toggleSelectionP(period.name)">
+                <input class="periods"
+                        type="checkbox"
+                        name="selectedPeriods[]"
+                        value="{{period}}"
+                        ng-checked="selectionP.indexOf(period.name) > -1"
+
+                /> {{period.name}}<br><small >({{period.description}})</small>
+              </label>
+
+            </div>
+          <br><br>
+
+
+
+          <div>
+              <div>
+
+                  <div class="btn-group-lg " data-toggle="buttons">
+
+
+                    <label class="btn btn-primary-outline categorySelect" ng-repeat="category in categories" ng-click="toggleSelectionC(category)">
+                      <input
+                              class="categories"
+                              type="checkbox"
+                              name="selectedCategories[]"
+                              value="{{category}}"
+                              ng-checked="selectionC.indexOf(category) > -1"
+
+                      /> {{category}}
+                    </label>
+
+                  </div>
+
+                <br>
+                <div>
+                <div class="btn-group-lg " data-toggle="buttons">
+                <label class="btn btn-primary-outline  categorySelect" ng-click="selectAllC()">
+                  <input
+                          id="selectAllC"
+                          type="checkbox"
+                          name="selectAll"
+                          value="Select All"
+
+                  /> {{allCat}}
+                </label></div>
+                <button type="submit" class="btn browseButton" >Browse</button>
+                </div>
+
+
+       </div>
+      </div>
+          </form>
+     </div>
+    </div>
+  </div>
+</div>
+  </div>
