@@ -347,6 +347,7 @@ app.controller('employerApplicants', function ($scope,$http,cacheUser, session, 
                                 $scope.gotoProfile = function(){
                                     $location.url("/profile?user="+app.studentID._id);
                                 };
+                                console.log(app.studentID);
                                 app.distance = distance(app.studentID.location.geo.lat,app.studentID.location.geo.lng,job.post.location.geo.coordinates[1],job.post.location.geo.coordinates[0]);
                             });
                         });

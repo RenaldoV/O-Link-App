@@ -245,7 +245,7 @@ div.feature a.jobLink {
 }
 
 div.feature:hover {
-    border-width: 3px;
+    border-width: 1px;
     border-color: #33B6CC;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 30px rgba(51, 182, 204, 0.7);
     outline: 0 none;
@@ -265,13 +265,6 @@ div.jobBox.studentBox:first-child{
 }
 .jobBox.studentBox{
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-}
-.ppRating{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .cropArea {
@@ -704,15 +697,14 @@ td > .jobHistoryStars .star-button.star-on .material-icons {
 }
 .applicantStars{
     border: none;
-    text-align: center;
-    width:109px;
+    width:75px;
     margin:auto;
 }
 
 .applicantStars > input { display: none; }
 .applicantStars > label:before {
-    margin-left:5px;
-    font-size: 18px;
+    margin-left:2px;
+    font-size: 10px;
     font-family: FontAwesome;
     display: inline-block;
     content: "\f005";
@@ -1044,7 +1036,7 @@ border-bottom: 0;
 .applHead{
     text-align: left;
     margin-top: 0px;
-    padding-left: 0px;
+    padding: 6px;
 }
 
 .jobInfoBox{
@@ -1063,15 +1055,15 @@ border-bottom: 0;
 }
 .appInfoBox{
     text-align: center;
-    width:23%;
-    padding: 0;
+    padding: 7px;
     height: 42px;
-    border: 1px solid #33B6CC;
     display:inline-table;
-    margin-right:2.1%;
+}
+.appInfoBox.FirstBox{
+    padding-left: 0;
 }
 .appInfoBox:last-of-type{
-    margin-right:0;
+    padding-right:0;
 }
 
 .institutionBox{

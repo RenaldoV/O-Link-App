@@ -1156,9 +1156,6 @@ body {
   fieldset.applicantStars > label:before {
     font-size: 14px;
   }
-  fieldset.applicantStars{
-    width: 90px;
-  }
   .jobMobileSpace {
     display: block;
   }
@@ -1175,13 +1172,10 @@ body {
 
 @media (max-width: 680px) {
   img.applicantsLogos{
-    width: 70%;
-    height:70%;
+    width: 50px;
+    height: 50px;
   }
 
-  div.ppRating{
-    width:30%;
-  }
   div.applicantsBtns > button{
     height:30px;
     width: 80px;
