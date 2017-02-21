@@ -54,7 +54,10 @@ span.fa-stack.fa-lg.green {
     display: flex;
     flex-direction: row;
 }
-
+div.profInfoCol{
+    padding:0px;
+    text-align: left;
+}
 .jobInfoBoxMobi{
     padding:0px;
     width:24%;

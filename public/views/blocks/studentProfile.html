@@ -34,20 +34,20 @@
                         <ul ng-if="myProfile" class="list-group no-bg no-borders pull-in">
                             <li class="list-group-item">
                                 <div class="row clear">
-                                    <div class="col-xs-5 col-xs-offset-1">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                         <b class="pull-left">Contact Number</b>
                                     </div>
-                                    <div class="col-xs-5">
+                                    <div class="col-xs-5 profInfoCol">
                                         <small class="text-muted pull-left">{{user.contact.contactNo}}</small>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="row clear">
-                                    <div class="col-xs-5 col-xs-offset-1">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                         <b class="pull-left">Email</b>
                                     </div>
-                                    <div class="col-xs-5">
+                                    <div class="col-xs-5 profInfoCol">
                                         <small class="text-muted pull-left">{{user.contact.email}}</small>
                                     </div>
                                 </div>
@@ -57,30 +57,30 @@
                         <ul class="list-group no-bg no-borders pull-in">
                             <li class="list-group-item">
                                 <div class="row clear">
-                                    <div class="col-xs-5 col-xs-offset-1">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                         <b class="pull-left">Gender</b>
                                     </div>
-                                    <div class="col-xs-5">
+                                    <div class="col-xs-5 profInfoCol">
                                         <small class="text-muted pull-left">{{user.gender}}</small>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="row clear">
-                                    <div class="col-xs-5 col-xs-offset-1">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                         <b class="pull-left">ID Number</b>
                                     </div>
-                                    <div class="col-xs-5">
+                                    <div class="col-xs-5 profInfoCol">
                                         <small class="text-muted pull-left">{{user.IDnumber}}</small>
                                     </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="row clear">
-                                    <div class="col-xs-5 col-xs-offset-1">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                         <b class="pull-left">Date Of Birth</b>
                                     </div>
-                                    <div class="col-xs-5">
+                                    <div class="col-xs-5 profInfoCol">
                                         <small class="text-muted pull-left">{{user.dob}}</small>
                                     </div>
                                 </div>
@@ -111,20 +111,20 @@
                             <ul class="list-group no-bg no-borders pull-in">
                                 <li class="list-group-item">
                                     <div class="row clear">
-                                        <div class="col-xs-5 col-xs-offset-1">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                             <b class="pull-left">Institution Type</b>
                                         </div>
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-5 profInfoCol">
                                             <small class="text-muted pull-left">{{user.institution.type}}</small>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="row clear">
-                                        <div class="col-xs-5 col-xs-offset-1">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                             <b class="pull-left">Institution Name</b>
                                         </div>
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-5 profInfoCol">
                                             <small ng-if="user.institution.name != 'Other'" class="text-muted pull-left">
                                                 {{user.institution.name}}
                                             </small>
@@ -136,10 +136,10 @@
                                 </li>
                                 <li class="list-group-item" ng-if="user.qualification.name">
                                     <div class="row clear">
-                                        <div class="col-xs-5 col-xs-offset-1">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
                                             <b class="pull-left">Qualification Name</b>
                                         </div>
-                                        <div class="col-xs-5">
+                                        <div class="col-xs-5 profInfoCol">
                                             <small class="text-muted pull-left">{{user.qualification.name}}</small>
                                         </div>
                                     </div>
