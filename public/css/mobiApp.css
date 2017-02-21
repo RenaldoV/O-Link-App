@@ -42,14 +42,8 @@ span.fa-stack.fa-lg.green {
     border-color: grey;
 }
 .mobiBrowseLogos{
-    width:90%;
-    height:90%;
-}
-
-.mobiJobsLogo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width:50px;
+    height:50px;
 }
 
 .mobiJobBox{

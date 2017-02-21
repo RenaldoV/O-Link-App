@@ -67,9 +67,9 @@
     <div class="jobsContainer container">
         <h4 class="black"><b>{{message}}</b></h4>
         <div ng-click="gotoJob(job._id)" class=" jobBox mobiJobBox blueTop" ng-repeat="job in jobs" style="width:100%;margin-bottom:10px; border:1px solid; border-radius: 10px; border-color:#33B6CC; background-color: white; cursor:pointer;" >
-            <div class="row firstJobRowMobi">
+            <div class="row firstJobRowMobi" style="padding-left: 15px;padding-right: 15px;">
                 <div class="col-xs-3 mobiJobsLogo">
-                        <img ng-src="data:image/png;base64,{{job.logo}}" class="img-circle mobiBrowseLogos"><br>
+                        <img ng-src="data:image/png;base64,{{job.logo}}" class="img-circle pull-left mobiBrowseLogos"><br>
                 </div>
                 <div class="col-xs-5 jobsHead" style="padding-left:5px; padding-right:5px; margin-top:2px;">
                     <h4 class="jobCategory" ng-if="job.post.category != 'Other'">{{job.post.category}}</h4>
@@ -78,15 +78,15 @@
                 <div class="col-xs-2 jobsHead interviewDanger"  style="margin-top:13px; padding:0px;">
                     <span style="font-size: 12px; background-color: lightgrey; border-radius: 3px;" class="text-danger" ng-if="job.post.interviewRequired">Interview</span>
                 </div>
-                <div class="statusDiv2 col-xs-2" style="padding:0px;">
-                    <div ng-if="isDeclined(job.appStat)" style="background-color: red" class="statusBall1 Mobi"></div>
-                    <div ng-if="isPending(job.appStat)" style="background-color: orange" class="statusBall1 Mobi"></div>
-                    <div ng-if="isProv(job.appStat)" style="background-color: lawngreen" class="statusBall1 Mobi"></div>
-                    <div ng-if="isConfirmed(job.appStat)" style="background-color: #286090" class="statusBall1 Mobi"></div>
+                <div class="statusDiv2 col-xs-2">
+                    <div ng-if="isDeclined(job.appStat)" style="background-color: red" class="statusBall1 Mobi pull-right"></div>
+                    <div ng-if="isPending(job.appStat)" style="background-color: orange" class="statusBall1 Mobi pull-right"></div>
+                    <div ng-if="isProv(job.appStat)" style="background-color: lawngreen" class="statusBall1 Mobi pull-right"></div>
+                    <div ng-if="isConfirmed(job.appStat)" style="background-color: #286090" class="statusBall1 Mobi pull-right"></div>
                 </div>
             </div>
-            <br/>
-            <div class="row text-center job-info-boxes-mobi">
+            <hr style="margin-top: 8px;margin-bottom: 10px;">
+            <div class="row text-center job-info-boxes-mobi" style="padding-left: 30px;padding-right: 29px;">
                 <table class="col-xs-3 jobInfoBoxMobi">
                     <thead class="blueBack">
                     <th class=" glyphicon glyphicon-send infoBoxHead "></th>
