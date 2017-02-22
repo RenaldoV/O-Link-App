@@ -6,13 +6,33 @@
         <small ng-if="!ngDialogData.jobID.post.OtherCategory">{{ngDialogData.jobID.post.category}}</small>
         <small ng-if="ngDialogData.jobID.post.OtherCategory">{{ngDialogData.jobID.post.OtherCategory}}</small>
         <form name="rateForm">
-        <div class="rater">
-            <jk-rating-stars class="studentRating" rating="rating"></jk-rating-stars>
-        </div>
-        <textarea class="comment" ng-model="comment"></textarea>
+            <div class="rater">
+                <jk-rating-stars class="studentRating" rating="rating"></jk-rating-stars>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Comment (20 - 300 characters)" class="comment rateCommentBox form-control" ng-model="comment" id="commentArea" rows="2"></textarea>
+                <div id="textarea_feedback"></div><br/>
+                <div ng-show="commentError" class="alert alert-danger" role="alert">
+                    Your comment should be between 20 and 300 characters long.
+                </div>
+            </div>
+
 
         <div class="ngdialog-buttons">
-            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-disabled="rateForm.$invalid" ng-click=" confirmStudent(); closeThisDialog('button')")>OK</button>
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-disabled="rateForm.$invalid" ng-click=" confirmStudent(); ")>OK</button>
         </div>
         </form>
 </div>
+<script>
+    $(function () {
+        var text_max = 300;
+        $('#textarea_feedback').html(text_max + ' remaining');
+
+        $('#commentArea').keyup(function() {
+            var text_length = $('#commentArea').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#textarea_feedback').html(text_remaining + ' remaining');
+        });
+    });
+</script>

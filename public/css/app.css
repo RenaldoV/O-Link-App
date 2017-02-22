@@ -5427,12 +5427,10 @@ div.profileRight {
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-  transform: scale(0.8, 0.8);
+  transform: scale(0.9, 0.9);
   text-align: center;
   display: inline-block;
   position: absolute;
-  width: 120vh;
-  height: 120vh;
   top: 0;
 }
 

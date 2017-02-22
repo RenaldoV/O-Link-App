@@ -112,62 +112,48 @@ app.service('rate', function(ngDialog, $controller, $http){
 });
 
 app.controller('rateBox', function($scope, $http, notify){
-    console.log($scope.ngDialogData);
+    //console.log($scope.ngDialogData);
 var app = $scope.ngDialogData;
 
+
     $scope.rating;
-    $scope.confirmEmployer = function(){
-        console.log($scope.rating);
-
-        $http
-            .post('/rateEmployer', {_id: app._id, status: app.status, employerRating: parseFloat($scope.rating), commentToEmployer: $scope.comment,id: app.employerID._id})
-            .then(function (res, err) {
-
-
-                if(app.jobID.post.OtherCategory)
-                    var Cat = app.jobID.post.OtherCategory;
-                else
-                    var Cat = app.jobID.post.category;
-
-                notify.go({
-                    type: 'rated',
-                    jobID: app.jobID._id,
-                    userID: app.employerID._id,
-                    status: "rated "+$scope.rating+ " stars",
-                    title: Cat,
-                    comment: $scope.comment
-                });
-                swal("User Rated.", "The user has been notified.", "success");
-
-
-            });
-
-    };
 
     $scope.confirmStudent = function(){
-        console.log($scope.rating);
+        //console.log($scope.rating);
+        if(!$scope.rating){
+            swal("Error", "You must rate at least 1 star.", "warning");
+        }
+        else{
+            if(!$scope.comment || ( $scope.comment.length >= 20 && $scope.comment.length <= 300)){
+                //console.log("comment is correct length proceeding...");
+                $http
+                 .post('/rateStudent', {_id: app._id, status: app.status, studentRating: parseFloat($scope.rating), commentToStudent: $scope.comment, id: app.studentID._id})
+                 .then(function (res, err) {
+                     if(app.jobID.post.OtherCategory)
+                     var Cat = app.jobID.post.OtherCategory;
+                     else
+                     var Cat = app.jobID.post.category;
 
-        $http
-            .post('/rateStudent', {_id: app._id, status: app.status, studentRating: parseFloat($scope.rating), commentToStudent: $scope.comment, id: app.studentID._id})
-            .then(function (res, err) {
+                     notify.go({
+                         type: 'rated',
+                         jobID: app.jobID._id,
+                         userID: app.studentID._id,
+                         status: "rated "+$scope.rating+ " stars",
+                         title: Cat,
+                         comment: $scope.comment
+                     });
+                     swal("User Rated.", "The user has been notified.", "success");
+                     $scope.closeThisDialog();
+                 });
+            }
+            else{
+                //console.log("Comment is not correct length");
+                $scope.commentError = true;
+            }
+        }
 
-                if(app.jobID.post.OtherCategory)
-                    var Cat = app.jobID.post.OtherCategory;
-                else
-                    var Cat = app.jobID.post.category;
-
-                notify.go({
-                    type: 'rated',
-                    jobID: app.jobID._id,
-                    userID: app.studentID._id,
-                    status: "rated "+$scope.rating+ " stars",
-                    title: Cat,
-                    comment: $scope.comment
-                });
-                swal("User Rated.", "The user has been notified.", "success");
 
 
-            });
 
     };
 
