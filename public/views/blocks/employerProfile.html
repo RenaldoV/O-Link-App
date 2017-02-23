@@ -9,12 +9,12 @@
         </div>
 
         <div class="text-center" ng-if="user.employerType == 'Company'">
-            <div ng-if="user.employerType = 'Company'" class="row text-center ">
+            <div ng-if="user.employerType = 'Company'" class="row text-center " style="margin:0px;">
 
                 <div class=" profileBox profileLeft col-md-6 ">
                     <div class="panel blueBorder cards">
                         <div  class="card-header blueBack">
-                            <h4 class="font-thin m-t-none m-b-none ">Info</h4>
+                            <h4 class="font-thin m-t-none m-b-none ">Company</h4>
                         </div>
 
                         <div master class="wrapper" >
@@ -22,24 +22,37 @@
                                  class="profileImage img-circle">
 
                             <div class="studies">
-                                <h4 class="m-t-xs m-b-xs">Company</h4>
                                 <ul class="list-group no-bg no-borders pull-in">
                                     <li class="list-group-item">
-                                        <div class="clear">
-                                            <div>Company Name</div>
-                                            <small class="text-muted">{{user.company.name}}</small>
+                                        <div class="row clear">
+                                            <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                                <b class="pull-left">Company Name</b>
+                                            </div>
+                                            <div class="col-xs-5 profInfoCol">
+                                                <small class="text-muted pull-left">{{user.company.name}}</small>
+                                            </div>
                                         </div>
                                     </li>
                                     <li class="list-group-item">
-                                        <div class="clear">
-                                            <div>Company Description</div>
-                                            <small class="text-muted">{{user.company.description}}</small>
+                                        <div class="row clear">
+                                            <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                                <b class="pull-left">Company Category</b>
+                                            </div>
+                                            <div class="col-xs-5 profInfoCol">
+                                                <small ng-if="user.company.category != 'Other'" class="text-muted pull-left">{{user.company.category}}</small>
+                                                <small ng-if="user.company.category == 'Other'" class="text-muted pull-left">{{user.company.otherCategory}}</small>
+                                            </div>
+
                                         </div>
                                     </li>
                                     <li class="list-group-item">
-                                        <div class="clear">
-                                            <div>Location</div>
-                                            <small class="text-muted">{{user.company.location.address}}</small>
+                                        <div class="row clear">
+                                            <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                                <b class="pull-left">Location</b>
+                                            </div>
+                                            <div class="col-xs-5 profInfoCol">
+                                                <small class="text-muted pull-left">{{user.company.location.address.split(",")[1]}}</small>
+                                            </div>
                                         </div>
                                     </li>
 
@@ -60,28 +73,44 @@
 
                             <ul class="list-group no-bg no-borders pull-in">
                                 <li class="list-group-item">
-                                    <div class="clear">
-                                        <div>Name</div>
-                                        <small class="text-muted">{{user.contact.name}} {{user.contact.surname}}</small>
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                            <b class="pull-left">Name</b>
+                                        </div>
+                                        <div class="col-xs-5 profInfoCol">
+                                            <small class="text-muted pull-left">{{user.contact.name}} {{user.contact.surname}}</small>
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item" ng-if="user.employerType == 'Company'">
-                                    <div class="clear">
-                                        <div>Position in company</div>
-                                        <small class="text-muted">{{user.company.position}}</small>
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                            <b class="pull-left">Position in company</b>
+                                        </div>
+                                        <div class="col-xs-5 profInfoCol">
+                                            <small class="text-muted pull-left">{{user.company.position}}</small>
+                                        </div>
                                     </div>
                                 </li>
 
                                 <li class="list-group-item">
-                                    <div class="clear">
-                                        <div>Contact Number</div>
-                                        <small class="text-muted">{{user.contact.contactNo}}</small>
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                            <b class="pull-left">Contact Number</b>
+                                        </div>
+                                        <div class="col-xs-5 profInfoCol">
+                                            <small class="text-muted pull-left">{{user.contact.contactNo}}</small>
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
-                                    <div class="clear">
-                                        <div>Email</div>
-                                        <small class="text-muted">{{user.contact.email}}</small>
+                                    <div class="row clear">
+                                        <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                            <b class="pull-left">Email</b>
+                                        </div>
+                                        <div class="col-xs-5 profInfoCol">
+                                            <small class="text-muted pull-left">{{user.contact.email}}</small>
+                                        </div>
                                     </div>
                                 </li>
 
@@ -92,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <div ng-if="user.employerType == 'Individual'" class="row text-center">
+        <div ng-if="user.employerType == 'Individual'" class="row text-center" style="margin:0px;">
             <div class="col-md-3"></div>
             <div class=" profileBox col-md-6">
                 <div class="panel  greenBorder cards" id="contactBox">
@@ -104,28 +133,44 @@
 
                         <ul class="list-group no-bg no-borders pull-in">
                             <li class="list-group-item">
-                                <div class="clear">
-                                    <div>Name</div>
-                                    <small class="text-muted">{{user.contact.name}} {{user.contact.surname}}</small>
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                        <b class="pull-left">Name</b>
+                                    </div>
+                                    <div class="col-xs-5 profInfoCol">
+                                        <small class="text-muted pull-left">{{user.contact.name}} {{user.contact.surname}}</small>
+                                    </div>
                                 </div>
                             </li>
                             <li class="list-group-item" ng-if="user.employerType == 'Company'">
-                                <div class="clear">
-                                    <div>Position in company</div>
-                                    <small class="text-muted">{{user.company.position}}</small>
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                        <b class="pull-left">Position in company</b>
+                                    </div>
+                                    <div class="col-xs-5 profInfoCol">
+                                        <small class="text-muted pull-left">{{user.company.position}}</small>
+                                    </div>
                                 </div>
                             </li>
 
                             <li class="list-group-item">
-                                <div class="clear">
-                                    <div>Contact Number</div>
-                                    <small class="text-muted">{{user.contact.contactNo}}</small>
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                        <b class="pull-left">Contact Number</b>
+                                    </div>
+                                    <div class="col-xs-5 profInfoCol">
+                                        <small class="text-muted pull-left">{{user.contact.contactNo}}</small>
+                                    </div>
                                 </div>
                             </li>
                             <li class="list-group-item">
-                                <div class="clear">
-                                    <div>Email</div>
-                                    <small class="text-muted">{{user.contact.email}}</small>
+                                <div class="row clear">
+                                    <div class="col-xs-5 col-xs-offset-1 profInfoCol">
+                                        <b class="pull-left">Email</b>
+                                    </div>
+                                    <div class="col-xs-5 profInfoCol">
+                                        <small class="text-muted pull-left">{{user.contact.email}}</small>
+                                    </div>
                                 </div>
                             </li>
 
