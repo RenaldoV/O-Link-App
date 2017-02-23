@@ -1,6 +1,6 @@
 <div><div ng-controller="employmentHistory" class="empApplicants">
     <h4 ng-if="jobs.length == 0" class="white" style="text-align: center"><b>{{message}}</b></h4>
-    <div style="margin-top:42px;" ng-if="job.applications.length > 0" ng-repeat="job in jobs" class="jobApps">
+    <div style="margin-top:0px;" ng-if="job.applications.length > 0" ng-repeat="job in jobs" class="jobApps">
         <div class="applicantsHead blueBack" ng-click="toggleApplicants(job._id)">
             <div ng-if="job.post.category != 'Other'" class="appHeading">
                 {{job.post.category}}
@@ -38,20 +38,7 @@
                     <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmall histPbig" ng-if="app.commentToStudent">{{app.commentToStudent}}</td>
                     <td ng-click="getApplicant(app.studentID._id)" class="tableAddSmall histPbig" ng-if="!app.commentToStudent">No Comment</td>
                     <td ng-click="getApplicant(app.studentID._id)" class="histPrating">
-                        <span ng-if="app.studentRating" class="jobHistNumRating">{{app.studentRating}}</span>
-                        <span ng-if="!app.studentRating" class="jobHistNumRating">N/A</span>
-                        <fieldset class="jobHistStars jobHistPMed">
-                            <label  class = "full {{app.filled[9]}}" for="star5{{$index}}" title="Awesome - 5 stars"></label>
-                            <label class="half {{app.filled[8]}}" for="star4half{{$index}}" title="Pretty good - 4.5 stars"></label>
-                            <label class = "full {{app.filled[7]}}" for="star4{{$index}}" title="Pretty good - 4 stars"></label>
-                            <label class="half {{app.filled[6]}}" for="star3half{{$index}}" title="Meh - 3.5 stars"></label>
-                            <label class = "full {{app.filled[5]}}" for="star3{{$index}}" title="Meh - 3 stars"></label>
-                            <label class="half {{app.filled[4]}}" for="star2half{{$index}}" title="Kinda bad - 2.5 stars"></label>
-                            <label class = "full {{app.filled[3]}}" for="star2{{$index}}" title="Kinda bad - 2 stars"></label>
-                            <label class="half {{app.filled[2]}}" for="star1half{{$index}}" title="Meh - 1.5 stars"></label>
-                            <label class = "full {{app.filled[1]}}" for="star1{{$index}}" title="Sucks big time - 1 star"></label>
-                            <label style="color: #FFD700" class="half {{app.filled[0]}}" for="starhalf{{$index}}" title="Sucks big time - 0.5 stars"></label>
-                        </fieldset>
+                        <jk-rating-stars class="employmentHistStars" max-rating="5" rating="app.studentRating" read-only="true"></jk-rating-stars>
                     </td>
 
 

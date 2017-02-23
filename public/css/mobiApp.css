@@ -136,6 +136,12 @@ div.studentBox{
 div.applicantsStars .button .material-icons {
     font-size: 18px;
 }
+div.employmentHistStars .button .material-icons {
+    font-size: 16px;
+}
+div.employmentHistStars.jk-rating-stars-container {
+    text-align: left;
+}
 div.applicantsStars.jk-rating-stars-container{
     text-align: left;
 }

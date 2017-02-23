@@ -894,12 +894,12 @@ span.jobDescription{
     border-bottom-left-radius: 10px;
 }
 .applicantsTables tbody tr td {
-    background-color: white;
+    background-color: #e9f8ff;
     padding-top: 11px;
 }
 
 .applicantsTables td.hover{
-    background-color: #e9f8ff;
+    background-color: white;
 }
 
 td.hover {
